@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { color, typography } from './shared/styles';
-import { glow } from './shared/animation';
-import { Icon } from './Icon';
+import { color, typography } from '../shared/styles';
+import { glow } from '../shared/animation';
+import { Icon } from '../Icon';
 
 export const sizes = {
   large: 40,
@@ -25,32 +25,32 @@ const Image = styled.div`
   line-height: ${sizes.medium}px;
 
   ${props =>
-    props.size === 'tiny' &&
-    css`
+  props.size === 'tiny' &&
+  css`
       height: ${sizes.tiny}px;
       width: ${sizes.tiny}px;
       line-height: ${sizes.tiny}px;
     `}
 
   ${props =>
-    props.size === 'small' &&
-    css`
+  props.size === 'small' &&
+  css`
       height: ${sizes.small}px;
       width: ${sizes.small}px;
       line-height: ${sizes.small}px;
     `}
 
   ${props =>
-    props.size === 'large' &&
-    css`
+  props.size === 'large' &&
+  css`
       height: ${sizes.large}px;
       width: ${sizes.large}px;
       line-height: ${sizes.large}px;
     `}
 
   ${props =>
-    !props.src &&
-    css`
+  !props.src &&
+  css`
       background: ${!props.loading && '#37D5D3'};
     `}
 
