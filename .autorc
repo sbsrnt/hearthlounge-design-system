@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    "npm",
+    [
+      "released",
+      {
+        "message": "%TYPE went out with version: %VERSION"
+      }
+    ]
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "name": "hearthlounge-design-system",
   "version": "0.1.1",
-  "private": true,
+  "private": false,
   "dependencies": {
     "babel-loader": "^8.0.6",
     "js-yaml": "^3.13.1",
@@ -20,6 +20,7 @@
     "build": "BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "release": "auto shipit",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "build-docs": "build-storybook -s public --docs",
@@ -70,6 +71,7 @@
     ]
   },
   "devDependencies": {
+    "@auto-it/released": "^7.8.0",
     "@babel/cli": "^7.6.2",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",

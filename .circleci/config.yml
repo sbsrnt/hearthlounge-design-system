@@ -16,3 +16,8 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test
+      - run: |
+          if [ $CIRCLE_BRANCH = "master" ]
+          then
+            yarn release
+          fi

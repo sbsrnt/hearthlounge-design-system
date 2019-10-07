@@ -10,6 +10,11 @@ configure(
   [
     require.context('../src', true, /Intro\.stories\.mdx$/),
     require.context('../src', true, /\.stories\.(js|mdx)$/),
+    require.context(
+      '../node_modules/hearthlounge-design-system/dist',
+      true,
+      /\.stories\.(js|mdx)$/
+    ),
   ],
   module
 );
