@@ -1,7 +1,15 @@
-import React from "react";
-import { configure } from "@storybook/react";
+import React from 'react';
+import { configure, addDecorator } from '@storybook/react';
+import { withA11y } from '@storybook/addon-a11y';
 
-import "../src/styles/_styles.scss";
+addDecorator(withA11y);
+import '../src/styles/_styles.scss';
 
 // automatically import all files ending in *.stories.js
-configure(require.context("../src", true, /stories\.js$/), module);
+configure(
+  [
+    require.context('../src', true, /Intro\.stories\.mdx$/),
+    require.context('../src', true, /\.stories\.(js|mdx)$/),
+  ],
+  module
+);

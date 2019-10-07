@@ -1,0 +1,85 @@
+@import '../styles/colors';
+@import '../styles/typography';
+@import '../styles/animations';
+
+$large: 40px;
+$medium: 28px;
+$small: 20px;
+$tiny: 16px;
+
+.avatar {
+  background: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  text-transform: uppercase;
+  text-align: center;
+
+  height: $medium;
+  width: $medium;
+  line-height: $medium;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  svg {
+    position: relative;
+    bottom: -2px;
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
+  }
+
+  path {
+    fill: $color-medium;
+    animation: glow 1.5s ease-in-out infinite;
+  }
+}
+
+.src {
+  background: #37d5d3;
+}
+
+.initial {
+  color: $color-lightest;
+  background: $color-dark;
+}
+
+.loading {
+  background: transparent;
+}
+
+.large {
+  height: $large;
+  width: $large;
+  line-height: $large;
+  font-size: $font-size-l1;
+}
+
+.small {
+  height: $small;
+  width: $small;
+  line-height: $small;
+  font-size: $font-size-s2;
+}
+
+.tiny {
+  height: $tiny;
+  width: $tiny;
+  line-height: $tiny;
+  font-size: $font-size-s1;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}

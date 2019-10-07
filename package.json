@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-loader": "^8.0.6",
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.15",
     "node-sass": "^4.12.0",
@@ -21,6 +22,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
+    "build-docs": "build-storybook -s public --docs",
     "extract-tokens": "node -r esm scripts/extract-tokens/all.js",
     "extract-tokens:typography": "node -r esm scripts/extract-tokens/typography.js",
     "extract-tokens:colors": "node -r esm scripts/extract-tokens/colors.js"
@@ -65,7 +67,9 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@storybook/addon-a11y": "^5.2.1",
     "@storybook/addon-actions": "^5.2.1",
+    "@storybook/addon-docs": "^5.2.1",
     "@storybook/addon-knobs": "^5.2.1",
     "@storybook/addon-links": "^5.2.1",
     "@storybook/addon-storysource": "^5.2.1",

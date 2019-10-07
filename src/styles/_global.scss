@@ -11,6 +11,7 @@ h4,
 h5,
 h6 {
   font-weight: $font-weight-regular;
+
   margin: 0;
   padding: 0;
 }
@@ -19,8 +20,9 @@ button,
 input,
 textarea,
 select {
-  outline: none;
   font-family: $font-type-primary;
+
+  outline: none;
 }
 
 sub,
@@ -42,24 +44,29 @@ em {
 }
 
 hr {
+  clear: both;
+
+  margin-bottom: 1.25rem;
+
   border: none;
   border-top: 1px solid $color-border;
-  clear: both;
-  margin-bottom: 1.25rem;
 }
 
 code,
 pre {
   font-family: $font-type-code;
   font-size: $font-size-code;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   display: inline-block;
-  padding-left: 2px;
+
   padding-right: 2px;
+  padding-left: 2px;
+
   vertical-align: baseline;
 
   color: $color-secondary;
@@ -67,30 +74,33 @@ code {
 
 pre {
   line-height: 18px;
+
+  margin: 1rem 0;
   padding: 11px 1rem;
+
   white-space: pre-wrap;
 
-  background: rgba(0, 0, 0, 0.05);
   color: $color-darkest;
   border-radius: 3px;
-  margin: 1rem 0;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 body {
   font-family: $font-type-primary;
   font-size: $font-size-s3;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  margin: 0;
+
   color: $color-darkest;
-  background: blue;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
-
-  margin: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   &.ReactModal__Body--open {
     overflow: hidden;
