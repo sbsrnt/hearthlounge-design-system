@@ -7,6 +7,7 @@
     "lodash": "^4.17.15",
     "node-sass": "^4.12.0",
     "polished": "^3.4.1",
+    "pretty-quick": "^1.11.1",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -26,6 +27,28 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,mdx,json}": "pretty-quick --staged",
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.scss": [
+      "csscomb --tty-mode --",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "browserslist": {
     "production": [
@@ -48,6 +71,8 @@
     "@storybook/addon-storysource": "^5.2.1",
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
+    "@testing-library/react": "^9.3.0",
+    "@types/jest": "^24.0.18",
     "classnames": "^2.2.6",
     "commitizen": "^4.0.3",
     "csscomb": "^4.3.0",
@@ -57,6 +82,7 @@
     "esm": "^3.2.25",
     "fs": "^0.0.1-security",
     "husky": "^3.0.8",
+    "jest-circus": "^24.9.0",
     "lint-staged": "^9.4.1",
     "prettier": "^1.18.2"
   }

@@ -1,6 +1,7 @@
 {
   "extends": ["airbnb", "prettier"],
   "env": {
+    "jest": true,
     "browser": true,
     "node": true,
     "jasmine": true
