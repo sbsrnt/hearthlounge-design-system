@@ -1,0 +1,53 @@
+_colors:
+  color:
+    primary: '#FF4785'
+    secondary: '#1EA7FD'
+    tertiary: '#DDDDDD'
+    orange: '#FC521F'
+    gold: '#FFAE00'
+    green: '#66BF3C'
+    seafoam: '#37D5D3'
+    purple: '#6F2CAC'
+    ultraviolet: '#2A0481'
+    lightest: '#FFFFFF'
+    lighter: '#F8F8F8'
+    light: '#F3F3F3'
+    mediumlight: '#EEEEEE'
+    medium: '#DDDDDD'
+    mediumdark: '#999999'
+    dark: '#666666'
+    darker: '#444444'
+    darkest: '#333333'
+    border: 'rgba(0,0,0,.1)'
+    positive: '#66BF3C'
+    negative: '#FF4400'
+    warning: '#E69D00'
+_spacing:
+  padding:
+    small: '10'
+    medium: '20'
+    large: '30'
+  borderRadius:
+    small: '5'
+    default: '10'
+_typography:
+  font:
+    type:
+      primary: '"Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif'
+      code:
+    weight:
+      regular: '400'
+      bold: '700'
+      extrabold: '800'
+      black: '900'
+    size:
+      s1: '12px'
+      s2: '14px'
+      s3: '16px'
+      m1: '20px'
+      m2: '24px'
+      m3: '28px'
+      l1: '32px'
+      l2: '40px'
+      l3: '48px'
+      code: '90px'

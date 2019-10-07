@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
-import { Avatar } from './Avatar';
+import { Avatar } from './index';
 
 export default {
   title: 'Design System|Avatar',
