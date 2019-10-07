@@ -1,8 +1,5 @@
 version: 2
 jobs:
-  deploy-job:
-    steps:
-
   build:
     docker:
       - image: circleci/node:10.16.0
