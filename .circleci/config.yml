@@ -7,7 +7,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "ac:75:2a:70:30:0a:c0:a2:3d:f0:7e:02:b1:a8:65:d6"
+            - "34:2d:57:85:c5:a4:43:09:c7:c7:f3:1e:2f:e2:7b:64"
   build:
     docker:
       - image: circleci/node:10.16.0
