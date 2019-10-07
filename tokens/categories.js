@@ -1,9 +1,9 @@
-const COLORS = "_colors";
-const TYPOGRAPHY = "_typography";
+const COLORS = '_colors';
+const TYPOGRAPHY = '_typography';
 
 export const TOKEN_CATEGORIES = {
   COLORS,
-  TYPOGRAPHY
+  TYPOGRAPHY,
 };
 
 export default TOKEN_CATEGORIES;

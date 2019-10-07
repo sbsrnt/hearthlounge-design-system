@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
@@ -26,6 +26,11 @@
     "extract-tokens": "node -r esm scripts/extract-tokens/all.js",
     "extract-tokens:typography": "node -r esm scripts/extract-tokens/typography.js",
     "extract-tokens:colors": "node -r esm scripts/extract-tokens/colors.js"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -65,6 +70,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.2",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@storybook/addon-a11y": "^5.2.1",
@@ -77,6 +83,7 @@
     "@storybook/react": "^5.2.1",
     "@testing-library/react": "^9.3.0",
     "@types/jest": "^24.0.18",
+    "auto": "^7.8.0",
     "classnames": "^2.2.6",
     "commitizen": "^4.0.3",
     "csscomb": "^4.3.0",
@@ -89,5 +96,10 @@
     "jest-circus": "^24.9.0",
     "lint-staged": "^9.4.1",
     "prettier": "^1.18.2"
-  }
+  },
+  "description": "HearthLounge design system",
+  "main": "dist/index.js",
+  "repository": "https://github.com/sbsrnt/hearthlounge-design-system.git",
+  "author": "Sebastian Krzyżanowski <eskrzy@gmail.com>",
+  "license": "MIT"
 }

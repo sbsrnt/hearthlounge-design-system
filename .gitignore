@@ -10,6 +10,8 @@
 
 # production
 storybook-static
+dist
+.env
 
 # misc
 .DS_Store
