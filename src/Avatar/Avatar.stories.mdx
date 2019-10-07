@@ -1,0 +1,96 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Avatar from '.';
+
+<Meta title="Design System|Avatar" component={Avatar} />
+
+# Avatar
+
+## Displays an image that represents a user or organization
+
+Use an avatar for attributing actions or content to specific users. The user’s name should _always_ be present when using Avatar – either printed beside the avatar or in a tooltip.
+
+<Preview withToolbar>
+  <Story name="standard">
+    <Avatar
+      size="large"
+      username="Foo"
+      src="https://static-cdn.jtvnw.net/jtv_user_pictures/sbsrnt-profile_image-a021d1707d38faea-70x70.png"
+    />
+  </Story>
+</Preview>
+
+<Props of={Avatar} />
+
+## Usage
+
+Avatar is used to represent a person or an organization. By default the avatar shows an image and gracefully falls back to the first initial of the username. While hydrating the component you may find it useful to render a skeleton template to indicate that Avatar is awaiting data. Avatars can be grouped with the AvatarList component.
+
+### Sizes
+
+4 sizes are supported.
+
+<Story name="sizes">
+  <div>
+    <Avatar
+      size="large"
+      username="Foo"
+      src="https://static-cdn.jtvnw.net/jtv_user_pictures/sbsrnt-profile_image-a021d1707d38faea-70x70.png"
+    />
+    <Avatar
+      size="medium"
+      username="Foo"
+      src="https://static-cdn.jtvnw.net/jtv_user_pictures/sbsrnt-profile_image-a021d1707d38faea-70x70.png"
+    />
+    <Avatar
+      size="small"
+      username="foo"
+      src="https://static-cdn.jtvnw.net/jtv_user_pictures/sbsrnt-profile_image-a021d1707d38faea-70x70.png"
+    />
+    <Avatar
+      size="tiny"
+      username="Foo"
+      src="https://static-cdn.jtvnw.net/jtv_user_pictures/sbsrnt-profile_image-a021d1707d38faea-70x70.png"
+    />
+  </div>
+</Story>
+
+### Default Values
+
+When no image is supplied to the `src` prop, Avatar displays initials. Avatar should be used sparingly in situations without access to images.
+
+<Story name="initials">
+  <div>
+    <Avatar username="One" />
+    <Avatar username="Two" />
+    <Avatar username="Four" />
+    <Avatar username="Six" />
+  </div>
+</Story>
+
+### Loading
+
+The loading state is used when the image or username is, well, loading.
+
+<Story name="loading">
+  <div>
+    <Avatar size="large" loading />
+    <Avatar size="medium" loading />
+    <Avatar size="small" loading />
+    <Avatar size="tiny" loading />
+  </div>
+</Story>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="knobs" decorators={[withKnobs]}>
+  <Avatar
+    loading={boolean('Loading')}
+    size={select('Size', ['tiny', 'small', 'medium', 'large'])}
+    username="Foo"
+    src="https://static-cdn.jtvnw.net/jtv_user_pictures/sbsrnt-profile_image-a021d1707d38faea-70x70.png"
+  />
+</Story>

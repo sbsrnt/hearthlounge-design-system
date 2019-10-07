@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { Icon } from './Icon';
-import { icons } from './shared/icons';
+import Icon from '.';
+import { icons } from '../shared/icons';
 
 const Meta = styled.div`
   color: #666;
@@ -54,7 +54,7 @@ export default {
 };
 
 export const labels = () => (
-  <Fragment>
+  <>
     There are {Object.keys(icons).length} icons
     <List>
       {Object.keys(icons).map(key => (
@@ -64,7 +64,7 @@ export const labels = () => (
         </Item>
       ))}
     </List>
-  </Fragment>
+  </>
 );
 
 export const noLabels = () => (
@@ -82,13 +82,14 @@ noLabels.story = {
 };
 
 export const inline = () => (
-  <Fragment>
-    this is an inline <Icon icon="facehappy" aria-label="Happy face" /> icon (default)
-  </Fragment>
+  <>
+    this is an inline <Icon icon="facehappy" aria-label="Happy face" /> icon
+    (default)
+  </>
 );
 
 export const block = () => (
-  <Fragment>
+  <>
     this is a block <Icon icon="facehappy" aria-label="Happy face" block /> icon
-  </Fragment>
+  </>
 );
