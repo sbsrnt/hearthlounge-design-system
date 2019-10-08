@@ -1,3 +1,15 @@
+# v0.7.1 (Tue Oct 08 2019)
+
+#### ⚠️  Pushed to master
+
+- chore: update changelog [skip-ci]  (eskrzy@gmail.com)
+
+#### Authors: 1
+
+- Sebastian Krzyżanowski (eskrzy@gmail.com)
+
+---
+
 # v0.7.0 (Tue Oct 08 2019)
 
 #### 🚀  Enhancement
