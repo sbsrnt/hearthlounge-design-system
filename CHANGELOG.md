@@ -2,8 +2,7 @@
 
 #### 🚀  Enhancement
 
-- feat(color-palette): expansion & adventure initial colors [#11](https://github.com/sbsrnt/hearthlounge-design-system/pull/11) ([@sbsrnt](https://github.com/sbsrnt))
-- feat: color palette [#10](https://github.com/sbsrnt/hearthlounge-design-system/pull/10) ([@sbsrnt](https://github.com/sbsrnt))
+Added initial colors to the palette for expansions and adventures.
 
 #### Authors: 1
 
