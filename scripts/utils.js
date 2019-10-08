@@ -73,7 +73,11 @@ export const buildJsColors = async category => {
     forEach(vars.global, ({ type, value }, name) => {
       let simplifiedName = tail(name.split('-'));
 
-      if (['media', 'classes'].includes(simplifiedName[0])) {
+      if (
+        ['media', 'classes', 'adventures', 'expansions'].includes(
+          simplifiedName[0]
+        )
+      ) {
         simplifiedName = tail(simplifiedName);
       }
       simplifiedName.join('-');

@@ -26,6 +26,8 @@ const Palette = () => {
                 'darkest',
                 'classes',
                 'media',
+                'adventures',
+                'expansions',
               ].includes(key)
             ) {
               return (
