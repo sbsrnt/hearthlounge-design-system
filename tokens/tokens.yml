@@ -158,29 +158,117 @@ _colors:
         '80': '#87633D'
         '90': '#72502C'
     adventures:
-      karazhan:
+      one-night-in-karazhan:
+        '10': '#F8EDF7'
+        '20': '#F3DFF1'
+        '30': '#EDD1EB'
+        '40': '#E8C2E5'
         '50': '#E2B4DF'
-      loe:
-        '50': '#14A9A1'
-      bm:
-        '50': '#FA5210'
-      naxx:
-        '50': '#B5dE3F'
+        '60': '#D99ED5'
+        '70': '#D187CB'
+        '80': '#C871C0'
+        '90': '#BF5AB6'
+      league-of-explorers:
+        '10': '#C6F7E2'
+        '20': '#8EEDC7'
+        '30': '#65D6AD'
+        '40': '#3EBD93'
+        '50': '#27AB83'
+        '60': '#199473'
+        '70': '#147D64'
+        '80': '#0C6B58'
+        '90': '#014D40'
+      blackrock-mountain:
+        '10': '#FFE8D9'
+        '20': '#FFD0B5'
+        '30': '#FFB088'
+        '40': '#FF9466'
+        '50': '#F9703E'
+        '60': '#F35627'
+        '70': '#DE3A11'
+        '80': '#C52707'
+        '90': '#AD1D07'
+      naxxramas:
+        '10': '#F2FDE0'
+        '20': '#E2F7C2'
+        '30': '#C7EA8F'
+        '40': '#ABDB5E'
+        '50': '#94C843'
+        '60': '#7BB026'
+        '70': '#63921A'
+        '80': '#507712'
+        '90': '#42600C'
     expansions:
-      tgt:
+      goblins-vs-gnomes:
+        '10': '#FEF9D2'
+        '20': '#FDF4AD'
+        '30': '#FCEF89'
+        '40': '#FBE964'
+        '50': '#FAE43F'
+        '60': '#E0CC32'
+        '70': '#C6B426'
+        '80': '#AC9B19'
+        '90': '#92830C'
+      the-grand-tournament:
+        '10': '#F5BDC6'
+        '20': '#E996A3'
+        '30': '#DD6E81'
+        '40': '#D0475E'
         '50': '#C41F3B'
-      gvg:
-        '50': '#14A9A1'
-      ungoro:
+        '60': '#AF1C35'
+        '70': '#99182E'
+        '80': '#841528'
+        '90': '#6E1121'
+      whispers-of-the-old-gods:
+        '10': '#DAC4FF'
+        '20': '#B990FF'
+        '30': '#A368FC'
+        '40': '#9446ED'
+        '50': '#8719E0'
+        '60': '#7A0ECC'
+        '70': '#690CB0'
+        '80': '#580A94'
+        '90': '#44056E'
+      mean-streets-of-gadgetzan:
+        '10': '#FAF9F7'
+        '20': '#E8E6E1'
+        '30': '#D3CEC4'
+        '40': '#B8B2A7'
+        '50': '#A39E93'
+        '60': '#857F72'
+        '70': '#625D52'
+        '80': '#504A40'
+        '90': '#423D33'
+      journey-to-ungoro:
+        '10': '#B8E9AF'
+        '20': '#99D68E'
+        '30': '#7BC46E'
+        '40': '#5CB14D'
         '50': '#3D9E2C'
-      msog:
-        '50': '#D2CAC5'
-      wotog:
-        '50': '#9482C9'
-      kotft:
-        '50': '#A5F2F3'
-      kac:
+        '60': '#368B27'
+        '70': '#2E7721'
+        '80': '#27641C'
+        '90': '#1F5016'
+      knights-of-the-frozen-throne:
+        '10': '#E1FCF8'
+        '20': '#C1FEF6'
+        '30': '#92FDF2'
+        '40': '#62F4EB'
+        '50': '#3AE7E1'
+        '60': '#1CD4D4'
+        '70': '#0FB5BA'
+        '80': '#099AA4'
+        '90': '#07818F'
+      kobolds-and-catacombs:
+        '10': '#FBF6E9'
+        '20': '#FCEFD1'
+        '30': '#FDE8B9'
+        '40': '#FEE0A1'
         '50': '#FFD989'
+        '60': '#EFC367'
+        '70': '#DEAD45'
+        '80': '#CE9722'
+        '90': '#BD8100'
     media:
       facebook:
         logo: '#FFFFFF'
@@ -212,6 +300,7 @@ _typography:
   font:
     type:
       primary: '"Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif'
+      code:
     weight:
       regular: '400'
       bold: '700'
