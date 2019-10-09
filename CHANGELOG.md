@@ -1,3 +1,15 @@
+# v0.7.2 (Wed Oct 09 2019)
+
+#### 🐛  Bug Fix
+
+- feat: more color tokens [#12](https://github.com/sbsrnt/hearthlounge-design-system/pull/12) ([@sbsrnt](https://github.com/sbsrnt))
+
+#### Authors: 1
+
+- Sebastian Krzyżanowski ([@sbsrnt](https://github.com/sbsrnt))
+
+---
+
 # v0.7.1 (Tue Oct 08 2019)
 
 #### ⚠️  Pushed to master
