@@ -6,4 +6,12 @@ export const TOKEN_CATEGORIES = {
   TYPOGRAPHY,
 };
 
+export const nestedTokenColors = [
+  'media',
+  'classes',
+  'adventures',
+  'expansions',
+  'rarities',
+];
+
 export default TOKEN_CATEGORIES;

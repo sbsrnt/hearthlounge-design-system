@@ -2,6 +2,7 @@ import { forEach, tail, lowerCase, camelCase } from 'lodash';
 import yaml from 'js-yaml';
 import fs from 'fs';
 import { render } from 'sass-extract';
+import { nestedTokenColors } from '../tokens/categories';
 
 /* eslint-disable */
 export const scssFilePath = category => `./src/styles/${category}.scss`;
@@ -73,11 +74,7 @@ export const buildJsColors = async category => {
     forEach(vars.global, ({ type, value }, name) => {
       let simplifiedName = tail(name.split('-'));
 
-      if (
-        ['media', 'classes', 'adventures', 'expansions'].includes(
-          simplifiedName[0]
-        )
-      ) {
+      if (nestedTokenColors.includes(simplifiedName[0])) {
         simplifiedName = tail(simplifiedName);
       }
       simplifiedName.join('-');

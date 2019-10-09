@@ -1,8 +1,8 @@
 import React from 'react';
 import { camelCase, startCase } from 'lodash';
 import cx from 'classnames';
-
 import tokens from '../../../tokens/tokens.json';
+import { nestedTokenColors } from '../../../tokens/categories';
 
 import styles from './styles.module.scss';
 
@@ -18,25 +18,22 @@ const Palette = () => {
           {entries.map(({ 0: key, 1: values }) => {
             if (
               ![
+                ...nestedTokenColors,
                 'medium',
                 'border',
                 'secondary',
                 'lightest',
                 'dark',
                 'darkest',
-                'classes',
-                'media',
-                'adventures',
-                'expansions',
               ].includes(key)
             ) {
               return (
-                <div className={styles.wrapper}>
+                <div className={styles.wrapper} key={key}>
                   <p>{startCase(key)}</p>
                   <ul>
                     {Object.entries(values).map(
                       ({ 0: colorKey, 1: colorValue }) => (
-                        <li>
+                        <li key={`${key}_${colorKey}`}>
                           <span style={{ backgroundColor: colorValue }} />
                           <code>
                             {key}
@@ -62,17 +59,17 @@ const Palette = () => {
 
           if (isExtendedObj) {
             return (
-              <div>
+              <div key={key}>
                 <h3>{startCase(key)}</h3>
                 <div className={cx(styles.wrapper, styles.innerWrapper)}>
                   {Object.entries(values).map(
                     ({ 0: extendedObjKey, 1: extendedObjValues }) => (
-                      <div>
+                      <div key={`${key}_${extendedObjKey}`}>
                         <p>{startCase(extendedObjKey)}</p>
                         <ul>
                           {Object.entries(extendedObjValues).map(
                             ({ 0: k, 1: v }) => (
-                              <li>
+                              <li key={`${key}_${extendedObjKey}_${k}`}>
                                 <span style={{ backgroundColor: v }} />
                                 <code>
                                   {camelCase(extendedObjKey)}
