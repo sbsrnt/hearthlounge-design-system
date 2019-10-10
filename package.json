@@ -24,10 +24,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "build-docs": "build-storybook -s public --docs",
-    "extract-tokens": "node -r esm scripts/extract-tokens/all.js",
-    "extract-tokens:typography": "node -r esm scripts/extract-tokens/typography.js",
-    "extract-tokens:colors": "node -r esm scripts/extract-tokens/colors.js",
-    "extract-tokens:obj": "node -r esm scripts/extract-tokens/tokens-obj.js"
+    "extract-tokens": "node -r esm scripts/extract-tokens.js"
   },
   "babel": {
     "presets": [
