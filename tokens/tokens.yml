@@ -289,6 +289,17 @@ _colors:
         logo: '#FFFFFF'
         background: '#6441A4'
 _spacing:
+  spacing:
+    xs: '0.25rem'
+    sm: '0.5rem'
+    md: '1rem'
+    lg: '1.5rem'
+    xl: '3rem'
+  grid-breakpoints:
+    xs: '0'
+    sm: '48em'
+    md: '64em'
+    lg: '75em'
   padding:
     small: '10'
     medium: '20'
@@ -299,13 +310,13 @@ _spacing:
 _typography:
   font:
     type:
-      primary: '"Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif'
+      primary: '"Lato", sans-serif'
       code:
     weight:
+      thin: '300'
       regular: '400'
       bold: '700'
-      extrabold: '800'
-      black: '900'
+      bolder: '900'
     size:
       s1: '12px'
       s2: '14px'
