@@ -1,3 +1,15 @@
+# v0.7.3 (Thu Oct 10 2019)
+
+#### 🐛  Bug Fix
+
+- Update issue templates [#14](https://github.com/sbsrnt/hearthlounge-design-system/pull/14) ([@sbsrnt](https://github.com/sbsrnt))
+
+#### Authors: 1
+
+- Sebastian Krzyżanowski ([@sbsrnt](https://github.com/sbsrnt))
+
+---
+
 # v0.7.2 (Wed Oct 09 2019)
 
 #### 🐛  Bug Fix
