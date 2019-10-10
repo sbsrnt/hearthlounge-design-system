@@ -1,3 +1,15 @@
+# v0.8.0 (Thu Oct 10 2019)
+
+#### 🚀  Enhancement
+
+- [feat]: spacing [#16](https://github.com/sbsrnt/hearthlounge-design-system/pull/16) ([@sbsrnt](https://github.com/sbsrnt))
+
+#### Authors: 1
+
+- Sebastian Krzyżanowski ([@sbsrnt](https://github.com/sbsrnt))
+
+---
+
 # v0.7.6 (Thu Oct 10 2019)
 
 #### ⚠️  Pushed to master
