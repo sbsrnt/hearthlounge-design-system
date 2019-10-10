@@ -1,3 +1,15 @@
+# v0.9.0 (Thu Oct 10 2019)
+
+#### 🚀  Enhancement
+
+- [feat]: Paragraph Component and Typography page intro [#25](https://github.com/sbsrnt/hearthlounge-design-system/pull/25) ([@sbsrnt](https://github.com/sbsrnt))
+
+#### Authors: 1
+
+- Sebastian Krzyżanowski ([@sbsrnt](https://github.com/sbsrnt))
+
+---
+
 # v0.8.1 (Thu Oct 10 2019)
 
 #### ⚠️  Pushed to master
