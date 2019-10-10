@@ -1,3 +1,15 @@
+# v0.8.1 (Thu Oct 10 2019)
+
+#### ⚠️  Pushed to master
+
+- Update issue templates  (eskrzy@gmail.com)
+
+#### Authors: 1
+
+- Sebastian Krzyżanowski (eskrzy@gmail.com)
+
+---
+
 # v0.8.0 (Thu Oct 10 2019)
 
 #### 🚀  Enhancement
