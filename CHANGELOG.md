@@ -1,3 +1,15 @@
+# v0.7.6 (Thu Oct 10 2019)
+
+#### ⚠️  Pushed to master
+
+- chore: update autorc config  (eskrzy@gmail.com)
+
+#### Authors: 1
+
+- Sebastian Krzyżanowski (eskrzy@gmail.com)
+
+---
+
 # v0.7.5 (Thu Oct 10 2019)
 
 #### ⚠️  Pushed to master
