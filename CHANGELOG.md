@@ -1,3 +1,15 @@
+# v0.12.0 (Thu Oct 10 2019)
+
+#### 🚀  Enhancement
+
+- [feat]: sublabel component [#28](https://github.com/sbsrnt/hearthlounge-design-system/pull/28) ([@sbsrnt](https://github.com/sbsrnt))
+
+#### Authors: 1
+
+- Sebastian Krzyżanowski ([@sbsrnt](https://github.com/sbsrnt))
+
+---
+
 # v0.11.0 (Thu Oct 10 2019)
 
 #### 🚀  Enhancement
