@@ -1,0 +1,9 @@
+@import '../styles/colors';
+@import '../styles/typography';
+
+.sublabel {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+
+  color: $color-neutral-70;
+}
