@@ -2,7 +2,7 @@
 name: Fix request
 about: Create a fix request.
 title: "[fix]: title"
-labels: feature
+labels: fix
 assignees: ''
 
 ---
