@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800,900');
 @import 'typography';
+@import 'colors';
 
 * {
   box-sizing: border-box;
@@ -17,10 +18,38 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $font-weight-regular;
+  font-weight: $font-weight-bold;
 
   margin: 0;
   padding: 0;
+
+  color: $color-neutral-90;
+}
+
+h1 {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-regular;
+  line-height: $font-line-height-xl;
+}
+
+h2 {
+  font-weight: $font-weight-bolder;
+  line-height: $font-line-height-2xl;
+}
+
+h3 {
+  line-height: $font-line-height-lg;
+}
+
+h4 {
+  line-height: $font-line-height-md;
+}
+
+h5 {
+  font-weight: bold;
+  line-height: $font-line-height-sm;
+
+  letter-spacing: 1.1px;
 }
 
 button,
@@ -94,6 +123,13 @@ pre {
 
 p {
   font-size: $font-size-sm;
+  line-height: $font-line-height-lg;
+
+  margin: 0;
+
+  letter-spacing: 0.2px;
+
+  color: $color-neutral-90;
 }
 
 body {

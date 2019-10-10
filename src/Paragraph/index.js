@@ -11,7 +11,7 @@ Paragraph.propTypes = {
 };
 Paragraph.defaultProps = {
   children: null,
-  className: '',
+  className: null,
 };
 
 export default Paragraph;
