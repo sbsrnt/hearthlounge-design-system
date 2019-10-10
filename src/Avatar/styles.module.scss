@@ -1,47 +1,53 @@
 @import '../styles/colors';
 @import '../styles/typography';
 @import '../styles/animations';
-
 $large: 40px;
 $medium: 28px;
 $small: 20px;
 $tiny: 16px;
 
 .avatar {
-  background: transparent;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  overflow: hidden;
-  text-transform: uppercase;
-  text-align: center;
-
-  height: $medium;
-  width: $medium;
   line-height: $medium;
 
+  display: inline-block;
+  overflow: hidden;
+
+  width: $medium;
+  height: $medium;
+
+  text-align: center;
+  vertical-align: top;
+  text-transform: uppercase;
+
+  border-radius: 50%;
+  background: transparent;
+
   img {
+    display: block;
+
     width: 100%;
     height: auto;
-    display: block;
   }
 
   svg {
     position: relative;
     bottom: -2px;
-    height: 100%;
+
     width: 100%;
+    height: 100%;
+
     vertical-align: top;
   }
 
   path {
-    fill: $color-medium;
     animation: glow 1.5s ease-in-out infinite;
+
+    fill: $color-medium;
   }
 }
 
 .src {
-  background: #37d5d3;
+  background: #37D5D3;
 }
 
 .initial {
@@ -54,24 +60,27 @@ $tiny: 16px;
 }
 
 .large {
-  height: $large;
-  width: $large;
+  font-size: $font-size-lg;
   line-height: $large;
-  font-size: $font-size-l1;
+
+  width: $large;
+  height: $large;
 }
 
 .small {
-  height: $small;
-  width: $small;
+  font-size: $font-size-sm;
   line-height: $small;
-  font-size: $font-size-s2;
+
+  width: $small;
+  height: $small;
 }
 
 .tiny {
-  height: $tiny;
-  width: $tiny;
+  font-size: $font-size-xs;
   line-height: $tiny;
-  font-size: $font-size-s1;
+
+  width: $tiny;
+  height: $tiny;
 }
 
 @keyframes glow {
