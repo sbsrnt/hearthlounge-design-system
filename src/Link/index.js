@@ -1,13 +1,11 @@
 import React from 'react';
 import { node, string } from 'prop-types';
 
-const Link = ({ as: T, to, children, className, ...props }) => {
-  return (
-    <T href={to} className={className} {...props}>
-      {children}
-    </T>
-  );
-};
+const Link = ({ as: T, to, children, className, ...props }) => (
+  <T href={to} className={className} {...props}>
+    {children}
+  </T>
+);
 
 Link.propTypes = {
   as: string,
