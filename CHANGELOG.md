@@ -1,3 +1,15 @@
+# v0.11.0 (Thu Oct 10 2019)
+
+#### 🚀  Enhancement
+
+- [feat]: link component [#27](https://github.com/sbsrnt/hearthlounge-design-system/pull/27) ([@sbsrnt](https://github.com/sbsrnt))
+
+#### Authors: 1
+
+- Sebastian Krzyżanowski ([@sbsrnt](https://github.com/sbsrnt))
+
+---
+
 # v0.10.0 (Thu Oct 10 2019)
 
 #### 🚀  Enhancement
