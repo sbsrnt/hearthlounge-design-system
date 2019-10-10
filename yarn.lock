@@ -6,6 +6,13 @@
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@atomist/slack-messages/-/slack-messages-1.1.1.tgz#9de42932e89065fb4fe4842978ca2d1ed3424cea"
 
+"@auto-it/conventional-commits@^7.8.0":
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/@auto-it/conventional-commits/-/conventional-commits-7.8.0.tgz#3ee6ef4e341b55dde2c45771c3f02a70e31e2935"
+  dependencies:
+    "@auto-it/core" "^7.8.0"
+    parse-commit-message "4.0.0"
+
 "@auto-it/core@^7.8.0":
   version "7.8.0"
   resolved "https://registry.yarnpkg.com/@auto-it/core/-/core-7.8.0.tgz#f41dab7787a9b1fbc4f5edd4a2cb9ef7b254f34c"
@@ -9048,6 +9055,10 @@ parse-color@^1.0.0:
   resolved "https://registry.yarnpkg.com/parse-color/-/parse-color-1.0.0.tgz#7b748b95a83f03f16a94f535e52d7f3d94658619"
   dependencies:
     color-convert "~0.5.0"
+
+parse-commit-message@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/parse-commit-message/-/parse-commit-message-4.0.0.tgz#e24d53231c720224a96086ac33c8e9e0a3dae557"
 
 parse-entities@^1.1.0, parse-entities@^1.1.2:
   version "1.2.2"

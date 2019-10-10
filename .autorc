@@ -1,6 +1,29 @@
 {
   "plugins": [
     "npm",
-    "released"
-  ]
+    "conventional-commits",
+    ["released", {
+      "message": "%TYPE went out with version: %VERSION"
+    }]
+  ],
+  "labels": {
+    "minor": [
+      "minor",
+      {
+        "name": "New Component",
+        "title": "🧩 New Component",
+        "description": "A new component has been added to the design-system"
+      }
+    ],
+    "patch": [
+      "patch",
+      {
+        "name": "Fix",
+        "title": "\uD83D\uDC1B Bug Fix"
+      }
+    ],
+    "documentation": {
+      "title": "StoryBook"
+    }
+  }
 }

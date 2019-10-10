@@ -72,6 +72,7 @@
     ]
   },
   "devDependencies": {
+    "@auto-it/conventional-commits": "^7.8.0",
     "@auto-it/released": "^7.8.0",
     "@babel/cli": "^7.6.2",
     "@commitlint/cli": "^8.2.0",
