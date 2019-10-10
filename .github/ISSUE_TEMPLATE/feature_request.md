@@ -11,7 +11,9 @@ assignees: ''
 
 ### Design Proposal (optional)
 
+### Features (optional, listed like `checks` below)
+
 ### Checks
-- [] Tests
-- [] Accessibility
-- [] Docs
+- [ ] Tests
+- [ ] Accessibility
+- [ ] Docs

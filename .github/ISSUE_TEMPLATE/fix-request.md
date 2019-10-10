@@ -10,6 +10,6 @@ assignees: ''
 ### Issue description
 
 ### Checks
-- [] Tests
-- [] Accessibility (if applies)
-- [] Updated Docs (if applies)
+- [ ] Tests
+- [ ] Accessibility (if applies)
+- [ ] Updated Docs (if applies)
