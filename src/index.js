@@ -6,5 +6,6 @@ import * as colors from './colors';
 export { styles, animation, icons, colors };
 
 export * as Avatar from './Avatar';
-export * as Paragraph from './Paragraph';
+export * as Header from './Header';
 export * as Icon from './Icon';
+export * as Paragraph from './Paragraph';
