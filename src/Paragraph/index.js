@@ -1,8 +1,10 @@
 import React from 'react';
 import { node, string } from 'prop-types';
 
-const Paragraph = ({ children, className }) => (
-  <p className={className}>{children}</p>
+const Paragraph = ({ children, className, ...props }) => (
+  <p className={className} {...props}>
+    {children}
+  </p>
 );
 
 Paragraph.propTypes = {

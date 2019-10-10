@@ -1,8 +1,10 @@
 import React from 'react';
 import { node, oneOf, string } from 'prop-types';
 
-const Header = ({ as: T, children, className }) => (
-  <T className={className}>{children}</T>
+const Header = ({ as: T, children, className, ...props }) => (
+  <T className={className} {...props}>
+    {children}
+  </T>
 );
 
 const supportedHeaderTypes = ['h1', 'h2', 'h3', 'h4', 'h5'];

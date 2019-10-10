@@ -22,4 +22,11 @@ describe('Paragraph Component', () => {
 
     expect(container.firstChild.classList.contains('foo')).toBe(true);
   });
+
+  test('has aria-label prop (via {...props})', async () => {
+    const { getByLabelText } = render(<Paragraph aria-label="bar" />);
+    const label = getByLabelText('bar');
+
+    expect(label).not.toBeNull();
+  });
 });

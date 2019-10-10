@@ -1,0 +1,23 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Link from '.';
+
+<Meta title="Design System|Link" component={Link} />
+
+# Link
+
+Resembles HTML's `a` tag
+
+<Preview>
+  <Story name="default">
+    <div>
+      <Link to="#">Click me</Link>
+    </div>
+  </Story>
+</Preview>
+
+<Props of={Link} />
+
+## Usage
+
+Link is used to create a hyperlink to either other or internal web pages.

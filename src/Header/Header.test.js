@@ -40,4 +40,11 @@ describe('Header Component', () => {
 
     expect(container.firstChild.classList.contains('foo')).toBe(true);
   });
+
+  test('has aria-label prop (via {...props})', async () => {
+    const { getByLabelText } = render(<Header aria-label="bar" />);
+    const label = getByLabelText('bar');
+
+    expect(label).not.toBeNull();
+  });
 });
