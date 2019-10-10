@@ -1,3 +1,15 @@
+# v0.7.5 (Thu Oct 10 2019)
+
+#### ⚠️  Pushed to master
+
+- Update issue templates labels  (eskrzy@gmail.com)
+
+#### Authors: 1
+
+- Sebastian Krzyżanowski (eskrzy@gmail.com)
+
+---
+
 # v0.7.4 (Thu Oct 10 2019)
 
 #### 🐛  Bug Fix
