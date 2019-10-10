@@ -1,0 +1,27 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Header from '.';
+
+<Meta title="Design System|Header" component={Header} />
+
+# Header
+
+Resembles HTML's `h{n}` tag
+
+<Preview>
+  <Story name="default">
+    <div>
+      <Header as="h5">Some h5 text</Header>
+      <Header as="h4">Some h4 text</Header>
+      <Header>Some h3 text.</Header>
+      <Header as="h2">Some h2 text</Header>
+      <Header as="h1">Some h1 text</Header>
+    </div>
+  </Story>
+</Preview>
+
+<Props of={Header} />
+
+## Usage
+
+Header is used to represent header text.
