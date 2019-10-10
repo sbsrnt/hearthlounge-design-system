@@ -22,10 +22,10 @@ describe('Header Component', () => {
     expect(container.firstChild.nodeName).toBe('H1');
   });
 
-  test('renders as "h6"', async () => {
-    const { container } = render(<Header as="h6" />);
+  test('renders as "h5"', async () => {
+    const { container } = render(<Header as="h5" />);
 
-    expect(container.firstChild.nodeName).toBe('H6');
+    expect(container.firstChild.nodeName).toBe('H5');
   });
 
   test('renders children correctly', async () => {
