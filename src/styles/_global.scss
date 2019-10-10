@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800,900');
+@import 'typography';
 
 * {
   box-sizing: border-box;
@@ -61,7 +62,7 @@ hr {
 code,
 pre {
   font-family: $font-type-code;
-  font-size: $font-size-code;
+  font-size: $font-size-sm;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -91,9 +92,13 @@ pre {
   background: rgba(0, 0, 0, 0.05);
 }
 
+p {
+  font-size: $font-size-sm;
+}
+
 body {
   font-family: $font-type-primary;
-  font-size: $font-size-s3;
+  font-size: $font-size-md;
 
   overflow-x: hidden;
   overflow-y: auto;
