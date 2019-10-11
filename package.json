@@ -21,6 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "release": "auto shipit",
+    "semantic-release": "semantic-release",
     "eslit": "eslint .",
     "prettify": "pretty-quick",
     "storybook": "start-storybook -p 9009 -s public",
@@ -76,6 +77,7 @@
     "@babel/cli": "^7.6.2",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@semantic-release/git": "^7.0.16",
     "@storybook/addon-a11y": "^5.2.1",
     "@storybook/addon-actions": "^5.2.1",
     "@storybook/addon-docs": "^5.2.1",
@@ -99,7 +101,8 @@
     "jest-circus": "^24.9.0",
     "lint-staged": "^9.4.1",
     "prettier": "^1.18.2",
-    "sass-extract": "^2.1.0"
+    "sass-extract": "^2.1.0",
+    "semantic-release": "^15.13.24"
   },
   "description": "HearthLounge design system",
   "main": "dist/index.js",
