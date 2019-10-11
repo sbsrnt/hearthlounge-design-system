@@ -1,112 +1,80 @@
 version: 2.1
 
-executors:
-  node:
-    working_directory: ~/repo
-    docker:
-      - image: circleci/node:10.16.0
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:10.16.0
+      environment:
+        YARN_VERSION: 1.16.0
 
 jobs:
-  add_ssh:
-    executor: node
+  install-and-build:
+    <<: *defaults
     steps:
       - add_ssh_keys:
           fingerprints:
             - '34:2d:57:85:c5:a4:43:09:c7:c7:f3:1e:2f:e2:7b:64'
-
-  checkout_code:
-    executor: node
-    steps:
       - checkout
-      - persist_to_workspace:
-          root: ~/repo
-          paths:
-            - .
 
-  install_packages:
-    executor: node
-    steps:
-      - attach_workspace:
-          at: ~/repo
       - restore_cache:
-          key: yarn-{{ checksum "yarn.lock" }}
-      - run: yarn install
+          name: Restore Yarn Package Cache
+          keys:
+            - v1-hl-design-system-{{ checksum "yarn.lock" }}
+            - v1-hl-design-system-
+
+      - run:
+          name: Install Dependencies with Yarn
+          command: yarn install --ignore-engines
+
       - save_cache:
-          key: yarn-{{ checksum "yarn.lock" }}
+          name: Save Yarn Package Cache
+          key: v1-hl-design-system-{{ checksum "yarn.lock" }}
           paths:
-            - ~/repo/node_modules
+            - node_modules
+
       - persist_to_workspace:
           root: ~/repo
           paths:
             - node_modules
-
-  run_linters:
-    executor: node
+  test:
+    <<: *defaults
     steps:
+      - checkout
+
       - attach_workspace:
           at: ~/repo
-      - run: yarn eslint
 
-  run_tests:
-    executor: node
+      - run:
+          name: react-scripts test
+          command: yarn test
+
+  release:
+    <<: *defaults
     steps:
+      - checkout
+
       - attach_workspace:
           at: ~/repo
-      - run: yarn test
 
-  build:
-    executor: node
-    steps:
-      - run: |
-          if [ $CIRCLE_BRANCH = "master" ]
-          then
-            yarn release
-          fi
+      - run:
+          name: auto release
+          command: |
+            if [ $CIRCLE_BRANCH = "master" ]
+            then
+              yarn release
+            fi
 
 workflows:
   version: 2.1
-  "Add SSH":
-    jobs:
-      - add_ssh
-      - checkout_code:
-          filters:
-            tags:
-              only: /.*/
-
-  "install packages":
-    - jobs:
-      - install_packages:
-          requires:
-            - checkout_code
-          filters:
-            tags:
-              only: /.*/
-  "run tests":
-    - jobs:
-      - run_tests:
-          requires:
-            - install_packages
-          filters:
-            tags:
-              only: /.*/
-  "run linters":
-    - jobs:
-      - run_linters:
-          requires:
-            - install_packages
-          filters:
-            tags:
-              only: /.*/
-  "deploy":
-    - jobs:
-      - build:
-          requires:
-            - add_ssh
-            - install_packages
-            - run_tests
-            - run_linters
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v\d+\.\d+\.\d+$/
+  jobs:
+    - install-and-build
+    - test:
+        requires:
+          - install-and-build
+    - release:
+        requires:
+          - test
+        filters:
+          branches:
+            only:
+              - master
