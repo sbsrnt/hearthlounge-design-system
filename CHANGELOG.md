@@ -1,3 +1,15 @@
+# v0.13.1 (Fri Oct 11 2019)
+
+#### 🐛  Bug Fix
+
+- fix(circleci): downgrade circleci version [#30](https://github.com/sbsrnt/hearthlounge-design-system/pull/30) ([@sbsrnt](https://github.com/sbsrnt))
+
+#### Authors: 1
+
+- Sebastian Krzyżanowski ([@sbsrnt](https://github.com/sbsrnt))
+
+---
+
 # v0.13.0 (Fri Oct 11 2019)
 
 #### 🚀  Enhancement
