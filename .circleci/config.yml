@@ -57,13 +57,18 @@ jobs:
       - attach_workspace:
           at: ~/repo
 
+      #      - run:
+      #          name: auto release
+      #          command: |
+      #            if [ $CIRCLE_BRANCH = "master" ]
+      #            then
+      #              yarn release
+      #            fi
+
       - run:
-          name: auto release
-          command: |
-            if [ $CIRCLE_BRANCH = "master" ]
-            then
-              yarn release
-            fi
+          name: Semantic Release
+          command: yarn semantic-release
+          no_output_timeout: 5m
 
 workflows:
   version: 2
