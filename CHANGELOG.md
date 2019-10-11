@@ -1,3 +1,15 @@
+# v0.13.0 (Fri Oct 11 2019)
+
+#### 🚀  Enhancement
+
+- refactor(circleci): workflow [#29](https://github.com/sbsrnt/hearthlounge-design-system/pull/29) ([@sbsrnt](https://github.com/sbsrnt))
+
+#### Authors: 1
+
+- Sebastian Krzyżanowski ([@sbsrnt](https://github.com/sbsrnt))
+
+---
+
 # v0.12.0 (Thu Oct 10 2019)
 
 #### 🚀  Enhancement
