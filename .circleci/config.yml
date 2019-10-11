@@ -12,8 +12,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "34:2d:57:85:c5:a4:43:09:c7:c7:f3:1e:2f:e2:7b:64"
-
+            - '34:2d:57:85:c5:a4:43:09:c7:c7:f3:1e:2f:e2:7b:64'
 
   checkout_code:
     executor: node
@@ -41,6 +40,13 @@ jobs:
           paths:
             - node_modules
 
+  run_linters:
+    executor: node
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run: yarn eslint
+
   run_tests:
     executor: node
     steps:
@@ -56,7 +62,6 @@ jobs:
           then
             yarn release
           fi
-
 
 workflows:
   version: 2.1
