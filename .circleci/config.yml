@@ -65,31 +65,40 @@ jobs:
 
 workflows:
   version: 2.1
-  test-and-release:
+  "Add SSH":
     jobs:
       - add_ssh
       - checkout_code:
           filters:
             tags:
               only: /.*/
+
+  "install packages":
+    - jobs:
       - install_packages:
           requires:
             - checkout_code
           filters:
             tags:
               only: /.*/
+  "run tests":
+    - jobs:
       - run_tests:
           requires:
             - install_packages
           filters:
             tags:
               only: /.*/
+  "run linters":
+    - jobs:
       - run_linters:
           requires:
             - install_packages
           filters:
             tags:
               only: /.*/
+  "deploy":
+    - jobs:
       - build:
           requires:
             - add_ssh
