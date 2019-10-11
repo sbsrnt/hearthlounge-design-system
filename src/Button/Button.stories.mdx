@@ -1,0 +1,67 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Button from '.';
+
+<Meta title="Design System|Button" component={Button} />
+
+# Button
+
+## Displays an image that represents a user or organization
+
+<Preview withToolbar>
+  <Story name="default">
+    <Button>Click Me</Button>
+  </Story>
+</Preview>
+
+<Props of={Button} />
+
+## Usage
+
+Button is used to trigger actions.
+
+### Sizes
+
+By default the size of the button is `medium`.
+There are `2` supported sizes.
+
+<Story name="sizes">
+  <div>
+    <Button className="mr-2">Click Me</Button>
+    <Button size="small">Click Me</Button>
+  </div>
+</Story>
+
+### Themes
+
+By default the theme of the button is `primary`. There are `2` themes are supported.
+
+<Story name="themes">
+  <div>
+    <Button className="mr-2">Click Me</Button>
+    <Button theme="secondary">Click Me</Button>
+  </div>
+</Story>
+
+### Loading
+
+The loading state is used when action is async and the
+response was not yet received, hence the loading usage.
+
+<Story name="loading">
+  <Button loading>Click Me</Button>
+</Story>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="knobs" decorators={[withKnobs]}>
+  <Button
+    loading={boolean('Loading')}
+    theme={select('theme', ['primary', 'secondary'])}
+  >
+    Click Me
+  </Button>
+</Story>
