@@ -1,6 +1,6 @@
 version: 2.1
 
-executor:
+executors:
   node:
     working_directory: ~/repo
     docker:
