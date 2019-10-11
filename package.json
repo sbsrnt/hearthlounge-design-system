@@ -1,6 +1,6 @@
 {
   "name": "hearthlounge-design-system",
-  "version": "0.13.1",
+  "version": "0.14.0",
   "private": false,
   "dependencies": {
     "babel-loader": "^8.0.6",
