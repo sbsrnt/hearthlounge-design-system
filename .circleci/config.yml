@@ -1,31 +1,106 @@
-version: 2
-jobs:
-  deploy-job:
+version: 2.1
+
+executor:
+  node:
+    working_directory: ~/repo
     docker:
       - image: circleci/node:10.16.0
-    working_directory: ~/repo
+
+jobs:
+  add_ssh:
+    executor: node
     steps:
       - add_ssh_keys:
           fingerprints:
             - "34:2d:57:85:c5:a4:43:09:c7:c7:f3:1e:2f:e2:7b:64"
-  build:
-    docker:
-      - image: circleci/node:10.16.0
-    working_directory: ~/repo
+
+
+  checkout_code:
+    executor: node
     steps:
       - checkout
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - .
+
+  install_packages:
+    executor: node
+    steps:
+      - attach_workspace:
+          at: ~/repo
       - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
+          key: yarn-{{ checksum "yarn.lock" }}
       - run: yarn install
       - save_cache:
+          key: yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/repo/node_modules
+      - persist_to_workspace:
+          root: ~/repo
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+
+  run_tests:
+    executor: node
+    steps:
+      - attach_workspace:
+          at: ~/repo
       - run: yarn test
+
+  build:
+    executor: node
+    steps:
       - run: |
           if [ $CIRCLE_BRANCH = "master" ]
           then
             yarn release
           fi
+
+
+workflows:
+  version: 2.1
+  test-and-release:
+    jobs:
+      - add_ssh
+      - checkout_code:
+          filters:
+            tags:
+              only: /.*/
+      - install_packages:
+          requires:
+            - checkout_code
+          filters:
+            tags:
+              only: /.*/
+      - run_tests:
+          requires:
+            - install_packages
+          filters:
+            tags:
+              only: /.*/
+      - run_linters:
+          requires:
+            - install_packages
+          filters:
+            tags:
+              only: /.*/
+      - build:
+          requires:
+            - add_ssh
+            - install_packages
+            - run_tests
+            - run_linters
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v\d+\.\d+\.\d+$/
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v\d+\.\d+\.\d+$/
