@@ -37,7 +37,7 @@ describe('Button Component', () => {
       const { container } = render(<Button size="small" />);
       const className = container.firstChild.classList.contains(styles.small);
 
-      expect(className).not.toBe(true);
+      expect(className).toBe(true);
     });
 
     test('secondary', async () => {
