@@ -21,6 +21,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "release": "auto shipit",
+    "eslit": "eslint .",
+    "prettify": "pretty-quick",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "build-docs": "build-storybook -s public --docs",
