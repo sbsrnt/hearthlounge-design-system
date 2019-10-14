@@ -4,11 +4,9 @@ defaults: &defaults
   working_directory: ~/repo
   docker:
     - image: circleci/node:10.16.0
-      environment:
-        YARN_VERSION: 1.16.0
 
 jobs:
-  install-and-build:
+  build:
     <<: *defaults
     steps:
       - add_ssh_keys:
@@ -22,6 +20,10 @@ jobs:
           keys:
             - v1-hl-design-system-{{ checksum "yarn.lock" }}
             - v1-hl-design-system-
+
+      - run:
+          name: Check that yarn.lock is not corrupted
+          command: yarn repo-dirty-check
 
       - run:
           name: Install Dependencies with Yarn
@@ -74,10 +76,10 @@ workflows:
   version: 2
   hl-design-system-workflow:
     jobs:
-      - install-and-build
+      - build
       - test:
           requires:
-            - install-and-build
+            - build
       - release:
           requires:
             - test
