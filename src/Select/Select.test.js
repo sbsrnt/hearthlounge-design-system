@@ -7,13 +7,13 @@ import Select from '.';
 describe('Select Component', () => {
   const items = [{ value: 'foo' }, { value: 'bar' }];
 
-  test('renders correctly', async () => {
+  test('renders correctly', () => {
     const { container } = render(<Select />);
 
     expect(container).not.toBeNull();
   });
 
-  test('has select input rendered as input', async () => {
+  test('has select input rendered as input', () => {
     const { getByTestId } = render(<Select />);
     const input = getByTestId('select input');
 
@@ -67,7 +67,7 @@ describe('Select Component', () => {
       });
     });
 
-    test('fires onSelect', done => {
+    test('fires onSelect', async done => {
       const handleSelect = (name, value) => {
         expect(name).toEqual('bar');
         expect(value).toEqual('foo');
@@ -83,7 +83,7 @@ describe('Select Component', () => {
     });
 
     // FIXME: expected behaviour is to stay visible on item click
-    test('closes on list item click', done => {
+    test('closes on list item click', async done => {
       const handleSelect = () => done();
       const { getByTestId } = render(
         <Select items={items} name="bar" onSelect={handleSelect} />
