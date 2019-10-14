@@ -50,7 +50,7 @@ describe('Select Component', () => {
 
       test('on label click', () => {
         const { getByTestId } = render(<Select items={items} />);
-        const label = getByTestId('select label');
+        const label = getByTestId('label');
         commonExpects(getByTestId, label);
       });
 

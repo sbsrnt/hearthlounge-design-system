@@ -1,14 +1,14 @@
 import React from 'react';
 import Downshift from 'downshift';
 import cx from 'classnames';
-import { arrayOf, func, string, shape } from 'prop-types';
+import { arrayOf, func, string, number, shape } from 'prop-types';
 
 import List from './List';
 import FieldOverlap from '../FieldOverlap';
 
 import styles from './styles.module.scss';
 
-const Select = ({ items, name, onSelect }) => {
+const Select = ({ items, name, onSelect, width }) => {
   return (
     <Downshift
       onChange={selection => {
@@ -27,8 +27,8 @@ const Select = ({ items, name, onSelect }) => {
         openMenu,
         closeMenu,
       }) => (
-        <div>
-          <FieldOverlap label={name} {...getLabelProps()}>
+        <div style={{ width }}>
+          <FieldOverlap label={name} width={width} {...getLabelProps()}>
             <div
               className={styles.inputWrapper}
               role="textbox"
@@ -42,7 +42,6 @@ const Select = ({ items, name, onSelect }) => {
                 className={styles.input}
                 placeholder="ex. Foo, Bar..."
                 name={name}
-                id={name}
               />
               <button
                 data-testid="select icon"
@@ -71,11 +70,13 @@ Select.propTypes = {
   items: arrayOf(shape({})),
   name: string,
   onSelect: func,
+  width: number,
 };
 Select.defaultProps = {
   items: [],
   name: 'single select',
   onSelect: null,
+  width: 200,
 };
 
 export default Select;
