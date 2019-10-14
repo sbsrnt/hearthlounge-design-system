@@ -11,6 +11,7 @@ export * as FieldOverlap from './FieldOverlap';
 export * as Header from './Header';
 export * as Icon from './Icon';
 export * as Link from './Link';
+export * as Loader from './Loader';
 export * as Paragraph from './Paragraph';
 export * as Select from './Select';
 export * as Sublabel from './Sublabel';
