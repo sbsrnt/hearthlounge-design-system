@@ -1,0 +1,119 @@
+@import '../styles/colors';
+@import '../styles/typography';
+
+/**
+ * Input
+ */
+
+.inputWrapper {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  font-size: $font-size-sm;
+
+  width: 100%;
+  padding: 4px 5px;
+
+  transition: all ease-in-out 0.4s;
+
+  color: $color-cyan-80;
+  border: 0;
+}
+
+.icon {
+  font-size: $font-size-sm;
+
+  cursor: pointer;
+  transition: all ease 0.4s;
+  transform: rotate(90deg);
+
+  color: $color-neutral-80;
+  border: 0;
+}
+
+.iconOpen {
+  transform: rotate(-90deg);
+
+  color: $color-cyan-60;
+}
+
+/**
+ * List
+ */
+
+.list,
+li {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.list {
+  position: relative;
+  z-index: 1;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  transition: all ease-in-out 0.4s;
+
+  border-radius: 4px;
+  box-shadow: 0 0 4px $color-neutral-70;
+}
+
+.listVisible {
+  top: 5px;
+
+  visibility: visible;
+  overflow: auto;
+
+  max-height: 200px;
+  margin-bottom: 5px;
+
+  opacity: 1;
+}
+
+.listHidden {
+  top: -15px;
+
+  visibility: hidden;
+
+  max-height: 0;
+
+  opacity: 0;
+}
+
+/**
+ * List item
+ */
+
+.listItem {
+  font-size: $font-size-sm;
+
+  padding: 8px 5px;
+
+  color: $color-neutral-90;
+  border-bottom: 1px solid $color-neutral-30;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.listItemSelected {
+  color: $color-cyan-60;
+}
+
+.listItemHovered {
+  cursor: pointer;
+
+  color: $color-cyan-60;
+}

@@ -1,0 +1,42 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import FieldOverlap from '.';
+import Select from '../Select';
+
+<Meta title="Design System|Field Overlap" component={FieldOverlap} />
+
+# Field Overlap
+
+<Preview>
+  <Story name="default">
+    <div>
+      <FieldOverlap label="Label" />
+      <FieldOverlap label="Label">Some Content</FieldOverlap>
+    </div>
+  </Story>
+</Preview>
+
+<Props of={FieldOverlap} />
+
+## Usage
+
+Used for overlapping fields or content with label attached on the top of it.
+
+# Field Overlap with select
+
+<Preview>
+  <Story name="with select">
+    <div>
+      <FieldOverlap label="Select values">
+        <Select
+          items={[
+            { value: 'foo' },
+            { value: 'bar' },
+            { value: 'baz' },
+            { value: 'que' },
+          ]}
+        />
+      </FieldOverlap>
+    </div>
+  </Story>
+</Preview>
