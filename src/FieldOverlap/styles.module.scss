@@ -1,0 +1,26 @@
+@import '../styles/typography';
+@import '../styles/colors';
+
+.wrapper {
+  position: relative;
+
+  width: 200px;
+  margin-top: 1rem;
+  padding: 7px 7px;
+
+  border: 1px solid $color-neutral-60;
+  border-radius: 4px;
+}
+
+.label {
+  font-size: $font-size-xs;
+
+  position: absolute;
+  top: -9px;
+  left: 7px;
+
+  padding: 0 5px;
+
+  color: $color-neutral-80;
+  background: white;
+}

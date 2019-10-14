@@ -7,6 +7,7 @@ export { styles, animation, icons, colors };
 
 export * as Avatar from './Avatar';
 export * as Button from './Button';
+export * as FieldOverlap from './FieldOverlap';
 export * as Header from './Header';
 export * as Icon from './Icon';
 export * as Link from './Link';
