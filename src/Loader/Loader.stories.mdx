@@ -1,0 +1,39 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Loader from '.';
+
+<Meta title="Design System|Loader" component={Loader} />
+
+# Loader
+
+<Preview>
+  <Story name="default">
+    <Loader />
+  </Story>
+</Preview>
+
+<Props of={Loader} />
+
+## Usage
+
+Spinning loader used whenever content is being loaded.
+
+## Size
+
+Loader's size.
+
+<Preview>
+  <Story name="size">
+    <Loader size={50} />
+  </Story>
+</Preview>
+
+## Thickness
+
+Loader's border size.
+
+<Preview>
+  <Story name="border thickness">
+    <Loader thickness={6} />
+  </Story>
+</Preview>
