@@ -22,10 +22,6 @@ jobs:
             - v1-hl-design-system-
 
       - run:
-          name: Check that yarn.lock is not corrupted
-          command: yarn repo-dirty-check
-
-      - run:
           name: Install Dependencies with Yarn
           command: yarn install --ignore-engines
 
