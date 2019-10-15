@@ -1,8 +1,10 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { listHidden, listVisible } from './styles.module.scss';
+import styles, { listHidden, listVisible } from './styles.module.scss';
 
 import Select from '.';
+
+
 
 describe('Select Component', () => {
   const items = [{ value: 'foo' }, { value: 'bar' }];
@@ -67,32 +69,127 @@ describe('Select Component', () => {
       });
     });
 
-    test('fires onSelect', async done => {
-      const handleSelect = (name, value) => {
-        expect(name).toEqual('bar');
-        expect(value).toEqual('foo');
-        done();
+    describe('className', () => {
+      const fireInputChange = getByTestId => {
+        fireEvent.change(getByTestId('select input'), {
+          target: { value: '10' },
+        });
       };
-      const { getByTestId } = render(
-        <Select items={items} name="bar" onSelect={handleSelect} />
-      );
-      const list = getByTestId('list');
+      describe('is "listWithIcon" with one icon', () => {
+        const checkWithOneIcon = getByTestId => {
+          const list = getByTestId('list');
+          expect(list.classList.contains(styles.listWithIcon)).toBeTruthy();
+          expect(
+            list.classList.contains(styles.listWithDoubleIcon)
+          ).toBeFalsy();
+        };
 
-      fireEvent.click(list);
-      fireEvent.click(list.firstChild);
+        test('as error', () => {
+          const { getByTestId } = render(<Select items={items} error="foo" />);
+          const list = getByTestId('list');
+
+          expect(list.classList.contains(styles.listWithIcon)).toBeTruthy();
+          expect(
+            list.classList.contains(styles.listWithDoubleIcon)
+          ).toBeFalsy();
+        });
+
+        test('as loader', () => {
+          const { getByTestId } = render(<Select items={items} loading />);
+
+          checkWithOneIcon(getByTestId);
+        });
+
+        test('as loader and error', () => {
+          const { getByTestId } = render(
+            <Select items={items} loading error="foo" />
+          );
+          const list = getByTestId('list');
+
+          expect(list.classList.contains(styles.listWithIcon)).toBeFalsy();
+          expect(
+            list.classList.contains(styles.listWithDoubleIcon)
+          ).toBeFalsy();
+        });
+
+        test('as reset', () => {
+          const { getByTestId } = render(<Select items={items} />);
+          fireInputChange(getByTestId);
+
+          checkWithOneIcon(getByTestId);
+        });
+      });
+
+      describe('is "listWithDoubleIcon" with two icons', () => {
+        const checkWithDoubleIcon = getByTestId => {
+          const list = getByTestId('list');
+          expect(
+            list.classList.contains(styles.listWithDoubleIcon)
+          ).toBeTruthy();
+        };
+
+        test('as loading and reset', () => {
+          const { getByTestId } = render(<Select items={items} loading />);
+
+          fireInputChange(getByTestId);
+          checkWithDoubleIcon(getByTestId);
+        });
+
+        test('as error and reset', () => {
+          const { getByTestId } = render(<Select items={items} error="foo" />);
+
+          fireInputChange(getByTestId);
+          checkWithDoubleIcon(getByTestId);
+        });
+      });
     });
 
-    // FIXME: expected behaviour is to stay visible on item click
-    test('closes on list item click', async done => {
-      const handleSelect = () => done();
-      const { getByTestId } = render(
-        <Select items={items} name="bar" onSelect={handleSelect} />
-      );
-      const list = getByTestId('list');
+    describe('events', () => {
+      test('fires onSelect', async done => {
+        const handleSelect = (name, value) => {
+          expect(name).toEqual('bar');
+          expect(value).toEqual('foo');
+          done();
+        };
+        const { getByTestId } = render(
+          <Select items={items} name="bar" onSelect={handleSelect} />
+        );
+        const list = getByTestId('list');
 
-      fireEvent.click(list);
-      fireEvent.click(list.firstChild);
-      expect(list.classList.contains(listHidden)).toBeTruthy();
+        fireEvent.click(list);
+        fireEvent.click(list.firstChild);
+      });
+
+      test('fires onInputReset', done => {
+        const handleReset = (name, value) => {
+          expect(name).toEqual('bar');
+          expect(value).toEqual('');
+          done();
+        };
+
+        const { getByTestId, getByLabelText } = render(
+          <Select items={items} name="bar" onInputReset={handleReset} />
+        );
+        const input = getByTestId('select input');
+
+        fireEvent.change(input, { target: { value: '10' } });
+        expect(input.value).toBe('10');
+        const resetIcon = getByLabelText('reset input value icon');
+        fireEvent.click(resetIcon);
+      });
+
+      // FIXME: expected behaviour is to stay visible on item click
+      test('closes on list item click', async done => {
+        const handleSelect = () => done();
+        const { getByTestId } = render(
+          <Select items={items} name="bar" onSelect={handleSelect} />
+        );
+        const list = getByTestId('list');
+
+        fireEvent.click(list);
+        fireEvent.click(list.firstChild);
+        expect(list.classList.contains(listHidden)).toBeTruthy();
+      });
     });
   });
 });
