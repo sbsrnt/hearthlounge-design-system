@@ -12,6 +12,7 @@ const FieldOverlap = ({
   loading,
   width,
   error,
+  name,
   resetIcon,
   onReset,
   ...labelProps
@@ -76,6 +77,7 @@ FieldOverlap.propTypes = {
   error: string,
   label: string,
   loading: bool,
+  name: string,
   onReset: func,
   resetIcon: bool,
   width: number,
@@ -85,6 +87,7 @@ FieldOverlap.defaultProps = {
   error: null,
   label: null,
   loading: false,
+  name: null,
   onReset: null,
   resetIcon: false,
   width: 200,
