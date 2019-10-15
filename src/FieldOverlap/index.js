@@ -28,7 +28,8 @@ const FieldOverlap = ({
 
   const childrenWrapperClasses = {
     [styles.childrenWrapperDefault]: true,
-    [styles.childrenWithIcon]: error || loading || resetIcon,
+    [styles.childrenWithIcon]:
+      (!error && loading) || (error && !loading) || resetIcon,
     [styles.childrenWithDoubleIcon]: (error || loading) && resetIcon,
   };
 
@@ -39,7 +40,12 @@ const FieldOverlap = ({
         {label}
       </label>
       <div className={styles.childrenWrapper}>
-        <div className={cx(childrenWrapperClasses)}>{children}</div>
+        <div
+          className={cx(childrenWrapperClasses)}
+          aria-label="field overlap elements"
+        >
+          {children}
+        </div>
         <div className={styles.icons}>
           {resetIcon && (
             <Icon
@@ -50,9 +56,15 @@ const FieldOverlap = ({
             />
           )}
           {!loading && error && (
-            <Icon icon="important" aria-label="important icon" />
+            <Icon
+              icon="important"
+              aria-label="important icon"
+              data-testid="important icon"
+            />
           )}
-          {loading && !error && <Loader size={18} thickness={2} />}
+          {loading && !error && (
+            <Loader size={18} thickness={2} data-testid="loader icon" />
+          )}
         </div>
       </div>
     </div>
@@ -61,7 +73,7 @@ const FieldOverlap = ({
 
 FieldOverlap.propTypes = {
   children: node,
-  error: bool,
+  error: string,
   label: string,
   loading: bool,
   onReset: func,
