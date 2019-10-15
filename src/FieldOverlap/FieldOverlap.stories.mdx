@@ -1,7 +1,9 @@
 import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import FieldOverlap from '.';
 import Select from '../Select';
+import Input from '../Input';
 
 <Meta title="Design System|Field Overlap" component={FieldOverlap} />
 
@@ -10,7 +12,7 @@ import Select from '../Select';
 <Preview>
   <Story name="default">
     <div>
-      <FieldOverlap label="Label" />
+      <FieldOverlap label="Label without content" />
       <FieldOverlap label="Label">Some Content</FieldOverlap>
     </div>
   </Story>
@@ -22,21 +24,43 @@ import Select from '../Select';
 
 Used for overlapping fields or content with label attached on the top of it.
 
-# Field Overlap with select
+### With Input
+
+<Preview>
+  <Story name="with input">
+    <Input />
+  </Story>
+</Preview>
+
+### With select
 
 <Preview>
   <Story name="with select">
     <div>
-      <FieldOverlap label="Select values">
-        <Select
-          items={[
-            { value: 'foo' },
-            { value: 'bar' },
-            { value: 'baz' },
-            { value: 'que' },
-          ]}
-        />
-      </FieldOverlap>
+      <Select
+        label="Select values"
+        items={[
+          { value: 'foo' },
+          { value: 'bar' },
+          { value: 'baz' },
+          { value: 'que' },
+        ]}
+      />
     </div>
   </Story>
 </Preview>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="knobs" decorators={[withKnobs]}>
+  <FieldOverlap
+    label="Label"
+    loading={boolean('loading')}
+    error={boolean('error')}
+    resetIcon={boolean('resetIcon')}
+  >
+    Some content
+  </FieldOverlap>
+</Story>
