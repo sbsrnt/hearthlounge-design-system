@@ -91,6 +91,14 @@ li {
   opacity: 0;
 }
 
+.listWithIcon {
+  width: calc(100% + 18px);
+}
+
+.listWithDoubleIcon {
+  width: calc(100% + 34px);
+}
+
 /**
  * List item
  */
