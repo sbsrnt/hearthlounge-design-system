@@ -15,6 +15,10 @@ const Path = styled.path`
   fill: currentColor;
 `;
 
+const PathSecondary = styled.path`
+  fill: white;
+`;
+
 /**
  * An Icon is a piece of visual element, but we must ensure its accessibility while using it.
  * It can have 2 purposes:
@@ -25,13 +29,20 @@ const Path = styled.path`
 const Icon = ({ icon, block, ...props }) => {
   return (
     <Svg
-      viewBox="0 0 1024 1024"
+      viewBox="0 0 24 24"
       width="20px"
       height="20px"
       block={block}
       {...props}
     >
-      <Path d={icons[icon]} />
+      {typeof icons[icon] === 'object' ? (
+        <>
+          <Path className="primary" d={icons[icon].primary} />
+          <PathSecondary className="secondary" d={icons[icon].secondary} />
+        </>
+      ) : (
+        <Path d={icons[icon]} />
+      )}
     </Svg>
   );
 };
