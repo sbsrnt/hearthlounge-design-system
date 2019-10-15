@@ -1,10 +1,13 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import styles, { listHidden, listVisible } from './styles.module.scss';
+import {
+  listHidden,
+  listVisible,
+  listWithIcon,
+  listWithDoubleIcon,
+} from './styles.module.scss';
 
 import Select from '.';
-
-
 
 describe('Select Component', () => {
   const items = [{ value: 'foo' }, { value: 'bar' }];
@@ -78,20 +81,16 @@ describe('Select Component', () => {
       describe('is "listWithIcon" with one icon', () => {
         const checkWithOneIcon = getByTestId => {
           const list = getByTestId('list');
-          expect(list.classList.contains(styles.listWithIcon)).toBeTruthy();
-          expect(
-            list.classList.contains(styles.listWithDoubleIcon)
-          ).toBeFalsy();
+          expect(list.classList.contains(listWithIcon)).toBeTruthy();
+          expect(list.classList.contains(listWithDoubleIcon)).toBeFalsy();
         };
 
         test('as error', () => {
           const { getByTestId } = render(<Select items={items} error="foo" />);
           const list = getByTestId('list');
 
-          expect(list.classList.contains(styles.listWithIcon)).toBeTruthy();
-          expect(
-            list.classList.contains(styles.listWithDoubleIcon)
-          ).toBeFalsy();
+          expect(list.classList.contains(listWithIcon)).toBeTruthy();
+          expect(list.classList.contains(listWithDoubleIcon)).toBeFalsy();
         });
 
         test('as loader', () => {
@@ -106,10 +105,8 @@ describe('Select Component', () => {
           );
           const list = getByTestId('list');
 
-          expect(list.classList.contains(styles.listWithIcon)).toBeFalsy();
-          expect(
-            list.classList.contains(styles.listWithDoubleIcon)
-          ).toBeFalsy();
+          expect(list.classList.contains(listWithIcon)).toBeFalsy();
+          expect(list.classList.contains(listWithDoubleIcon)).toBeFalsy();
         });
 
         test('as reset', () => {
@@ -123,9 +120,7 @@ describe('Select Component', () => {
       describe('is "listWithDoubleIcon" with two icons', () => {
         const checkWithDoubleIcon = getByTestId => {
           const list = getByTestId('list');
-          expect(
-            list.classList.contains(styles.listWithDoubleIcon)
-          ).toBeTruthy();
+          expect(list.classList.contains(listWithDoubleIcon)).toBeTruthy();
         };
 
         test('as loading and reset', () => {
@@ -179,7 +174,7 @@ describe('Select Component', () => {
       });
 
       // FIXME: expected behaviour is to stay visible on item click
-      test('closes on list item click', async done => {
+      test('closes on list item click', done => {
         const handleSelect = () => done();
         const { getByTestId } = render(
           <Select items={items} name="bar" onSelect={handleSelect} />
