@@ -1,4 +1,10 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  Story,
+  Props,
+  Preview,
+  withToolbar,
+} from '@storybook/addon-docs/blocks';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import FieldOverlap from '.';
@@ -9,7 +15,7 @@ import Input from '../Input';
 
 # Field Overlap
 
-<Preview>
+<Preview withToolbar>
   <Story name="default">
     <div>
       <FieldOverlap label="Label without content" />
@@ -22,11 +28,39 @@ import Input from '../Input';
 
 ## Usage
 
-Used for overlapping fields or content with label attached on the top of it.
+### Error
+
+<Preview withToolbar>
+  <Story name="error">
+    <FieldOverlap label="Label" error>
+      Some Content
+    </FieldOverlap>
+  </Story>
+</Preview>
+
+### Loading
+
+<Preview withToolbar>
+  <Story name="loading">
+    <FieldOverlap label="Label" loading>
+      Some Content
+    </FieldOverlap>
+  </Story>
+</Preview>
+
+### Disabled
+
+<Preview withToolbar>
+  <Story name="disabled">
+    <FieldOverlap label="Label" disabled>
+      Some Content
+    </FieldOverlap>
+  </Story>
+</Preview>
 
 ### With Input
 
-<Preview>
+<Preview withToolbar>
   <Story name="with input">
     <Input />
   </Story>
@@ -34,7 +68,7 @@ Used for overlapping fields or content with label attached on the top of it.
 
 ### With select
 
-<Preview>
+<Preview withToolbar>
   <Story name="with select">
     <div>
       <Select
