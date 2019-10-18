@@ -1,6 +1,10 @@
 @import '../styles/colors';
 @import '../styles/typography';
 
+.disabled {
+  pointer-events: none;
+}
+
 /**
  * Input
  */
@@ -20,7 +24,7 @@
   width: 100%;
   padding: 4px 5px;
 
-  transition: all ease-in-out 0.4s;
+  transition: all ease 0.4s;
 
   color: $color-cyan-80;
   border: 0;
@@ -63,7 +67,7 @@ li {
 
   width: 100%;
 
-  transition: all ease-in-out 0.4s;
+  transition: all ease 0.4s;
 
   border-radius: 4px;
   box-shadow: 0 0 4px $color-neutral-70;

@@ -10,6 +10,7 @@ import FieldOverlap from '../FieldOverlap';
 import styles from './styles.module.scss';
 
 const Select = ({
+  disabled,
   error,
   items,
   name,
@@ -41,13 +42,16 @@ const Select = ({
       }) => {
         const resetIcon = !!(inputValue && !isEmpty(inputValue));
         const handleReset = () => {
-          if (onInputReset) onInputReset(name, '');
-          clearSelection();
+          if (!disabled) {
+            if (onInputReset) onInputReset(name, '');
+            clearSelection();
+          }
         };
 
         return (
           <div style={{ width }}>
             <FieldOverlap
+              disabled={disabled}
               label={label}
               width={width}
               error={error}
@@ -58,7 +62,7 @@ const Select = ({
               {...getLabelProps()}
             >
               <div
-                className={styles.inputWrapper}
+                className={cx(styles.inputWrapper, disabled && styles.disabled)}
                 role="textbox"
                 aria-label="input"
               >
@@ -98,6 +102,7 @@ const Select = ({
 };
 
 Select.propTypes = {
+  disabled: bool,
   error: string,
   items: arrayOf(shape({})),
   label: string,
@@ -108,6 +113,7 @@ Select.propTypes = {
   width: number,
 };
 Select.defaultProps = {
+  disabled: false,
   error: null,
   items: [],
   label: 'Select',
