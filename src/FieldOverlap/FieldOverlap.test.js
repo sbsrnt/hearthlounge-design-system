@@ -6,20 +6,20 @@ import FieldOverlap from '.';
 import styles from './styles.module.scss';
 
 describe('FieldOverlap Component', () => {
-  test('renders correctly', async () => {
+  test('renders correctly', () => {
     const { container } = render(<FieldOverlap />);
 
     expect(container).not.toBeNull();
   });
 
-  test('renders children correctly', async () => {
+  test('renders children correctly', () => {
     const { getByText } = render(<FieldOverlap>foo</FieldOverlap>);
     const children = getByText('foo');
 
     expect(children).not.toBeNull();
   });
 
-  test('renders label correctly', async () => {
+  test('renders label correctly', () => {
     const { queryByText } = render(
       <FieldOverlap label="bar">foo</FieldOverlap>
     );
@@ -41,7 +41,7 @@ describe('FieldOverlap Component', () => {
     expect(label.classList.contains(styles.error)).toBeTruthy();
   });
 
-  test('has error icon on error state', async () => {
+  test('has error icon on error state', () => {
     const { queryByTestId } = render(
       <FieldOverlap label="bar" error="error msg">
         foo
@@ -54,7 +54,7 @@ describe('FieldOverlap Component', () => {
     expect(loaderIcon).toBeNull();
   });
 
-  test('has loader icon on loading state', async () => {
+  test('has loader icon on loading state', () => {
     const { queryByTestId } = render(
       <FieldOverlap label="bar" loading>
         foo
@@ -65,6 +65,15 @@ describe('FieldOverlap Component', () => {
 
     expect(loaderIcon).not.toBeNull();
     expect(errorIcon).toBeNull();
+  });
+
+  test('with "disabled" prop', () => {
+    const { container } = render(<FieldOverlap disabled>foo</FieldOverlap>);
+    const wrapperClasses = container.firstChild.classList;
+    const labelClasses = container.firstChild.firstChild.classList;
+
+    expect(wrapperClasses.contains(styles.disabled)).toBeTruthy();
+    expect(labelClasses).toBeTruthy();
   });
 
   describe('has "childrenWithIcon" class with one icon', () => {
