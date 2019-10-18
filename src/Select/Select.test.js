@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import {
+  disabled,
   listHidden,
   listVisible,
   listWithIcon,
@@ -23,6 +24,15 @@ describe('Select Component', () => {
     const input = getByTestId('select input');
 
     expect(input.nodeName).toBe('INPUT');
+  });
+
+  describe('disabled', () => {
+    test('has "disabled" class', () => {
+      const { getByLabelText } = render(<Select items={items} disabled />);
+      const input = getByLabelText('input');
+
+      expect(input.classList.contains(disabled)).toBeTruthy();
+    });
   });
 
   describe('list', () => {
