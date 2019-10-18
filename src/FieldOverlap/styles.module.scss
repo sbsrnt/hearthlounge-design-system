@@ -87,14 +87,18 @@
 .disabled {
   background: $color-neutral-20;
   cursor: not-allowed;
-}
+  input,
+  button {
+    background: $color-neutral-20;
+  }
 
-.disabledLabel {
-  background: linear-gradient(
-    to bottom,
-    $color-neutral-10 25%,
-    $color-neutral-20 100%
-  );
+  label {
+    background: linear-gradient(
+      to bottom,
+      $color-neutral-10 25%,
+      $color-neutral-20 100%
+    );
+  }
 }
 
 @keyframes iconFadeIn {

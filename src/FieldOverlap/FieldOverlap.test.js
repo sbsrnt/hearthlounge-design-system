@@ -70,10 +70,8 @@ describe('FieldOverlap Component', () => {
   test('with "disabled" prop', () => {
     const { container } = render(<FieldOverlap disabled>foo</FieldOverlap>);
     const wrapperClasses = container.firstChild.classList;
-    const labelClasses = container.firstChild.firstChild.classList;
 
     expect(wrapperClasses.contains(styles.disabled)).toBeTruthy();
-    expect(labelClasses).toBeTruthy();
   });
 
   describe('has "childrenWithIcon" class with one icon', () => {
