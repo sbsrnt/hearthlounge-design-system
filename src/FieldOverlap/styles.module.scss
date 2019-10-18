@@ -84,6 +84,19 @@
   border-color: $color-red-50;
 }
 
+.disabled {
+  background: $color-neutral-20;
+  cursor: not-allowed;
+}
+
+.disabledLabel {
+  background: linear-gradient(
+    to bottom,
+    $color-neutral-10 25%,
+    $color-neutral-20 100%
+  );
+}
+
 @keyframes iconFadeIn {
   0% {
     top: -10px;

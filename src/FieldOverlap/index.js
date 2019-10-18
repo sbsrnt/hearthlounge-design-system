@@ -8,6 +8,7 @@ import Loader from '../Loader';
 
 const FieldOverlap = ({
   children,
+  disabled,
   label,
   loading,
   width,
@@ -20,11 +21,14 @@ const FieldOverlap = ({
   const wrapperClasses = {
     [styles.wrapper]: true,
     [styles.error]: !!error,
+    [styles.disabled]: disabled,
   };
 
   const labelClasses = {
     [styles.label]: true,
     [styles.error]: !!error,
+    [styles.disabled]: disabled,
+    [styles.disabledLabel]: disabled,
   };
 
   const childrenWrapperClasses = {
@@ -82,6 +86,7 @@ const FieldOverlap = ({
 
 FieldOverlap.propTypes = {
   children: node,
+  disabled: bool,
   error: string,
   label: string,
   loading: bool,
@@ -92,6 +97,7 @@ FieldOverlap.propTypes = {
 };
 FieldOverlap.defaultProps = {
   children: null,
+  disabled: false,
   error: null,
   label: null,
   loading: false,
