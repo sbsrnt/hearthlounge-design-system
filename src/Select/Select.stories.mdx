@@ -1,4 +1,5 @@
 import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import Select from '.';
 
@@ -17,3 +18,51 @@ import Select from '.';
 ## Usage
 
 Select represents a control that provides a menu of options.
+
+### Error
+
+<Preview>
+  <Story name="error">
+    <Select
+      items={[{ value: 'foo' }, { value: 'bar' }, { value: 'baz' }]}
+      error
+    />
+  </Story>
+</Preview>
+
+### Loading
+
+<Preview>
+  <Story name="loading">
+    <Select
+      items={[{ value: 'foo' }, { value: 'bar' }, { value: 'baz' }]}
+      loading
+    />
+  </Story>
+</Preview>
+
+### Disabled
+
+<Preview>
+  <Story name="disabled">
+    <Select
+      items={[{ value: 'foo' }, { value: 'bar' }, { value: 'baz' }]}
+      disabled
+    />
+  </Story>
+</Preview>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="knobs" decorators={[withKnobs]}>
+  <Select
+    label="Label"
+    loading={boolean('loading')}
+    disabled={boolean('disabled')}
+    error={boolean('error')}
+    resetIcon={boolean('resetIcon')}
+    items={[{ value: 'foo' }, { value: 'bar' }, { value: 'baz' }]}
+  />
+</Story>

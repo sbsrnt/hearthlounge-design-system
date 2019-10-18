@@ -1,0 +1,71 @@
+import {
+  Meta,
+  Story,
+  Props,
+  Preview,
+  withToolbar,
+} from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import Input from '.';
+
+<Meta title="Design System|Input" component={Input} />
+
+# Input
+
+<Preview withToolbar>
+  <Story name="default">
+    <Input />
+  </Story>
+</Preview>
+
+<Props of={Input} />
+
+## Usage
+
+<Preview withToolbar>
+  <Story name="onChange">
+    <Input
+      name="bar"
+      onChange={(name, value) =>
+        console.log('Name: ', name, '\nValue: ', value)
+      }
+    />
+  </Story>
+</Preview>
+
+### Error
+
+<Preview withToolbar>
+  <Story name="error">
+    <Input error="Some error msg." value="123" />
+  </Story>
+</Preview>
+
+### Loading
+
+<Preview withToolbar>
+  <Story name="loading">
+    <Input loading />
+  </Story>
+</Preview>
+
+### Disabled
+
+<Preview withToolbar>
+  <Story name="disabled">
+    <Input disabled />
+  </Story>
+</Preview>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="knobs" decorators={[withKnobs]}>
+  <Input
+    loading={boolean('loading')}
+    error={boolean('error')}
+    disabled={boolean('disabled')}
+  />
+</Story>

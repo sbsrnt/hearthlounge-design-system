@@ -5,11 +5,36 @@
   position: relative;
 
   width: 200px;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   padding: 7px 7px;
+
+  transition: all ease 0.4s;
 
   border: 1px solid $color-neutral-60;
   border-radius: 4px;
+}
+
+.childrenWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.childrenWrapperDefault {
+  width: 100%;
+
+  transition: all ease 0.4s;
+}
+
+.childrenWithIcon {
+  &:first-child {
+    width: calc(100% - 18px);
+  }
+}
+
+.childrenWithDoubleIcon {
+  &:first-child {
+    width: calc(100% - 34px);
+  }
 }
 
 .label {
@@ -23,4 +48,81 @@
 
   color: $color-neutral-80;
   background: white;
+}
+
+.icons {
+  position: absolute;
+  z-index: 1;
+  top: 9px;
+  right: 5px;
+
+  display: flex;
+}
+
+.fadeIn {
+  animation: iconFadeIn 0.4s ease;
+}
+
+.fadeOut {
+  animation: iconFadeOut 0.4s ease;
+}
+
+.close {
+  path {
+    fill: $color-neutral-70;
+  }
+
+  &:hover {
+    path {
+      fill: $color-neutral-80;
+    }
+  }
+}
+
+.error {
+  color: $color-red-60;
+  border-color: $color-red-50;
+}
+
+.disabled {
+  background: $color-neutral-20;
+  cursor: not-allowed;
+  input,
+  button {
+    background: $color-neutral-20;
+  }
+
+  label {
+    background: linear-gradient(
+      to bottom,
+      $color-neutral-10 25%,
+      $color-neutral-20 100%
+    );
+  }
+}
+
+@keyframes iconFadeIn {
+  0% {
+    top: -10px;
+
+    opacity: 0;
+  }
+  100% {
+    top: 9px;
+
+    opacity: 1;
+  }
+}
+
+@keyframes iconFadeOut {
+  0% {
+    top: 9px;
+
+    opacity: 1;
+  }
+  100% {
+    top: -10px;
+
+    opacity: 0;
+  }
 }
