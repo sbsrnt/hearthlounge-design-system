@@ -47,20 +47,28 @@ const FieldOverlap = ({
         >
           {children}
         </div>
-        <div className={styles.icons}>
-          {resetIcon && (
-            <Icon
-              className={styles.close}
-              icon="close"
-              onClick={onReset}
-              aria-label="reset input value icon"
-            />
+        <div
+          className={cx(
+            styles.icons,
+            (resetIcon || loading || error) && styles.fadeIn,
+            !resetIcon && !loading && !error && styles.fadeOut
           )}
+        >
+          <Icon
+            className={styles.close}
+            icon="close"
+            onClick={onReset}
+            aria-hidden={!resetIcon}
+            aria-label="reset input value icon"
+            visible={resetIcon}
+          />
           {!loading && error && (
             <Icon
               icon="important"
               aria-label="important icon"
               data-testid="important icon"
+              visible={!loading && error}
+              aria-hidden={!error || loading}
             />
           )}
           {loading && !error && (
