@@ -28,7 +28,6 @@ const FieldOverlap = ({
     [styles.label]: true,
     [styles.error]: !!error,
     [styles.disabled]: disabled,
-    [styles.disabledLabel]: disabled,
   };
 
   const childrenWrapperClasses = {
