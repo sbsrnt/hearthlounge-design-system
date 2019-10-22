@@ -1,5 +1,5 @@
 import React from 'react';
-import RcSlider from 'rc-slider';
+import RcSlider from 'rc-slider/lib/Slider';
 import { func, number, string } from 'prop-types';
 import 'rc-slider/assets/index.css';
 
