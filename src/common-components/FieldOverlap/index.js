@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, func, node, number, string } from 'prop-types';
+import { bool, func, node, number, oneOfType, string } from 'prop-types';
 import cx from 'classnames';
 
 import Icon from '../../Icon';
@@ -87,7 +87,7 @@ const FieldOverlap = ({
 FieldOverlap.propTypes = {
   children: node,
   disabled: bool,
-  error: string,
+  error: oneOfType([bool, string]),
   label: string,
   loading: bool,
   name: string,

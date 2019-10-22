@@ -36,7 +36,6 @@ const ListItem = ({
         index,
         item: item.value,
         key: `list_${item.value}`,
-        onClick: e => e.stopPropagation(),
       })}
       id={`list_${item.value}`}
       className={cx(listItemClasses)}

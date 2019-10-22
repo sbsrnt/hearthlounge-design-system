@@ -61,7 +61,7 @@ const List = ({
 };
 
 List.propTypes = {
-  error: string,
+  error: oneOfType([bool, string]),
   getMenuProps: func.isRequired,
   getItemProps: func.isRequired,
   highlightedIndex: number,
