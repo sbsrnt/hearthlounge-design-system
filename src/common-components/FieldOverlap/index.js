@@ -1,10 +1,11 @@
 import React from 'react';
 import { bool, func, node, number, string } from 'prop-types';
 import cx from 'classnames';
-import styles from './styles.module.scss';
 
-import Icon from '../Icon';
-import Loader from '../Loader';
+import Icon from '../../Icon';
+import Loader from '../../Loader';
+
+import styles from './styles.module.scss';
 
 const FieldOverlap = ({
   children,
