@@ -15,4 +15,5 @@ export * as Loader from './Loader';
 export * as MultiSelect from './MultiSelect';
 export * as Paragraph from './Paragraph';
 export * as Select from './Select';
+export * as Slider from './Slider';
 export * as Sublabel from './Sublabel';

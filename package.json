@@ -11,6 +11,7 @@
     "polished": "^3.4.1",
     "pretty-quick": "^1.11.1",
     "prop-types": "^15.7.2",
+    "rc-slider": "^8.7.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0",
