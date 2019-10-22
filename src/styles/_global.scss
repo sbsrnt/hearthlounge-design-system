@@ -172,3 +172,39 @@ body {
     }
   }
 }
+
+/**
+ * rc-slider
+ */
+.rc-slider-handle {
+  border-color: $color-cyan-60 !important;
+  &:active,
+  &:focus {
+    box-shadow: 0 0 5px $color-neutral-70 !important;
+  }
+}
+
+.rc-slider-track {
+  background-color: $color-cyan-60 !important;
+}
+
+.rc-slider-rail {
+  background-color: $color-neutral-50 !important;
+}
+
+.rc-slider-disabled {
+  background-color: $color-neutral-30 !important;
+
+  .rc-slider-track,
+  .rc-slider-rail {
+    background-color: $color-neutral-30!important;
+  }
+
+  .rc-slider-handle {
+    border-color: $color-neutral-60 !important;
+    &:active,
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+}
