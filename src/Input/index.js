@@ -1,7 +1,7 @@
 import React from 'react';
 import { bool, func, number, string } from 'prop-types';
 import cx from 'classnames';
-import FieldOverlap from '../FieldOverlap';
+import FieldOverlap from '../common-components/FieldOverlap';
 import styles from './styles.module.scss';
 
 const Input = ({
