@@ -1,17 +1,28 @@
 import React from 'react';
-import { arrayOf, bool, func, number, string, shape } from 'prop-types';
+import {
+  array,
+  arrayOf,
+  bool,
+  func,
+  number,
+  string,
+  shape,
+  object,
+  oneOfType,
+} from 'prop-types';
 import cx from 'classnames';
 import ListItem from '../ListItem';
 import styles from '../styles.module.scss';
 
 const List = ({
   error,
-  items,
-  getMenuProps,
-  isOpen,
-  loading,
-  highlightedIndex,
   getItemProps,
+  getMenuProps,
+  highlightedIndex,
+  isOpen,
+  items,
+  loading,
+  openMenu,
   resetIcon,
   selectedItem,
 }) => {
@@ -27,21 +38,22 @@ const List = ({
   return (
     <ul
       {...getMenuProps()}
-      data-testid="list"
-      className={cx(listClasses)}
       aria-hidden={!isOpen}
       aria-owns={items}
+      className={cx(listClasses)}
+      data-testid="list"
     >
       {items
         // .filter(item => !inputValue || item.value.includes(inputValue))
         .map((item, index) => (
           <ListItem
-            key={item.value}
+            getItemProps={getItemProps}
             highlightedIndex={highlightedIndex}
             index={index}
-            getItemProps={getItemProps}
-            selectedItem={selectedItem}
             item={item}
+            key={item.value}
+            openMenu={openMenu}
+            selectedItem={selectedItem}
           />
         ))}
     </ul>
@@ -50,21 +62,23 @@ const List = ({
 
 List.propTypes = {
   error: string,
-  items: arrayOf(shape({})),
   getMenuProps: func.isRequired,
-  isOpen: bool.isRequired,
-  loading: bool,
-  highlightedIndex: number,
   getItemProps: func.isRequired,
-  selectedItem: shape({}),
+  highlightedIndex: number,
+  isOpen: bool.isRequired,
+  items: arrayOf(shape({})),
+  loading: bool,
+  openMenu: func,
   resetIcon: bool,
+  selectedItem: oneOfType([array, object, string]),
 };
 
 List.defaultProps = {
   error: null,
-  items: [],
   highlightedIndex: null,
+  items: [],
   loading: false,
+  openMenu: null,
   resetIcon: false,
   selectedItem: null,
 };

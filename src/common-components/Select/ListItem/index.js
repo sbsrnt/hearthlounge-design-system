@@ -1,7 +1,15 @@
 import React from 'react';
-
 import cx from 'classnames';
-import { func, shape, number } from 'prop-types';
+import {
+  array,
+  func,
+  shape,
+  number,
+  object,
+  string,
+  oneOfType,
+} from 'prop-types';
+
 import styles from '../styles.module.scss';
 
 const ListItem = ({
@@ -9,9 +17,12 @@ const ListItem = ({
   item,
   index,
   highlightedIndex,
+  // openMenu,
   selectedItem,
 }) => {
-  const selected = selectedItem === item;
+  const selected = Array.isArray(selectedItem)
+    ? selectedItem.find(v => v && v === item.value)
+    : selectedItem === item;
   const hovered = highlightedIndex === index;
   const listItemClasses = {
     [styles.listItem]: true,
@@ -23,9 +34,11 @@ const ListItem = ({
     <li
       {...getItemProps({
         index,
-        item,
+        item: item.value,
+        key: `list_${item.value}`,
+        onClick: e => e.stopPropagation(),
       })}
-      id={item.value}
+      id={`list_${item.value}`}
       className={cx(listItemClasses)}
     >
       {item.value}
@@ -38,11 +51,13 @@ ListItem.propTypes = {
   item: shape({}).isRequired,
   index: number.isRequired,
   highlightedIndex: number,
-  selectedItem: shape({}),
+  openMenu: func,
+  selectedItem: oneOfType([array, object, string]),
 };
 
 ListItem.defaultProps = {
   highlightedIndex: null,
+  openMenu: null,
   selectedItem: null,
 };
 

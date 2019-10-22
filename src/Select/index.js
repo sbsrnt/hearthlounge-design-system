@@ -1,13 +1,10 @@
 import React from 'react';
 import Downshift from 'downshift';
-import cx from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import { arrayOf, bool, func, string, number, shape } from 'prop-types';
 
-import List from './List';
-import FieldOverlap from '../FieldOverlap';
-
-import styles from './styles.module.scss';
+import { List, SelectInput } from '../common-components/Select';
+import FieldOverlap from '../common-components/FieldOverlap';
 
 const Select = ({
   disabled,
@@ -36,6 +33,7 @@ const Select = ({
         highlightedIndex,
         selectedItem,
         openMenu,
+        toggleMenu,
         inputValue,
         closeMenu,
         clearSelection,
@@ -61,27 +59,15 @@ const Select = ({
               onReset={handleReset}
               {...getLabelProps()}
             >
-              <div
-                className={cx(styles.inputWrapper, disabled && styles.disabled)}
-                role="textbox"
-                aria-label="input"
-              >
-                <input
-                  {...getInputProps()}
-                  onClick={openMenu}
-                  data-testid="select input"
-                  className={styles.input}
-                  placeholder="ex. Foo, Bar..."
-                  name={name}
-                />
-                <button
-                  data-testid="select icon"
-                  className={cx(styles.icon, isOpen && styles.iconOpen)}
-                  onClick={!isOpen ? openMenu : closeMenu}
-                >
-                  ❯
-                </button>
-              </div>
+              <SelectInput
+                disabled={disabled}
+                closeMenu={closeMenu}
+                getInputProps={getInputProps}
+                isOpen={isOpen}
+                name={name}
+                openMenu={openMenu}
+                toggleMenu={toggleMenu}
+              />
               <List
                 resetIcon={resetIcon}
                 error={error}
