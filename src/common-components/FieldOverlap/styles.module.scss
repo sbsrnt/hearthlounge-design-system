@@ -1,5 +1,5 @@
-@import '../styles/typography';
-@import '../styles/colors';
+@import '../../styles/typography';
+@import '../../styles/colors';
 
 .wrapper {
   position: relative;
@@ -85,8 +85,9 @@
 }
 
 .disabled {
-  background: $color-neutral-20;
   cursor: not-allowed;
+
+  background: $color-neutral-20;
   input,
   button {
     background: $color-neutral-20;
@@ -94,9 +95,9 @@
 
   label {
     background: linear-gradient(
-      to bottom,
-      $color-neutral-10 25%,
-      $color-neutral-20 100%
+    to bottom,
+    $color-neutral-10 25%,
+    $color-neutral-20 100%
     );
   }
 }

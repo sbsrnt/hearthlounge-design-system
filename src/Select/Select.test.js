@@ -6,7 +6,7 @@ import {
   listVisible,
   listWithIcon,
   listWithDoubleIcon,
-} from './styles.module.scss';
+} from '../common-components/Select/styles.module.scss';
 
 import Select from '.';
 

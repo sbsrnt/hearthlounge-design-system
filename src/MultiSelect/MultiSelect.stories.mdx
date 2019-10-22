@@ -1,0 +1,104 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import MultiSelect from '.';
+
+<Meta title="Design System|MultiSelect" component={MultiSelect} />
+
+# MultiSelect
+
+<Preview>
+  <Story name="default">
+    <MultiSelect
+      selectedOptions={[{ value: 'foo' }, { value: 'bar' }]}
+      options={[
+        { value: 'foo' },
+        { value: 'bar' },
+        { value: 'baz' },
+        { value: 'foo2' },
+        { value: 'bar2' },
+        { value: 'baz2' },
+      ]}
+    />
+  </Story>
+</Preview>
+
+<Props of={MultiSelect} />
+
+### Error
+
+<Preview>
+  <Story name="error">
+    <MultiSelect
+      error
+      selectedOptions={[{ value: 'foo' }, { value: 'bar' }]}
+      options={[
+        { value: 'foo' },
+        { value: 'bar' },
+        { value: 'baz' },
+        { value: 'foo2' },
+        { value: 'bar2' },
+        { value: 'baz2' },
+      ]}
+    />
+  </Story>
+</Preview>
+
+### Loading
+
+<Preview>
+  <Story name="loading">
+    <MultiSelect
+      loading
+      selectedOptions={[{ value: 'foo' }, { value: 'bar' }]}
+      options={[
+        { value: 'foo' },
+        { value: 'bar' },
+        { value: 'baz' },
+        { value: 'foo2' },
+        { value: 'bar2' },
+        { value: 'baz2' },
+      ]}
+    />
+  </Story>
+</Preview>
+
+### Disabled
+
+<Preview>
+  <Story name="disabled">
+    <MultiSelect
+      disabled
+      selectedOptions={[{ value: 'foo' }, { value: 'bar' }]}
+      options={[
+        { value: 'foo' },
+        { value: 'bar' },
+        { value: 'baz' },
+        { value: 'foo2' },
+        { value: 'bar2' },
+        { value: 'baz2' },
+      ]}
+    />
+  </Story>
+</Preview>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="knobs" decorators={[withKnobs]}>
+  <MultiSelect
+    label="Label"
+    loading={boolean('loading')}
+    disabled={boolean('disabled')}
+    error={boolean('error')}
+    options={[
+      { value: 'foo' },
+      { value: 'bar' },
+      { value: 'baz' },
+      { value: 'foo2' },
+      { value: 'bar2' },
+      { value: 'baz2' },
+    ]}
+  />
+</Story>

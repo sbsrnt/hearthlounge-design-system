@@ -1,0 +1,48 @@
+.chipsAndInputWrapperOpen {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chipsAndInputWrapperClose {
+  display: block;
+}
+
+.chipContainer {
+  display: flex;
+  flex-wrap: wrap;
+
+  background: transparent;
+}
+
+.chip {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+
+  min-width: 50px;
+  margin-bottom: 4px;
+
+  animation: scale 0.4s ease;
+
+  animation-fill-mode: forwards;
+}
+
+.paper {
+  overflow-y: auto;
+
+  max-height: 150px;
+}
+
+@keyframes scale {
+  0% {
+    bottom: -20px;
+
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+
+    opacity: 1;
+  }
+}
