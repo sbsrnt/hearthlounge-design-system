@@ -1,7 +1,15 @@
 import React from 'react';
 import Downshift from 'downshift';
 import isEmpty from 'lodash/isEmpty';
-import { arrayOf, bool, func, string, number, shape } from 'prop-types';
+import {
+  arrayOf,
+  bool,
+  func,
+  string,
+  number,
+  oneOfType,
+  shape,
+} from 'prop-types';
 
 import { List, SelectInput } from '../common-components/Select';
 import FieldOverlap from '../common-components/FieldOverlap';
@@ -20,9 +28,8 @@ const Select = ({
   return (
     <Downshift
       onChange={selection => {
-        return onSelect && onSelect(name, selection.value);
+        if (onSelect) onSelect(name, selection);
       }}
-      itemToString={item => (item ? item.value : '')}
     >
       {({
         getInputProps,
@@ -89,7 +96,7 @@ const Select = ({
 
 Select.propTypes = {
   disabled: bool,
-  error: string,
+  error: oneOfType([bool, string]),
   items: arrayOf(shape({})),
   label: string,
   loading: bool,
