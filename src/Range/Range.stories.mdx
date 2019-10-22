@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import Range from '.';
+
+<Meta title="Design System|Range" component={Range} />
+
+# Slider
+
+Proxy of [rc-slider](http://react-component.github.io/slider/).
+
+Note: StoryBook's MDX does not support inner state so can't really play with this component (yet).
+
+<Preview withToolbar>
+  <Story name="default">
+    <Range onChange={(name, value) => console.log(name, value)} />
+  </Story>
+</Preview>
+
+<Props of={Range} />
+
+## Usage
