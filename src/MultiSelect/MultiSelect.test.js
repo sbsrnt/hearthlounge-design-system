@@ -187,7 +187,6 @@ describe('MultiSelect Component', () => {
         const list = getByTestId('list');
 
         fireEvent.click(list);
-        console.log(list);
         fireEvent.click(list.firstChild);
       });
 
