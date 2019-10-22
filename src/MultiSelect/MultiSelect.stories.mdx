@@ -5,7 +5,7 @@ import MultiSelect from '.';
 
 <Meta title="Design System|MultiSelect" component={MultiSelect} />
 
-# Select
+# MultiSelect
 
 <Preview>
   <Story name="default">
@@ -24,6 +24,63 @@ import MultiSelect from '.';
 </Preview>
 
 <Props of={MultiSelect} />
+
+### Error
+
+<Preview>
+  <Story name="error">
+    <MultiSelect
+      error
+      selectedOptions={[{ value: 'foo' }, { value: 'bar' }]}
+      options={[
+        { value: 'foo' },
+        { value: 'bar' },
+        { value: 'baz' },
+        { value: 'foo2' },
+        { value: 'bar2' },
+        { value: 'baz2' },
+      ]}
+    />
+  </Story>
+</Preview>
+
+### Loading
+
+<Preview>
+  <Story name="loading">
+    <MultiSelect
+      loading
+      selectedOptions={[{ value: 'foo' }, { value: 'bar' }]}
+      options={[
+        { value: 'foo' },
+        { value: 'bar' },
+        { value: 'baz' },
+        { value: 'foo2' },
+        { value: 'bar2' },
+        { value: 'baz2' },
+      ]}
+    />
+  </Story>
+</Preview>
+
+### Disabled
+
+<Preview>
+  <Story name="disabled">
+    <MultiSelect
+      disabled
+      selectedOptions={[{ value: 'foo' }, { value: 'bar' }]}
+      options={[
+        { value: 'foo' },
+        { value: 'bar' },
+        { value: 'baz' },
+        { value: 'foo2' },
+        { value: 'bar2' },
+        { value: 'baz2' },
+      ]}
+    />
+  </Story>
+</Preview>
 
 ### Playground
 
