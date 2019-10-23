@@ -5,6 +5,7 @@ import * as colors from './colors';
 
 export { styles, animation, icons, colors };
 
+export * as AnimatedList from './AnimatedList';
 export * as Avatar from './Avatar';
 export * as Button from './Button';
 export * as Checkbox from './Checkbox';
