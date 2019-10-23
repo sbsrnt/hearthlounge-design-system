@@ -1,0 +1,72 @@
+import React from 'react';
+import { bool, node, string } from 'prop-types';
+import { useHover, ToggleLayer } from 'react-laag';
+import { motion, AnimatePresence } from 'framer-motion';
+import ResizeObserver from 'resize-observer-polyfill';
+
+import styles from './styles.module.scss';
+
+const Tooltip = ({ applyStylesToChild, children, text }) => {
+  const [show, hoverProps] = useHover({ delayEnter: 300, delayLeave: 200 });
+
+  return (
+    <ToggleLayer
+      ResizeObserver={ResizeObserver}
+      isOpen={show}
+      fixed
+      placement={{ anchor: 'TOP_CENTER', autoAdjust: true, triggerOffset: 4 }}
+      renderLayer={({ isOpen, layerProps, layerSide }) => {
+        return (
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                {...layerProps}
+                className={styles.tooltipBox}
+                initial={{
+                  opacity: 0,
+                  scale: 0.8,
+                  y: layerSide === 'top' ? -8 : 8,
+                }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.8,
+                  y: layerSide === 'top' ? -8 : 8,
+                }}
+                transition={{
+                  type: 'spring',
+                  damping: 30,
+                  stiffness: 500,
+                }}
+              >
+                {text}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        );
+      }}
+    >
+      {({ triggerRef }) => (
+        <span
+          className={applyStylesToChild ? styles.tooltipText : ''}
+          ref={triggerRef}
+          {...hoverProps}
+        >
+          {children}
+        </span>
+      )}
+    </ToggleLayer>
+  );
+};
+
+Tooltip.propTypes = {
+  applyStylesToChild: bool,
+  children: node.isRequired,
+  text: string.isRequired,
+};
+
+Tooltip.defaultProps = {
+  applyStylesToChild: false,
+};
+
+export default Tooltip;
