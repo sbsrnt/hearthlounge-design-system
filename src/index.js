@@ -13,6 +13,7 @@ export * as Icon from './Icon';
 export * as Input from './Input';
 export * as Link from './Link';
 export * as Loader from './Loader';
+export * as Modal from './Modal';
 export * as MultiSelect from './MultiSelect';
 export * as Paragraph from './Paragraph';
 export * as Range from './Range';
