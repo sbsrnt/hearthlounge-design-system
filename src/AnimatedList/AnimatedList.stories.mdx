@@ -1,0 +1,52 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import AnimatedList from '.';
+import Avatar from '../Avatar';
+import Sublabel from '../Sublabel';
+
+<Meta title="Design System|AnimatedList" component={AnimatedList} />
+
+# AnimatedList
+
+<Preview withToolbar>
+  <Story name="default">
+    <AnimatedList
+      className="d-flex"
+      itemClassName="mr-2"
+      name="avatars"
+      items={[
+        { value: 'foo' },
+        { value: 'bar' },
+        { value: 'quartz' },
+        { value: 'ruby' },
+        { value: 'topaz' },
+      ]}
+    >
+      {({ meta }) => <Avatar username={meta.value} />}
+    </AnimatedList>
+  </Story>
+</Preview>
+
+<Props of={AnimatedList} />
+
+### AnimatedList with `Sublabel` as item component
+
+<Preview withToolbar>
+  <Story name="with sublabel as component">
+    <AnimatedList
+      className="d-flex"
+      itemClassName="mr-2"
+      name="sublabels"
+      items={[
+        { value: 'foo' },
+        { value: 'bar' },
+        { value: 'quartz' },
+        { value: 'ruby' },
+        { value: 'topaz' },
+      ]}
+    >
+      {({ meta }) => <Sublabel>{meta.value}</Sublabel>}
+    </AnimatedList>
+  </Story>
+</Preview>
