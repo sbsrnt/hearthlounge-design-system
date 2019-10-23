@@ -12,6 +12,10 @@
   }
 }
 
+.d-flex {
+  display: flex;
+}
+
 h1,
 h2,
 h3,
@@ -197,7 +201,7 @@ body {
 
   .rc-slider-track,
   .rc-slider-rail {
-    background-color: $color-neutral-30!important;
+    background-color: $color-neutral-30 !important;
   }
 
   .rc-slider-handle {
