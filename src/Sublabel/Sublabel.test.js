@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import Sublabel from '.';
 
-describe('Paragraph Component', () => {
+describe('Sublabel Component', () => {
   test('renders correctly', async () => {
     const { container } = render(<Sublabel />);
 
@@ -28,5 +28,12 @@ describe('Paragraph Component', () => {
     const label = getByLabelText('bar');
 
     expect(label).not.toBeNull();
+  });
+
+  test('renders as label', async () => {
+    const { getByLabelText } = render(<Sublabel as="label" aria-label="bar" />);
+    const label = getByLabelText('bar');
+
+    expect(label.nodeName).toEqual('LABEL');
   });
 });

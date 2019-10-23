@@ -1,0 +1,56 @@
+import {
+  Meta,
+  Story,
+  Props,
+  Preview,
+  withToolbar,
+} from '@storybook/addon-docs/blocks';
+
+import Checkbox from '.';
+import Sublabel from '../Sublabel';
+import FieldOverlap from '../common-components/FieldOverlap';
+
+<Meta title="Design System|Checkbox" component={Checkbox} />
+
+# Checkbox
+
+<Preview withToolbar>
+  <Story name="default">
+    <Checkbox />
+  </Story>
+</Preview>
+
+<Props of={Checkbox} />
+
+## Usage
+
+### Checked
+
+<Preview withToolbar>
+  <Story name="checked">
+    <Checkbox checked />
+  </Story>
+</Preview>
+
+### Disabled
+
+<Preview withToolbar>
+  <Story name="disabled">
+    <Checkbox disabled checked />
+  </Story>
+</Preview>
+
+### With label
+
+<Preview withToolbar>
+  <Story name="with label">
+    <FieldOverlap label="Checkbox" htmlFor="checkbox">
+      <div className="d-flex pt-1">
+        <Checkbox id="checkbox" />
+        <Sublabel htmlFor="checkbox" as="label" className="ml-2">
+          Some stuff to check
+        </Sublabel>
+      </div>
+    </FieldOverlap>
+  </Story>
+</Preview>
