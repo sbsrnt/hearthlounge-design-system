@@ -1,19 +1,23 @@
 import React from 'react';
 import cx from 'classnames';
-import { node, string } from 'prop-types';
+import { node, oneOf, string } from 'prop-types';
 import styles from './styles.module.scss';
 
-const Sublabel = ({ children, className, ...props }) => (
-  <div className={cx(styles.sublabel, className)} {...props}>
+const Sublabel = ({ as: T, children, className, ...props }) => (
+  <T className={cx(styles.sublabel, className)} {...props}>
     {children}
-  </div>
+  </T>
 );
 
+const supportedNodes = ['div', 'label'];
+
 Sublabel.propTypes = {
+  as: oneOf(supportedNodes),
   children: node,
   className: string,
 };
 Sublabel.defaultProps = {
+  as: 'div',
   children: null,
   className: null,
 };
