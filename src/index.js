@@ -21,3 +21,4 @@ export * as Range from './Range';
 export * as Select from './Select';
 export * as Slider from './Slider';
 export * as Sublabel from './Sublabel';
+export * as Tooltip from './Tooltip';
