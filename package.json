@@ -80,8 +80,6 @@
     ]
   },
   "devDependencies": {
-    "@auto-it/conventional-commits": "^7.8.0",
-    "@auto-it/released": "^7.8.0",
     "@babel/cli": "^7.6.2",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
@@ -97,7 +95,6 @@
     "@testing-library/jest-dom": "^4.1.2",
     "@testing-library/react": "^9.3.0",
     "@types/jest": "^24.0.18",
-    "auto": "^7.8.0",
     "autoprefixer": "^9.6.5",
     "classnames": "^2.2.6",
     "commitizen": "^4.0.3",
