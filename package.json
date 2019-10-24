@@ -3,7 +3,6 @@
   "version": "0.24.3",
   "private": false,
   "dependencies": {
-    "babel-loader": "^8.0.6",
     "downshift": "^3.3.4",
     "framer-motion": "^1.6.14",
     "js-yaml": "^3.13.1",
@@ -35,8 +34,7 @@
     "build-storybook": "build-storybook -s public",
     "build-docs": "build-storybook -s public --docs",
     "build-styles": "webpack --mode='production'",
-    "build:js": "yarn build:js:cjs && yarn build:js:esm",
-    "build:js:cjs": "BABEL_ENV=cjs babel src -d lib/cjs --ignore *.test.js",
+    "build:js": "yarn build:js:esm",
     "build:js:esm": "BABEL_ENV=esm babel src -d lib/esm --ignore *.test.js",
     "extract-tokens": "node -r esm scripts/extract-tokens.js"
   },
@@ -83,6 +81,11 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-lodash": "^3.3.4",
     "@babel/cli": "^7.6.2",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
