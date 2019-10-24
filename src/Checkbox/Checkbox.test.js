@@ -1,8 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Checkbox from '.';
 
-import styles from './styles.module.scss';
+import { Checkbox } from '.';
 
 describe('Checkbox Component', () => {
   test('renders correctly', async () => {
@@ -17,9 +16,11 @@ describe('Checkbox Component', () => {
     const checkmark = getByTestId('checkmark');
 
     expect(
-      checkboxContainer.classList.contains(styles.containerChecked)
+      checkboxContainer.classList.contains('checkbox__container--checked')
     ).toBeTruthy();
-    expect(checkmark.classList.contains(styles.checkmarkChecked)).toBeTruthy();
+    expect(
+      checkmark.classList.contains('checkbox__checkmark--checked')
+    ).toBeTruthy();
   });
 
   test('has disabled class when disabled prop is provided', async () => {
@@ -27,7 +28,7 @@ describe('Checkbox Component', () => {
     const checkboxContainer = getByTestId('checkbox-container');
 
     expect(
-      checkboxContainer.classList.contains(styles.containerDisabled)
+      checkboxContainer.classList.contains('checkbox__container--disabled')
     ).toBeTruthy();
   });
 

@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { bool, func, string } from 'prop-types';
 import cx from 'classnames';
 
-import styles from './styles.module.scss';
-
 const Checkbox = ({
   checked,
   className,
@@ -16,19 +14,19 @@ const Checkbox = ({
   const [innerChecked, setInnerChecked] = useState(checked);
 
   const containerClasses = cx({
-    [styles.container]: true,
-    [styles.containerChecked]: innerChecked,
-    [styles.containerDisabled]: disabled,
+    checkbox__container: true,
+    'checkbox__container--checked': innerChecked,
+    'checkbox__container--disabled': disabled,
   });
 
   const checkboxClasses = cx({
-    [styles.checkbox]: true,
+    checkbox: true,
     [className]: !!className,
   });
 
   const checkmarkClasses = cx({
-    [styles.checkmark]: true,
-    [styles.checkmarkChecked]: innerChecked,
+    checkbox__checkmark: true,
+    'checkbox__checkmark--checked': innerChecked,
   });
 
   const handleClick = () => {
