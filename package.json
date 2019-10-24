@@ -22,7 +22,7 @@
     "styled-components": "^4.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "start-storybook -p 9009 -s public",
     "build": "BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -30,18 +30,12 @@
     "semantic-release": "semantic-release",
     "eslit": "eslint .",
     "prettify": "pretty-quick",
-    "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "build-docs": "build-storybook -s public --docs",
     "build-styles": "webpack --mode='production'",
     "build:js": "yarn build:js:esm",
     "build:js:esm": "BABEL_ENV=esm babel src -d lib/esm --ignore *.test.js",
     "extract-tokens": "node -r esm scripts/extract-tokens.js"
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
   },
   "eslintConfig": {
     "extends": "react-app"
