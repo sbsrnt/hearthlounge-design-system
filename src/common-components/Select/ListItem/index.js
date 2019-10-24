@@ -10,8 +10,6 @@ import {
   oneOfType,
 } from 'prop-types';
 
-import styles from '../styles.module.scss';
-
 const ListItem = ({
   getItemProps,
   item,
@@ -25,9 +23,9 @@ const ListItem = ({
     : selectedItem === item;
   const hovered = highlightedIndex === index;
   const listItemClasses = {
-    [styles.listItem]: true,
-    [styles.listItemSelected]: selected,
-    [styles.listItemHovered]: hovered,
+    select__listItem: true,
+    'select__listItem--selected': selected,
+    'select__listItem--hovered': hovered,
   };
 
   return (

@@ -1,17 +1,15 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import {
-  disabled,
-  listHidden,
-  listVisible,
-  listWithIcon,
-  listWithDoubleIcon,
-} from '../common-components/Select/styles.module.scss';
 
-import Select from '.';
+import { Select } from '.';
 
 describe('Select Component', () => {
   const items = [{ value: 'foo' }, { value: 'bar' }];
+  const disabled = 'select__disabled';
+  const listHidden = 'select__list--hidden';
+  const listVisible = 'select__list--visible';
+  const listWithIcon = 'select__list--withIcon';
+  const listWithDoubleIcon = 'select__list--withDoubleIcon';
 
   test('renders correctly', () => {
     const { container } = render(<Select />);
