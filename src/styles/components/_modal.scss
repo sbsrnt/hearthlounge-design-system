@@ -1,5 +1,5 @@
-@import '../styles/colors';
-@import '../styles/typography';
+@import '../colors';
+@import '../typography';
 
 .modal {
   position: absolute;
@@ -22,20 +22,20 @@
   &:focus {
     outline: 0;
   }
-}
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  border-bottom: 1px solid $color-neutral-30;
-}
+    border-bottom: 1px solid $color-neutral-30;
+  }
 
-.footer {
-  border-top: 1px solid $color-neutral-30;
-}
+  &__footer {
+    border-top: 1px solid $color-neutral-30;
+  }
 
-.closeIcon {
-  font-size: $font-size-xl;
+  &__closeIcon {
+    font-size: $font-size-xl;
+  }
 }

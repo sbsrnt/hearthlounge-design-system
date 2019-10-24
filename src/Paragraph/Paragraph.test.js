@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Paragraph from '.';
+import { Paragraph } from '.';
 
 describe('Paragraph Component', () => {
   test('renders correctly', async () => {

@@ -1,8 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Button from '.';
 
-import styles from './styles.module.scss';
+import { Button } from '.';
 
 describe('Button Component', () => {
   test('renders correctly', async () => {
@@ -20,7 +19,7 @@ describe('Button Component', () => {
 
   test('has "button" class', async () => {
     const { container } = render(<Button />);
-    const className = container.firstChild.classList.contains(styles.button);
+    const className = container.firstChild.classList.contains('button');
 
     expect(className).toBe(true);
   });
@@ -35,7 +34,9 @@ describe('Button Component', () => {
   describe('has size', () => {
     test('small', async () => {
       const { container } = render(<Button size="small" />);
-      const className = container.firstChild.classList.contains(styles.small);
+      const className = container.firstChild.classList.contains(
+        'button__size--small'
+      );
 
       expect(className).toBe(true);
     });
@@ -43,7 +44,7 @@ describe('Button Component', () => {
     test('secondary', async () => {
       const { container } = render(<Button theme="secondary" />);
       const className = container.firstChild.classList.contains(
-        styles.secondary
+        'button__theme--secondary'
       );
 
       expect(className).toBe(true);
@@ -54,16 +55,16 @@ describe('Button Component', () => {
     test('primary by default', async () => {
       const { container } = render(<Button />);
       const className = container.firstChild.classList.contains(
-        styles.secondary
+        'button__theme--secondary'
       );
 
-      expect(className).not.toBe(true);
+      expect(className).toBeFalsy();
     });
 
     test('secondary', async () => {
       const { container } = render(<Button theme="secondary" />);
       const className = container.firstChild.classList.contains(
-        styles.secondary
+        'button__theme--secondary'
       );
 
       expect(className).toBe(true);
@@ -73,7 +74,9 @@ describe('Button Component', () => {
   describe('is disabled', () => {
     test('when loading prep is present', async () => {
       const { container } = render(<Button loading />);
-      const className = container.firstChild.classList.contains(styles.loading);
+      const className = container.firstChild.classList.contains(
+        'button__loading'
+      );
 
       expect(className).toBe(true);
     });

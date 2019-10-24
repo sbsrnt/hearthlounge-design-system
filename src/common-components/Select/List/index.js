@@ -12,7 +12,6 @@ import {
 } from 'prop-types';
 import cx from 'classnames';
 import ListItem from '../ListItem';
-import styles from '../styles.module.scss';
 
 const List = ({
   error,
@@ -27,12 +26,12 @@ const List = ({
   selectedItem,
 }) => {
   const listClasses = {
-    [styles.list]: true,
-    [styles.listVisible]: isOpen,
-    [styles.listHidden]: !isOpen,
-    [styles.listWithIcon]:
+    select__list: true,
+    'select__list--visible': isOpen,
+    'select__list--hidden': !isOpen,
+    'select__list--withIcon':
       (!error && loading) || (error && !loading) || resetIcon,
-    [styles.listWithDoubleIcon]: (error || loading) && resetIcon,
+    'select__list--withDoubleIcon': (error || loading) && resetIcon,
   };
 
   return (

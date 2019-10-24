@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import styles from './styles.module.scss';
-import Input from '.';
+import { Input } from '.';
 
 describe('Input Component', () => {
   test('renders correctly', () => {
@@ -13,13 +12,13 @@ describe('Input Component', () => {
   test('has "error" class on error', () => {
     const { getByTestId } = render(<Input error="foo" />);
     const input = getByTestId('input');
-    expect(input.classList.contains(styles.inputError)).toBeTruthy();
+    expect(input.classList.contains('input__error')).toBeTruthy();
   });
 
   test('has "disabled" class on disabled', () => {
     const { getByTestId } = render(<Input disabled />);
     const input = getByTestId('input');
-    expect(input.classList.contains(styles.disabled)).toBeTruthy();
+    expect(input.classList.contains('input__disabled')).toBeTruthy();
   });
 
   test('fires onChange implicitly', async () => {

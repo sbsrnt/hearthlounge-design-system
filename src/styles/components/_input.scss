@@ -1,5 +1,5 @@
-@import '../styles/colors';
-@import '../styles/typography';
+@import '../colors';
+@import '../typography';
 
 .input {
   font-size: $font-size-sm;
@@ -11,12 +11,12 @@
 
   color: $color-cyan-80;
   border: 0;
-}
 
-.inputError {
-  color: $color-red-60;
-}
+  &__error {
+    color: $color-red-60;
+  }
 
-.disabled {
-  pointer-events: none;
+  &__disabled {
+    pointer-events: none;
+  }
 }

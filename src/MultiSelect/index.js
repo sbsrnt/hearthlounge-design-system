@@ -7,7 +7,6 @@ import FieldOverlap from '../common-components/FieldOverlap';
 import ChipList from './ChipList';
 
 import { SelectInput, List } from '../common-components/Select';
-import styles from './styles.module.scss';
 
 const MultiSelect = ({
   onResetSelection,
@@ -118,8 +117,8 @@ const MultiSelect = ({
               <div
                 className={
                   resetIcon
-                    ? styles.chipsAndInputWrapperOpen
-                    : styles.chipsAndInputWrapperClose
+                    ? 'multiSelect__chipsAndInputWrapperOpen'
+                    : 'multiSelect__chipsAndInputWrapperClose'
                 }
               >
                 <ChipList

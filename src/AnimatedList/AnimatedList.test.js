@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import AnimatedList from '.';
+import { AnimatedList } from '.';
 
 describe('AnimatedList component', () => {
   const items = [{ value: 'foo' }, { value: 'bar' }];

@@ -2,8 +2,6 @@ import React from 'react';
 import { bool, func, string, node, oneOf } from 'prop-types';
 import cx from 'classnames';
 
-import styles from './styles.module.scss';
-
 const Button = ({
   className,
   children,
@@ -16,10 +14,10 @@ const Button = ({
   ...props
 }) => {
   const predefinedClasses = {
-    [styles.button]: true,
-    [styles[size]]: !!styles[size] || false,
-    [styles[theme]]: !!styles[theme] || false,
-    [styles.loading]: loading,
+    button: true,
+    [`button__size--${size}`]: !!`button__size--${size}` || false,
+    [`button__theme--${theme}`]: !!`button__theme--${theme}` || false,
+    button__loading: loading,
   };
 
   const isDisabled = loading || disabled;

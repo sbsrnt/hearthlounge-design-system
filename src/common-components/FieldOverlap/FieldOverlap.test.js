@@ -3,8 +3,6 @@ import { render } from '@testing-library/react';
 
 import FieldOverlap from '.';
 
-import styles from './styles.module.scss';
-
 describe('FieldOverlap Component', () => {
   test('renders correctly', () => {
     const { container } = render(<FieldOverlap />);
@@ -37,8 +35,10 @@ describe('FieldOverlap Component', () => {
 
     const label = getByTestId('label');
 
-    expect(container.firstChild.classList.contains(styles.error)).toBeTruthy();
-    expect(label.classList.contains(styles.error)).toBeTruthy();
+    expect(
+      container.firstChild.classList.contains('fieldOverlap__error')
+    ).toBeTruthy();
+    expect(label.classList.contains('fieldOverlap__error')).toBeTruthy();
   });
 
   test('has error icon on error state', () => {
@@ -71,7 +71,7 @@ describe('FieldOverlap Component', () => {
     const { container } = render(<FieldOverlap disabled>foo</FieldOverlap>);
     const wrapperClasses = container.firstChild.classList;
 
-    expect(wrapperClasses.contains(styles.disabled)).toBeTruthy();
+    expect(wrapperClasses.contains('fieldOverlap__disabled')).toBeTruthy();
   });
 
   describe('has "childrenWithIcon" class with one icon', () => {
@@ -82,8 +82,14 @@ describe('FieldOverlap Component', () => {
         </FieldOverlap>
       );
       const icons = getByLabelText('field overlap elements');
-      expect(icons.classList.contains('childrenWithIcon')).toBeTruthy();
-      expect(icons.classList.contains('childrenWithDoubleIcon')).toBeFalsy();
+      expect(
+        icons.classList.contains('fieldOverlap__childrenWrapper--withIcon')
+      ).toBeTruthy();
+      expect(
+        icons.classList.contains(
+          'fieldOverlap__childrenWrapper--withDoubleIcon'
+        )
+      ).toBeFalsy();
     });
 
     test('as error icon', async () => {
@@ -93,8 +99,14 @@ describe('FieldOverlap Component', () => {
         </FieldOverlap>
       );
       const icons = getByLabelText('field overlap elements');
-      expect(icons.classList.contains('childrenWithIcon')).toBeTruthy();
-      expect(icons.classList.contains('childrenWithDoubleIcon')).toBeFalsy();
+      expect(
+        icons.classList.contains('fieldOverlap__childrenWrapper--withIcon')
+      ).toBeTruthy();
+      expect(
+        icons.classList.contains(
+          'fieldOverlap__childrenWrapper--withDoubleIcon'
+        )
+      ).toBeFalsy();
     });
 
     test('as reset icon', async () => {
@@ -104,8 +116,14 @@ describe('FieldOverlap Component', () => {
         </FieldOverlap>
       );
       const icons = getByLabelText('field overlap elements');
-      expect(icons.classList.contains('childrenWithIcon')).toBeTruthy();
-      expect(icons.classList.contains('childrenWithDoubleIcon')).toBeFalsy();
+      expect(
+        icons.classList.contains('fieldOverlap__childrenWrapper--withIcon')
+      ).toBeTruthy();
+      expect(
+        icons.classList.contains(
+          'fieldOverlap__childrenWrapper--withDoubleIcon'
+        )
+      ).toBeFalsy();
     });
 
     test('as loading and error icon', async () => {
@@ -115,8 +133,14 @@ describe('FieldOverlap Component', () => {
         </FieldOverlap>
       );
       const icons = getByLabelText('field overlap elements');
-      expect(icons.classList.contains('childrenWithIcon')).toBeFalsy();
-      expect(icons.classList.contains('childrenWithDoubleIcon')).toBeFalsy();
+      expect(
+        icons.classList.contains('fieldOverlap__childrenWrapper--withIcon')
+      ).toBeFalsy();
+      expect(
+        icons.classList.contains(
+          'fieldOverlap__childrenWrapper--withDoubleIcon'
+        )
+      ).toBeFalsy();
     });
   });
 
@@ -128,7 +152,9 @@ describe('FieldOverlap Component', () => {
         </FieldOverlap>
       );
       const icons = getByLabelText('field overlap elements');
-      expect(icons.classList.contains('childrenWithIcon')).toBeTruthy();
+      expect(
+        icons.classList.contains('fieldOverlap__childrenWrapper--withIcon')
+      ).toBeTruthy();
     });
 
     test('as loading & reset icon', async () => {
@@ -138,7 +164,9 @@ describe('FieldOverlap Component', () => {
         </FieldOverlap>
       );
       const icons = getByLabelText('field overlap elements');
-      expect(icons.classList.contains('childrenWithIcon')).toBeTruthy();
+      expect(
+        icons.classList.contains('fieldOverlap__childrenWrapper--withIcon')
+      ).toBeTruthy();
     });
   });
 });

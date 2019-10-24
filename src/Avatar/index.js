@@ -4,8 +4,6 @@ import cx from 'classnames';
 
 import { Icon } from '../Icon';
 
-import styles from './styles.module.scss';
-
 /**
  Use an avatar for attributing actions or content to specific users.
  The user's name should always be present when using Avatar – either printed beside
@@ -15,13 +13,13 @@ import styles from './styles.module.scss';
 const Avatar = ({ loading, username, src, size, className, ...props }) => {
   const a11yProps = {};
   const classes = {
-    [styles.avatar]: true,
-    [styles.src]: src,
-    [styles.initial]: !loading,
-    [styles.loading]: loading,
-    [styles.large]: size && size === 'large',
-    [styles.small]: size && size === 'small',
-    [styles.tiny]: size && size === 'tiny',
+    avatar: true,
+    avatar__src: src,
+    avatar__initial: !loading,
+    avatar__loading: loading,
+    'avatar__size--large': size && size === 'large',
+    'avatar__size--small': size && size === 'small',
+    'avatar__size--tiny': size && size === 'tiny',
   };
 
   if (loading) {

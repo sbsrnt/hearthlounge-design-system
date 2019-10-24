@@ -1,13 +1,11 @@
 import React from 'react';
 import { arrayOf, func, string } from 'prop-types';
 
-import styles from './styles.module.scss';
-
 const ChipList = ({ onRemoveItem, selectedItems }) => (
-  <div className={styles.chipContainer} data-testid="chipList">
+  <div className="multiSelect__chipContainer" data-testid="chipList">
     {selectedItems.length > 0 &&
       selectedItems.map(item => (
-        <li key={`chip_${item}`} className={styles.chip}>
+        <li key={`chip_${item}`} className="multiSelect__chip">
           <button onClick={() => onRemoveItem(item)}>{item} x</button>
         </li>
       ))}

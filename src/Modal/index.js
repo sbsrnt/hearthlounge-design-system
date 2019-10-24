@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { bool, func, node, string } from 'prop-types';
 import ReactModal from 'react-modal';
-import cx from 'classnames';
 
 import { Header } from '../Header';
 import { Icon } from '../Icon';
 import ModalFooter from './ModalFooter';
-
-import styles from './styles.module.scss';
 
 const Modal = ({
   children,
@@ -30,14 +27,14 @@ const Modal = ({
       isOpen={isInnerOpen}
       onRequestClose={handleModalClose}
       closeTimeoutMS={400}
-      className={styles.modal}
+      className="modal"
       {...props}
     >
-      <div className={cx('d-flex p-3', styles.header)}>
+      <div className="d-flex p-3 modal__header">
         <Header>{header}</Header>
         <Icon
           icon="close"
-          className={styles.closeIcon}
+          className="modal__closeIcon"
           onClick={handleModalClose}
         />
       </div>

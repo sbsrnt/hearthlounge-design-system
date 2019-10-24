@@ -1,7 +1,6 @@
 import React from 'react';
 import { bool, func, string } from 'prop-types';
 import cx from 'classnames';
-import styles from '../styles.module.scss';
 
 const SelectInput = ({
   disabled,
@@ -14,7 +13,7 @@ const SelectInput = ({
 }) => {
   return (
     <div
-      className={cx(styles.inputWrapper, disabled && styles.disabled)}
+      className={cx('select__inputWrapper', disabled && 'select__disabled')}
       role="textbox"
       aria-label="input"
     >
@@ -22,13 +21,13 @@ const SelectInput = ({
         {...getInputProps()}
         onClick={toggleMenu}
         data-testid="select input"
-        className={styles.input}
+        className="select__input"
         placeholder="ex. Foo, Bar..."
         name={name}
       />
       <button
         data-testid="select icon"
-        className={cx(styles.icon, isOpen && styles.iconOpen)}
+        className={cx('select__icon', isOpen && 'select__icon--open')}
         onClick={!isOpen ? openMenu : closeMenu}
       >
         ❯

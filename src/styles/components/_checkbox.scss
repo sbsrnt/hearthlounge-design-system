@@ -1,0 +1,61 @@
+@import '../colors';
+
+.checkbox {
+  display: none;
+
+  &__container {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 16px;
+    height: 16px;
+
+    cursor: pointer;
+    transition: all ease 0.4s;
+
+    border: 1px solid $color-neutral-60;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $color-cyan-30;
+    }
+
+    &--checked {
+      border-color: $color-cyan-60;
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+
+      border-color: $color-neutral-50;
+      background: $color-neutral-30;
+
+      span {
+        cursor: not-allowed;
+
+        color: $color-neutral-60;
+      }
+    }
+  }
+
+  &__checkmark {
+    transition: all ease 0.4s;
+    transform: scale(1.5);
+
+    opacity: 0;
+
+    &--checked {
+      transform: scale(1);
+
+      opacity: 1;
+      color: $color-cyan-60;
+    }
+  }
+}
