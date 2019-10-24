@@ -8,7 +8,7 @@ module.exports = {
     styles: path.resolve(__dirname, 'src/styles/_styles.scss'),
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'lib'),
   },
   module: {
     rules: [
