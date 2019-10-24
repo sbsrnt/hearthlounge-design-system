@@ -117,4 +117,5 @@ Select.defaultProps = {
   width: 200,
 };
 
+export { Select };
 export default Select;

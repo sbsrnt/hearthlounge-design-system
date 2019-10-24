@@ -18,4 +18,5 @@ Link.defaultProps = {
   className: null,
 };
 
+export { Link };
 export default Link;

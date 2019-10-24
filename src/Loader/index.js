@@ -30,4 +30,5 @@ Loader.defaultProps = {
   thickness: 3,
 };
 
+export { Loader };
 export default Loader;

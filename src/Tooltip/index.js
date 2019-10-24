@@ -69,4 +69,5 @@ Tooltip.defaultProps = {
   applyStylesToChild: false,
 };
 
+export { Tooltip };
 export default Tooltip;

@@ -182,4 +182,5 @@ MultiSelect.defaultProps = {
   width: 200,
 };
 
+export { MultiSelect };
 export default MultiSelect;

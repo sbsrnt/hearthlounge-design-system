@@ -70,4 +70,5 @@ Icon.defaultProps = {
   visible: true,
 };
 
+export { Icon };
 export default Icon;

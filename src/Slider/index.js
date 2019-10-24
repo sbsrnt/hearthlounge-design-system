@@ -25,4 +25,5 @@ Slider.defaultProps = {
   value: 0,
 };
 
+export { Slider };
 export default Slider;

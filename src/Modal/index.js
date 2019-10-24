@@ -3,9 +3,9 @@ import { bool, func, node, string } from 'prop-types';
 import ReactModal from 'react-modal';
 import cx from 'classnames';
 
+import { Header } from '../Header';
+import { Icon } from '../Icon';
 import ModalFooter from './ModalFooter';
-import Header from '../Header';
-import Icon from '../Icon';
 
 import styles from './styles.module.scss';
 
@@ -66,4 +66,5 @@ Modal.defaultProps = {
   toggleModal: null,
 };
 
+export { Modal };
 export default Modal;

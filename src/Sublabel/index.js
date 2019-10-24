@@ -22,4 +22,5 @@ Sublabel.defaultProps = {
   className: null,
 };
 
+export { Sublabel };
 export default Sublabel;
