@@ -9,6 +9,7 @@ configure(
   [
     require.context('../src/pages', true, /\.stories.mdx$/),
     require.context('../src', true, /\.stories\.(js|mdx)$/),
+    // to work locally
     // require.context(
     //   '../node_modules/hearthlounge-design-system/dist',
     //   true,

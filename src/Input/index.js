@@ -60,4 +60,5 @@ Input.defaultProps = {
   width: 200,
 };
 
+export { Input };
 export default Input;

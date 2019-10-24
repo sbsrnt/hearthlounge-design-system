@@ -75,4 +75,5 @@ AnimatedList.defaultProps = {
   itemClassName: null,
 };
 
+export { AnimatedList };
 export default AnimatedList;

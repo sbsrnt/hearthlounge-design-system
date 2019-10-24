@@ -25,4 +25,5 @@ Range.defaultProps = {
   value: [0, 10],
 };
 
+export { Range };
 export default Range;

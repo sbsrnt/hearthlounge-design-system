@@ -16,4 +16,5 @@ Paragraph.defaultProps = {
   className: null,
 };
 
+export { Paragraph };
 export default Paragraph;

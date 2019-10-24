@@ -84,4 +84,5 @@ Checkbox.defaultProps = {
   onKeyPress: null,
 };
 
+export { Checkbox };
 export default Checkbox;

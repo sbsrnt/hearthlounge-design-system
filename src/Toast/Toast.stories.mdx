@@ -1,0 +1,33 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { toast } from 'react-toastify';
+
+import Toast from '.';
+
+<Meta title="Design System|Toast" />
+
+# Toast
+
+Proxy of [react-toastify](https://github.com/fkhadra/react-toastify#readme).
+
+## Usage
+
+Define initial rendering in app root.:
+
+```
+  import { initRender, renderToast } from 'hearthlounge-design-system';
+
+  initRender(); // <-- here
+
+  class App extends Component {
+    // then render the toast with renderToast();
+    notify = () => renderToast({type: 'success'});
+
+    render(){
+      return (
+        <div>
+          <button onClick={this.notify}>Notify !</button>
+        </div>
+      );
+    }
+  }
+```

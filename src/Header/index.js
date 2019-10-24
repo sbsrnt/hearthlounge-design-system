@@ -20,4 +20,5 @@ Header.defaultProps = {
   className: null,
 };
 
+export { Header };
 export default Header;

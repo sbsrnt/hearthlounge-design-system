@@ -25,6 +25,10 @@ jobs:
           name: Install Dependencies with Yarn
           command: yarn install --ignore-engines
 
+      - run:
+          name: Build Styles
+          command: yarn build-styles
+
       - save_cache:
           name: Save Yarn Package Cache
           key: v1-hl-design-system-{{ checksum "yarn.lock" }}
