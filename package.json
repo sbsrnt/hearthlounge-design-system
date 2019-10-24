@@ -35,6 +35,9 @@
     "build-storybook": "build-storybook -s public",
     "build-docs": "build-storybook -s public --docs",
     "build-styles": "webpack --mode='production'",
+    "build:js": "yarn build:js:cjs && yarn build:js:esm",
+    "build:js:cjs": "BABEL_ENV=cjs babel src -d lib/cjs --ignore *.test.js",
+    "build:js:esm": "BABEL_ENV=esm babel src -d lib/esm --ignore *.test.js",
     "extract-tokens": "node -r esm scripts/extract-tokens.js"
   },
   "babel": {
@@ -116,11 +119,12 @@
     "webpack-fix-style-only-entries": "^0.4.0"
   },
   "description": "HearthLounge design system",
-  "main": "dist/index.js",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
   "repository": "https://github.com/sbsrnt/hearthlounge-design-system.git",
   "author": "Sebastian Krzyżanowski <eskrzy@gmail.com>",
   "license": "MIT",
   "files": [
-    "dist"
+    "lib"
   ]
 }
