@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Sublabel from '.';
+import { Sublabel } from '.';
 
 describe('Sublabel Component', () => {
   test('renders correctly', async () => {

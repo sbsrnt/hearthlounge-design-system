@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Link from '.';
+import { Link } from '.';
 
 describe('Link Component', () => {
   test('renders correctly', async () => {
