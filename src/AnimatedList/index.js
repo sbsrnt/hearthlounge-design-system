@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import cx from 'classnames';
 import { any, arrayOf, func, shape, string } from 'prop-types';
 
-import styles from './styles.module.scss';
-
 const AnimatedList = ({
   children: Item,
   className,
@@ -39,7 +37,7 @@ const AnimatedList = ({
 
   return (
     <motion.ul
-      className={cx(styles.container, className)}
+      className={cx('animatedList__container', className)}
       variants={container}
       initial="hidden"
       animate="visible"
@@ -47,7 +45,7 @@ const AnimatedList = ({
       {items.map((itemProps, index) => (
         <motion.li
           key={`${name}-${index}`}
-          className={cx(styles.item, itemClassName)}
+          className={cx('animatedList__item', itemClassName)}
           variants={item}
         >
           {Item && <Item meta={{ ...itemProps }} />}
