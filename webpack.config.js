@@ -5,7 +5,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    styles: path.resolve(__dirname, 'styles/_styles.scss'),
+    styles: path.resolve(__dirname, 'src/styles/_styles.scss'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
