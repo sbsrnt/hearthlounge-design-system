@@ -26,6 +26,10 @@ jobs:
           command: yarn install --ignore-engines
 
       - run:
+          name: Build JS
+          command: yarn build:js
+
+      - run:
           name: Build Styles
           command: yarn build-styles
 
@@ -70,7 +74,7 @@ jobs:
       - run:
           name: Semantic Release
           command: yarn semantic-release
-          no_output_timeout: 5m
+          no_output_timeout: 10m
 
 workflows:
   version: 2
