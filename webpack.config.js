@@ -21,6 +21,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               ident: 'postcss',
+              // eslint-disable-next-line global-require
               plugins: () => [require('autoprefixer')],
             },
           },
