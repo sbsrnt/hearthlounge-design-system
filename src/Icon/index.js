@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import cx from 'classnames';
 import { icons } from '../shared/icons';
 
-import styles from './styles.module.scss';
-
 const Svg = styled.svg`
   display: ${props => (props.block ? 'block' : 'inline-block')};
   vertical-align: middle;
@@ -31,9 +29,9 @@ const PathSecondary = styled.path`
  */
 const Icon = ({ icon, block, visible, className, ...props }) => {
   const iconClasses = {
-    [styles.icon]: true,
-    [styles.visible]: visible,
-    [styles.notVisible]: !visible,
+    icon: true,
+    visible,
+    notVisible: !visible,
   };
 
   return (

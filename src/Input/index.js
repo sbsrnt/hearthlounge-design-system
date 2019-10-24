@@ -2,7 +2,6 @@ import React from 'react';
 import { bool, func, number, string } from 'prop-types';
 import cx from 'classnames';
 import FieldOverlap from '../common-components/FieldOverlap';
-import styles from './styles.module.scss';
 
 const Input = ({
   id,
@@ -15,9 +14,9 @@ const Input = ({
   ...props
 }) => {
   const inputClasses = {
-    [styles.input]: true,
-    [styles.inputError]: !!error,
-    [styles.disabled]: disabled,
+    input: true,
+    input__error: !!error,
+    input__disabled: disabled,
   };
   return (
     <FieldOverlap

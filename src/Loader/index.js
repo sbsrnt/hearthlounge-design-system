@@ -1,7 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
 import { number, string } from 'prop-types';
-import styles from './styles.module.scss';
 
 const Loader = ({ size, thickness, className, ...props }) => {
   const loaderStyles = {
@@ -11,7 +10,7 @@ const Loader = ({ size, thickness, className, ...props }) => {
   };
   return (
     <div
-      className={cx(styles.loader, className)}
+      className={cx('loader', className)}
       style={loaderStyles}
       aria-label="loader"
       {...props}
