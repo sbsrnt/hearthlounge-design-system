@@ -4,6 +4,7 @@ import * as icons from './shared/icons';
 import * as colors from './colors';
 
 export { styles, animation, icons, colors };
+export { initToast, renderToast } from './Toast';
 
 export * as AnimatedList from './AnimatedList';
 export * as Avatar from './Avatar';
@@ -21,4 +22,5 @@ export * as Range from './Range';
 export * as Select from './Select';
 export * as Slider from './Slider';
 export * as Sublabel from './Sublabel';
+export * as Toast from './Toast';
 export * as Tooltip from './Tooltip';

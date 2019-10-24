@@ -1,0 +1,61 @@
+@import '../styles/colors';
+
+/**
+ * Success
+ */
+.success-background {
+  background: $color-green-40;
+}
+
+.success-color {
+  color: $color-green-10;
+}
+
+.success-progress {
+  background: $color-green-10;
+}
+
+/**
+ * Error
+ */
+.error-background {
+  background: $color-expansions-the-grand-tournament-50;
+}
+
+.error-color {
+  color: $color-expansions-the-grand-tournament-10;
+}
+
+.error-progress {
+  background: $color-expansions-the-grand-tournament-10;
+}
+
+/**
+ * Info
+ */
+.info-background {
+  background: $color-blue-70;
+}
+
+.info-color {
+  color: $color-blue-20;
+}
+
+.info-progress {
+  background: $color-blue-20;
+}
+
+/**
+ * Warn
+ */
+.warn-background {
+  background: $color-yellow-60;
+}
+
+.warn-color {
+  color: $color-yellow-10;
+}
+
+.warn-progress {
+  background: $color-yellow-10;
+}
