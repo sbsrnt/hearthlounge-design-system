@@ -8,7 +8,7 @@ import {
   listWithDoubleIcon,
 } from '../common-components/Select/styles.module.scss';
 
-import MultiSelect from '.';
+import { MultiSelect } from '.';
 
 describe('MultiSelect Component', () => {
   const options = [{ value: 'foo' }, { value: 'bar' }, { value: 'baz' }];

@@ -1,0 +1,44 @@
+.multiSelect {
+  &__chipContainer {
+    display: flex;
+    flex-wrap: wrap;
+
+    background: transparent;
+  }
+
+  &__chip {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+
+    min-width: 50px;
+    margin-bottom: 4px;
+
+    animation: scale 0.4s ease;
+
+    animation-fill-mode: forwards;
+  }
+
+  &__chipsAndInputWrapperOpen {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__chipsAndInputWrapperClose {
+    display: block;
+  }
+}
+
+@keyframes scale {
+  0% {
+    bottom: -20px;
+
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+
+    opacity: 1;
+  }
+}
