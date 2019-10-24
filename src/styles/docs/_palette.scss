@@ -1,0 +1,52 @@
+.palette {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    &:nth-child(2) {
+      flex-direction: column;
+    }
+    div {
+      margin: 1em;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    ul,
+    li {
+      margin: 0;
+      padding-left: 0;
+
+      list-style: none;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+
+      margin-top: 5px;
+      span {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+
+        border-radius: 3px;
+        box-shadow: 0 0 2px black;
+      }
+
+      code {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__innerWrapper {
+    flex-direction: row;
+  }
+}

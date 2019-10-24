@@ -4,8 +4,6 @@ import { useHover, ToggleLayer } from 'react-laag';
 import { motion, AnimatePresence } from 'framer-motion';
 import ResizeObserver from 'resize-observer-polyfill';
 
-import styles from './styles.module.scss';
-
 const Tooltip = ({ applyStylesToChild, children, text }) => {
   const [show, hoverProps] = useHover({ delayEnter: 300, delayLeave: 200 });
 
@@ -21,7 +19,7 @@ const Tooltip = ({ applyStylesToChild, children, text }) => {
             {isOpen && (
               <motion.div
                 {...layerProps}
-                className={styles.tooltipBox}
+                className="tooltip_box"
                 initial={{
                   opacity: 0,
                   scale: 0.8,
@@ -48,7 +46,7 @@ const Tooltip = ({ applyStylesToChild, children, text }) => {
     >
       {({ triggerRef }) => (
         <span
-          className={applyStylesToChild ? styles.tooltipText : ''}
+          className={applyStylesToChild ? 'tooltip_text' : ''}
           ref={triggerRef}
           {...hoverProps}
         >

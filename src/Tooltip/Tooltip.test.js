@@ -3,8 +3,6 @@ import { render } from '@testing-library/react';
 
 import { Tooltip } from '.';
 
-import styles from './styles.module.scss';
-
 describe('Tooltip Component', () => {
   test('renders correctly', async () => {
     const { container } = render(<Tooltip text="foo">bar</Tooltip>);
@@ -20,7 +18,7 @@ describe('Tooltip Component', () => {
     );
 
     expect(
-      container.firstChild.classList.contains(styles.tooltipText)
+      container.firstChild.classList.contains('tooltip_text')
     ).toBeTruthy();
   });
 });

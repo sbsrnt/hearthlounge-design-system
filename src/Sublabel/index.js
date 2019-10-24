@@ -1,10 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 import { node, oneOf, string } from 'prop-types';
-import styles from './styles.module.scss';
 
 const Sublabel = ({ as: T, children, className, ...props }) => (
-  <T className={cx(styles.sublabel, className)} {...props}>
+  <T className={cx('sublabel', className)} {...props}>
     {children}
   </T>
 );

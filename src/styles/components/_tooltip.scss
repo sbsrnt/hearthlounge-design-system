@@ -1,0 +1,26 @@
+@import '../colors';
+@import '../typography';
+
+.tooltip {
+  &__box {
+    font-size: $font-size-xs;
+
+    z-index: 10;
+
+    padding: 3px 12px;
+
+    transform-origin: center center;
+
+    color: $color-neutral-20;
+    border: 1px solid $color-neutral-90;
+    border-radius: 3px;
+    background-color: rgba($color-neutral-90, 0.8);
+  }
+
+  &__text {
+    cursor: help;
+
+    color: $color-cyan-70;
+    border-bottom: 1px dotted $color-cyan-70;
+  }
+}
