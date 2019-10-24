@@ -1,21 +1,39 @@
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const path = require('path');
+
 module.exports = {
+  entry: {
+    styles: path.resolve(__dirname, 'styles/_styles.scss'),
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+  },
   module: {
     rules: [
       {
         test: /\.scss$/,
-        loaders: [
-          require.resolve('style-loader'),
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
           {
-            loader: require.resolve('css-loader'),
+            loader: 'postcss-loader',
             options: {
-              importLoaders: 1,
-              modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
+              ident: 'postcss',
+              plugins: () => [require('autoprefixer')],
             },
           },
-          require.resolve('sass-loader'),
+          'sass-loader',
         ],
       },
     ],
   },
+  plugins: [
+    new FixStyleOnlyEntriesPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+    new OptimizeCssAssetsWebpackPlugin(),
+  ],
 };
