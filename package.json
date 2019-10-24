@@ -122,5 +122,8 @@
   "main": "dist/index.js",
   "repository": "https://github.com/sbsrnt/hearthlounge-design-system.git",
   "author": "Sebastian Krzyżanowski <eskrzy@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "dist"
+  ]
 }
