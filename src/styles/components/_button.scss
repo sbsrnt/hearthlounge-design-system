@@ -1,0 +1,48 @@
+@import '../colors';
+@import '../typography';
+
+.button {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+
+  padding: 0.5rem 0.75rem;
+
+  cursor: pointer;
+
+  color: $color-neutral-10;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: $color-cyan-70;
+
+  &:hover {
+    background: $color-cyan-80;
+  }
+
+  &:disabled {
+    cursor: not-allowed !important;
+
+    color: $color-neutral-10 !important;
+    border-color: $color-expansions-mean-streets-of-gadgetzan-30 !important;
+    background: $color-expansions-mean-streets-of-gadgetzan-30 !important;
+  }
+
+  &__theme {
+    &--secondary {
+      color: $color-cyan-70;
+      border-color: $color-cyan-70;
+      background: transparent;
+
+      &:hover {
+        color: $color-cyan-90;
+        border-color: $color-cyan-90;
+        background: $color-neutral-10;
+      }
+    }
+  }
+
+  &__size {
+    &--small {
+      padding: 0.25rem 0.5rem;
+    }
+  }
+}
