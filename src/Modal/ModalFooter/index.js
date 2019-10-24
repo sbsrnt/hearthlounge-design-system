@@ -1,13 +1,12 @@
 import React from 'react';
 import { node, string } from 'prop-types';
 import cx from 'classnames';
-import styles from '../styles.module.scss';
 
 const ModalFooter = ({ children, className }) => {
   return (
     <div
       data-testid="modal-footer"
-      className={cx('p-3', styles.footer, className)}
+      className={cx('p-3 modal__footer', className)}
     >
       {children}
     </div>
