@@ -43,6 +43,8 @@ jobs:
           root: .
           paths:
             - node_modules
+            - lib/
+
   test:
     <<: *defaults
     steps:
@@ -62,14 +64,6 @@ jobs:
 
       - attach_workspace:
           at: ~/repo
-
-      #      - run:
-      #          name: auto release
-      #          command: |
-      #            if [ $CIRCLE_BRANCH = "master" ]
-      #            then
-      #              yarn release
-      #            fi
 
       - run:
           name: Semantic Release
