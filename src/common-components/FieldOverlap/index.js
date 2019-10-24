@@ -2,10 +2,8 @@ import React from 'react';
 import { bool, func, node, number, oneOfType, string } from 'prop-types';
 import cx from 'classnames';
 
-import Icon from '../../Icon';
-import Loader from '../../Loader';
-
-import styles from './styles.module.scss';
+import { Icon } from '../../Icon';
+import { Loader } from '../../Loader';
 
 const FieldOverlap = ({
   children,
@@ -20,22 +18,23 @@ const FieldOverlap = ({
   ...labelProps
 }) => {
   const wrapperClasses = {
-    [styles.wrapper]: true,
-    [styles.error]: !!error,
-    [styles.disabled]: disabled,
+    fieldOverlap__wrapper: true,
+    fieldOverlap__error: !!error,
+    fieldOverlap__disabled: disabled,
   };
 
   const labelClasses = {
-    [styles.label]: true,
-    [styles.error]: !!error,
-    [styles.disabled]: disabled,
+    fieldOverlap__label: true,
+    fieldOverlap__error: !!error,
+    fieldOverlap__disabled: disabled,
   };
 
   const childrenWrapperClasses = {
-    [styles.childrenWrapperDefault]: true,
-    [styles.childrenWithIcon]:
+    'fieldOverlap__childrenWrapper--default': true,
+    'fieldOverlap__childrenWrapper--withIcon':
       (!error && loading) || (error && !loading) || resetIcon,
-    [styles.childrenWithDoubleIcon]: (error || loading) && resetIcon,
+    'fieldOverlap__childrenWrapper--withDoubleIcon':
+      (error || loading) && resetIcon,
   };
 
   return (
@@ -44,7 +43,7 @@ const FieldOverlap = ({
       <label className={cx(labelClasses)} data-testid="label" {...labelProps}>
         {label}
       </label>
-      <div className={styles.childrenWrapper}>
+      <div className="fieldOverlap__childrenWrapper">
         <div
           className={cx(childrenWrapperClasses)}
           aria-label="field overlap elements"
@@ -53,13 +52,13 @@ const FieldOverlap = ({
         </div>
         <div
           className={cx(
-            styles.icons,
-            (resetIcon || loading || error) && styles.fadeIn,
-            !resetIcon && !loading && !error && styles.fadeOut
+            'fieldOverlap__icons',
+            (resetIcon || loading || error) && 'fieldOverlap__fadeIn',
+            !resetIcon && !loading && !error && 'fieldOverlap__fadeOut'
           )}
         >
           <Icon
-            className={styles.close}
+            className="fieldOverlap__close"
             icon="close"
             onClick={onReset}
             aria-hidden={!resetIcon}
