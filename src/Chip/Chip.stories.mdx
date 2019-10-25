@@ -1,0 +1,37 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import { Chip } from '.';
+
+<Meta title="Design System|Chip" component={Chip} />
+
+# Chip
+
+<Preview withToolbar>
+  <Story name="default">
+    <div className="d-flex">
+      <Chip className="mr-3">some content</Chip>
+      <Chip className="mr-3">foo</Chip>
+      <Chip>bar</Chip>
+    </div>
+  </Story>
+</Preview>
+
+<Props of={Chip} />
+
+### With background & text color
+
+<Preview withToolbar>
+  <Story name="with bg color">
+    <div className="d-flex">
+      <Chip className="mr-3" bgColor="lightblue" textColor="blue">
+        some content
+      </Chip>
+      <Chip className="mr-3" bgColor="red" textColor="white">
+        foo
+      </Chip>
+    </div>
+  </Story>
+</Preview>
+
+<Props of={Chip} />
