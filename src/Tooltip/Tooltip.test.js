@@ -18,7 +18,7 @@ describe('Tooltip Component', () => {
     );
 
     expect(
-      container.firstChild.classList.contains('tooltip_text')
+      container.firstChild.classList.contains('tooltip__text')
     ).toBeTruthy();
   });
 });
