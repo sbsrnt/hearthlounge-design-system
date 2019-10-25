@@ -1,6 +1,6 @@
 {
   "name": "hearthlounge-design-system",
-  "version": "0.24.7",
+  "version": "0.24.8",
   "private": false,
   "dependencies": {
     "downshift": "^3.3.4",
