@@ -25,7 +25,7 @@ const Palette = () => {
               ].includes(key)
             ) {
               return (
-                <div className="palette_wrapper" key={key}>
+                <div className="palette__wrapper" key={key}>
                   <p>{startCase(key)}</p>
                   <ul>
                     {Object.entries(values).map(
