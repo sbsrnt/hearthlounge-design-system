@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import { TextEditor } from '.';
+
+<Meta title="Design System|TextEditor" component={TextEditor} />
+
+# TextEditor
+
+Honestly, while [Draft.js](https://draftjs.org/) is neat, a lot of plugins broke with recent release.
+This component is not tested and will need to be replaced with something better.
+Definitely need MD support.
+
+Not to mention `componentWillMount` warnings. This stuff is actually ancient.
+
+<Preview>
+  <Story name="default">
+    <TextEditor />
+  </Story>
+</Preview>
+
+<Props of={TextEditor} />

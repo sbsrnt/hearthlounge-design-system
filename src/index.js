@@ -22,4 +22,5 @@ export { Range } from './Range';
 export { Select } from './Select';
 export { Slider } from './Slider';
 export { Sublabel } from './Sublabel';
+export { TextEditor } from './TextEditor';
 export { Tooltip } from './Tooltip';

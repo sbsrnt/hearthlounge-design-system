@@ -19,7 +19,7 @@ const Tooltip = ({ applyStylesToChild, children, text }) => {
             {isOpen && (
               <motion.div
                 {...layerProps}
-                className="tooltip_box"
+                className="tooltip__box"
                 initial={{
                   opacity: 0,
                   scale: 0.8,
@@ -46,7 +46,7 @@ const Tooltip = ({ applyStylesToChild, children, text }) => {
     >
       {({ triggerRef }) => (
         <span
-          className={applyStylesToChild ? 'tooltip_text' : ''}
+          className={applyStylesToChild ? 'tooltip__text' : ''}
           ref={triggerRef}
           {...hoverProps}
         >
