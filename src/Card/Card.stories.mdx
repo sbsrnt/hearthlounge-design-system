@@ -1,0 +1,16 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import { Card } from '.';
+
+<Meta title="Design System|Card" component={Card} />
+
+# Card
+
+<Preview withToolbar>
+  <Story name="default">
+    <Card>some content</Card>
+  </Story>
+</Preview>
+
+<Props of={Card} />
