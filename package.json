@@ -8,8 +8,6 @@
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.15",
     "node-sass": "^4.12.0",
-    "polished": "^3.4.1",
-    "pretty-quick": "^1.11.1",
     "prop-types": "^15.7.2",
     "rc-slider": "^8.7.1",
     "react": "^16.10.2",
@@ -27,17 +25,16 @@
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
-    "build": "BABEL_ENV=production babel src -d dist",
+    "build": "yarn build:js && yarn build:scss",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "semantic-release": "semantic-release",
     "eslit": "eslint .",
     "prettify": "pretty-quick",
     "build-storybook": "build-storybook -s public",
-    "build-docs": "build-storybook -s public --docs",
-    "build-styles": "webpack --mode='production'",
-    "build:js": "yarn build:js:esm",
-    "build:js:esm": "BABEL_ENV=esm babel src -d lib/esm --ignore *.test.js",
+    "docs": "build-storybook -s public --docs",
+    "build:scss": "webpack --mode='production'",
+    "build:js": "BABEL_ENV=esm babel src -d lib/esm --ignore *.test.js",
     "extract-tokens": "node -r esm scripts/extract-tokens.js"
   },
   "eslintConfig": {
@@ -112,19 +109,26 @@
     "lint-staged": "^9.4.1",
     "mini-css-extract-plugin": "^0.8.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "polished": "^3.4.1",
+    "pretty-quick": "^1.11.1",
     "prettier": "^1.18.2",
     "sass-extract": "^2.1.0",
     "semantic-release": "^15.13.24",
     "webpack-cli": "^3.3.9",
     "webpack-fix-style-only-entries": "^0.4.0"
   },
-  "description": "HearthLounge design system",
+  "description": "HearthLounge's design system",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
-  "repository": "https://github.com/sbsrnt/hearthlounge-design-system.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sbsrnt/hearthlounge-design-system.git"
+  },
   "author": "Sebastian Krzyżanowski <eskrzy@gmail.com>",
   "license": "MIT",
+  "homepage": "https://hearthlounge-design-system.netlify.com/",
   "files": [
     "lib"
-  ]
+  ],
+  "bugs": "https://github.com/sbsrnt/hearthlounge-design-system/issues"
 }

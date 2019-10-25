@@ -31,7 +31,7 @@ jobs:
 
       - run:
           name: Build Styles
-          command: yarn build-styles
+          command: yarn build:scss
 
       - save_cache:
           name: Save Yarn Package Cache
@@ -54,7 +54,7 @@ jobs:
           at: ~/repo
 
       - run:
-          name: react-scripts test
+          name: Run Tests
           command: yarn test
 
   release:
