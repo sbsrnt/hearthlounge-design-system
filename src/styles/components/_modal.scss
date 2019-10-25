@@ -39,3 +39,26 @@
     font-size: $font-size-xl;
   }
 }
+
+.ReactModal__Body--open {
+  overflow: hidden;
+  &.hide-intercom #intercom-container {
+    display: none;
+  }
+}
+
+.ReactModalPortal > div {
+  opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  transition: all 400ms ease-in;
+
+  &--after-open {
+    opacity: 1;
+  }
+
+  &--before-close {
+    opacity: 0;
+  }
+}

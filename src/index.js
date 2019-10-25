@@ -9,6 +9,7 @@ export { initToast, renderToast } from './Toast';
 export { AnimatedList } from './AnimatedList';
 export { Avatar } from './Avatar';
 export { Button } from './Button';
+export { Card } from './Card';
 export { Checkbox } from './Checkbox';
 export { Header } from './Header';
 export { Icon } from './Icon';
