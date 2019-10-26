@@ -38,7 +38,8 @@
     "docs": "build-storybook -s public --docs",
     "build:scss": "webpack --mode='production'",
     "build:js": "BABEL_ENV=esm babel src -d lib/esm --ignore *.test.js",
-    "extract-tokens": "node -r esm scripts/extract-tokens.js"
+    "extract:tokens": "node -r esm scripts/extract-tokens.js",
+    "extract:icons": "node -r esm scripts/extract-icons.js"
   },
   "eslintConfig": {
     "extends": "react-app"
