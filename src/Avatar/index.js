@@ -31,7 +31,7 @@ const Avatar = ({ loading, username, src, size, className, ...props }) => {
 
   return (
     <div className={cx(classes, className)} {...a11yProps} {...props}>
-      {loading && <Icon icon="useralt" />}
+      {loading && <Icon name="sign-in" />}
       {!loading && src && <img src={src} alt={username} />}
       {!loading && !src && (
         <div aria-hidden="true">{username.substring(0, 1)}</div>

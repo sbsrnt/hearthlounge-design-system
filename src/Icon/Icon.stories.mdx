@@ -1,0 +1,71 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+
+import { Icon } from '.';
+import { icons } from '../../assets/icons';
+
+<Meta title="Design System|Icon" component={Icon} />
+
+# Icon
+
+An Icon is a piece of visual element, but we must ensure its accessibility while using it.
+It can have 2 purposes:
+
+- _decorative only_: for example, it illustrates a label next to it. We must ensure that it is ignored by screen readers, by setting `aria-hidden` attribute (ex: `<Icon name="check" aria-hidden />`)
+- _non-decorative_: it means that it delivers information. For example, an icon as only child in a button. The meaning can be obvious visually, but it must have a proper text alternative via `aria-label` for screen readers. (ex: `<Icon name="print" aria-label="Print this document" />`)
+
+<Preview>
+  <Story name="default">
+    <>
+      There are {icons.length} icons
+      <ul className="docs__icons--list">
+        {icons.map(({ tags: { 0: category, 1: name } }) => (
+          <li className="docs__icons--item" key={`${category}_${name}`}>
+            <Icon name={name} aria-hidden />
+            <div className="docs__icons--meta">{name}</div>
+          </li>
+        ))}
+      </ul>
+    </>
+  </Story>
+</Preview>
+
+<Props of={Icon} />
+
+## Usage
+
+Header is used to represent header text. Wrapper for HTML's `h{n}` tag. By default the header is `h3`.
+
+### Without labels
+
+<Preview>
+  <Story name="without labels">
+    <ul className="docs__icons--list">
+      {icons.map(({ tags: { 0: category, 1: name } }) => (
+        <li className="docs__icons--item" key={`${category}_${name}`}>
+          <Icon name={name} aria-hidden />
+        </li>
+      ))}
+    </ul>
+  </Story>
+</Preview>
+
+### Inline
+
+<Preview>
+  <Story name="inline">
+    <p>
+      this is an inline <Icon name="github" aria-label="github logo" /> icon
+      (default)
+    </p>
+  </Story>
+</Preview>
+
+### Block
+
+<Preview>
+  <Story name="block">
+    <p>
+      this is a block <Icon name="github" aria-label="github logo" block /> icon
+    </p>
+  </Story>
+</Preview>

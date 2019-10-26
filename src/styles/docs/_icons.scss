@@ -1,0 +1,30 @@
+.docs__icons {
+  &--meta {
+    font-size: 12px;
+
+    color: #666666;
+  }
+
+  &--list {
+    display: flex;
+    flex-flow: row wrap;
+
+    list-style: none;
+  }
+
+  &--item {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 1 20%;
+    flex-direction: row;
+
+    min-width: 120px;
+    padding: 0 7.5px 20px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+  }
+}

@@ -33,7 +33,7 @@ const Modal = ({
       <div className="d-flex p-3 modal__header">
         <Header>{header}</Header>
         <Icon
-          icon="close"
+          name="close"
           className="modal__closeIcon"
           onClick={handleModalClose}
         />
