@@ -1,9 +1,11 @@
 import React from 'react';
 import { bool, func, node, number, oneOfType, string } from 'prop-types';
 import cx from 'classnames';
+import { isString } from 'lodash';
 
 import { Icon } from '../../Icon';
 import { Loader } from '../../Loader';
+import { Tooltip } from '../../Tooltip';
 
 const FieldOverlap = ({
   children,
@@ -37,6 +39,8 @@ const FieldOverlap = ({
       (error || loading) && resetIcon,
   };
 
+  const errorMsg = isString(error) ? error : 'Something went wrong.';
+
   return (
     <div className={cx(wrapperClasses)} style={{ width }}>
       {/* eslint-disable jsx-a11y/label-has-associated-control */}
@@ -59,20 +63,26 @@ const FieldOverlap = ({
         >
           <Icon
             className="fieldOverlap__close"
-            icon="close"
+            name="close"
             onClick={onReset}
             aria-hidden={!resetIcon}
             aria-label="reset input value icon"
             visible={resetIcon}
+            size={16}
           />
           {!loading && error && (
-            <Icon
-              icon="important"
-              aria-label="important icon"
-              data-testid="important icon"
-              visible={!loading && error}
-              aria-hidden={!error || loading}
-            />
+            <span style={{ marginTop: '-3px' }}>
+              <Tooltip text={errorMsg}>
+                <Icon
+                  name="error"
+                  aria-label="error icon"
+                  data-testid="important icon"
+                  visible={!loading && error}
+                  aria-hidden={!error || loading}
+                  size={16}
+                />
+              </Tooltip>
+            </span>
           )}
           {loading && !error && (
             <Loader size={18} thickness={2} data-testid="loader icon" />

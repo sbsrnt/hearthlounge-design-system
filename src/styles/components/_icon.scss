@@ -1,6 +1,9 @@
 .icon {
-  transition: opacity ease 0.4s;
+  display: inline-block;
 
+  transition: opacity ease 0.4s;
+  transform: translate3d(0, 0, 0);
+  vertical-align: middle;
   &__visible {
     display: block;
 
@@ -11,5 +14,13 @@
     display: none;
 
     opacity: 0;
+  }
+
+  &__block {
+    display: block;
+  }
+
+  &__path {
+    fill: currentColor;
   }
 }
