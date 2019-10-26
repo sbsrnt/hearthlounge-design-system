@@ -121,7 +121,7 @@
     "webpack-fix-style-only-entries": "^0.4.0"
   },
   "description": "HearthLounge's design system",
-  "main": "./lib/cjs/index.js",
+  "main": "./lib/esm/index.js",
   "module": "./lib/esm/index.js",
   "repository": {
     "type": "git",
@@ -131,7 +131,8 @@
   "license": "MIT",
   "homepage": "https://hearthlounge-design-system.netlify.com/",
   "files": [
-    "lib"
+    "lib",
+    "assets"
   ],
   "bugs": "https://github.com/sbsrnt/hearthlounge-design-system/issues"
 }
