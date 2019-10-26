@@ -1,7 +1,7 @@
 import React from 'react';
 import { bool, number, string } from 'prop-types';
 import cx from 'classnames';
-import { icons } from '../../assets/icons';
+import { icons } from '../icons';
 
 const Icon = ({ name, block, visible, className, size, ...props }) => {
   const {

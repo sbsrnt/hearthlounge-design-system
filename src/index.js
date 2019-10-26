@@ -1,6 +1,7 @@
 import * as colors from './colors';
+import { icons } from './icons';
 
-export { colors };
+export { colors, icons };
 export { initToast, renderToast } from './Toast';
 
 export { AnimatedList } from './AnimatedList';

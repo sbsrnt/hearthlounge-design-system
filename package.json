@@ -131,8 +131,7 @@
   "license": "MIT",
   "homepage": "https://hearthlounge-design-system.netlify.com/",
   "files": [
-    "lib",
-    "assets"
+    "lib"
   ],
   "bugs": "https://github.com/sbsrnt/hearthlounge-design-system/issues"
 }
