@@ -1,19 +1,20 @@
 @import '../colors';
 
 .rc-slider-handle {
-  border-color: $color-cyan-60 !important;
+  border-color: $color-neutral-50 !important;
+  background: $color-neutral-90;
   &:active,
   &:focus {
-    box-shadow: 0 0 5px $color-neutral-70 !important;
+    box-shadow: 0 0 5px $color-neutral-90 !important;
   }
 }
 
 .rc-slider-track {
-  background-color: $color-cyan-60 !important;
+  background-color: $color-neutral-50 !important;
 }
 
 .rc-slider-rail {
-  background-color: $color-neutral-50 !important;
+  background-color: $color-neutral-70 !important;
 }
 
 .rc-slider-disabled {

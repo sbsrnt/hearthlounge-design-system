@@ -27,7 +27,7 @@ h6 {
   margin: 0;
   padding: 0;
 
-  color: $color-neutral-90;
+  color: $color-neutral-20;
 }
 
 h1 {
@@ -89,7 +89,7 @@ hr {
   margin-bottom: 1.25rem;
 
   border: none;
-  border-top: 1px solid $color-border;
+  border-top: 1px solid $color-neutral-80;
 }
 
 code,
@@ -109,7 +109,7 @@ code {
 
   vertical-align: baseline;
 
-  color: $color-secondary;
+  color: $color-neutral-60;
 }
 
 pre {
@@ -120,7 +120,7 @@ pre {
 
   white-space: pre-wrap;
 
-  color: $color-darkest;
+  color: $color-neutral-60;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.05);
 }
@@ -131,9 +131,9 @@ p {
 
   margin: 0;
 
-  letter-spacing: 0.2px;
+  letter-spacing: 0.5px;
 
-  color: $color-neutral-90;
+  color: $color-neutral-10;
 }
 
 body {
@@ -145,7 +145,7 @@ body {
 
   margin: 0;
 
-  color: $color-darkest;
+  color: $color-neutral-40;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

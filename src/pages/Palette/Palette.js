@@ -10,8 +10,8 @@ const Palette = () => {
   return (
     <div className="palette__container">
       <div>
-        Common
-        <div className="palette__container">
+        <h3>Common</h3>
+        <div className="palette__container" style={{ flexDirection: 'row' }}>
           {entries.map(({ 0: key, 1: values }) => {
             if (
               ![

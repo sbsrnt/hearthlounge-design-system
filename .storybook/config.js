@@ -1,9 +1,16 @@
 import React from 'react';
-import { configure, addDecorator } from '@storybook/react';
+import { configure, addParameters, addDecorator } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
+import theme from './hearthloungeTheme';
 
 addDecorator(withA11y);
 import '../src/styles/_styles.scss';
+
+addParameters({
+  options: {
+    theme: theme,
+  },
+});
 
 configure(
   [

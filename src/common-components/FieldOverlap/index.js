@@ -61,15 +61,19 @@ const FieldOverlap = ({
             !resetIcon && !loading && !error && 'fieldOverlap__fadeOut'
           )}
         >
-          <Icon
-            className="fieldOverlap__close"
-            name="close"
-            onClick={onReset}
-            aria-hidden={!resetIcon}
-            aria-label="reset input value icon"
-            visible={resetIcon}
-            size={16}
-          />
+          <div className="d-flex" style={{ marginTop: '1px' }}>
+            {resetIcon && (
+              <Icon
+                className="fieldOverlap__close"
+                name="close"
+                onClick={onReset}
+                aria-hidden={!resetIcon}
+                aria-label="reset input value icon"
+                visible={!resetIcon}
+                size={16}
+              />
+            )}
+          </div>
           {!loading && error && (
             <span style={{ marginTop: '-3px' }}>
               <Tooltip text={errorMsg}>

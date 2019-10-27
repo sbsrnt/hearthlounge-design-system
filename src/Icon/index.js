@@ -4,10 +4,7 @@ import cx from 'classnames';
 import { icons } from '../icons';
 
 const Icon = ({ name, block, visible, className, size, ...props }) => {
-  const {
-    paths,
-    tags: { 1: title },
-  } = icons.find(i => i.tags[1] === name);
+  const { paths } = icons.find(i => i.tags[1] === name);
   const iconClasses = {
     icon: true,
     visible,
@@ -23,10 +20,10 @@ const Icon = ({ name, block, visible, className, size, ...props }) => {
       className={cx(iconClasses, className)}
       {...props}
     >
-      <title>{title}</title>
-      {paths.map((path, i) => (
-        <path className="icon__path" key={`path_${name}_${i}`} d={path} />
-      ))}
+      {paths &&
+        paths.map((path, i) => (
+          <path className="icon__path" key={`path_${name}_${i}`} d={path} />
+        ))}
     </svg>
   );
 };

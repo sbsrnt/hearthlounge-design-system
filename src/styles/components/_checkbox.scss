@@ -23,11 +23,11 @@
     }
 
     &:focus-visible {
-      outline: 3px solid $color-cyan-30;
+      outline: 3px solid $color-neutral-40;
     }
 
     &--checked {
-      border-color: $color-cyan-60;
+      border-color: $color-neutral-40;
     }
 
     &--disabled {
@@ -35,7 +35,7 @@
       pointer-events: none;
 
       border-color: $color-neutral-50;
-      background: $color-neutral-30;
+      background: $color-neutral-80;
 
       span {
         cursor: not-allowed;
@@ -55,7 +55,7 @@
       transform: scale(1);
 
       opacity: 1;
-      color: $color-cyan-60;
+      color: $color-neutral-40;
     }
   }
 }

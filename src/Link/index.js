@@ -1,8 +1,9 @@
 import React from 'react';
+import cx from 'classnames';
 import { node, string } from 'prop-types';
 
 const Link = ({ as: T, to, children, className, ...props }) => (
-  <T href={to} className={className} {...props}>
+  <T href={to} className={cx('link', className)} {...props}>
     {children}
   </T>
 );

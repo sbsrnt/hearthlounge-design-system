@@ -15,7 +15,12 @@ import { Input } from '.';
 
 <Preview withToolbar>
   <Story name="default">
-    <Input />
+    <Input
+      name="bar"
+      onChange={(name, value) =>
+        console.log('Name: ', name, '\nValue: ', value)
+      }
+    />
   </Story>
 </Preview>
 
