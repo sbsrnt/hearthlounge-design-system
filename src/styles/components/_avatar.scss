@@ -42,16 +42,16 @@ $tiny: 16px;
   path {
     animation: glow 1.5s ease-in-out infinite;
 
-    fill: $color-medium;
+    fill: $color-neutral-80;
   }
 
   &__src {
-    background: #37d5d3;
+    background: $color-neutral-50;
   }
 
   &__initial {
-    color: $color-lightest;
-    background: $color-dark;
+    color: $color-neutral-50;
+    background: $color-neutral-80;
   }
 
   &__loading {

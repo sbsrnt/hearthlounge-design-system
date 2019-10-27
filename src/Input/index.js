@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { bool, func, number, string } from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
 import cx from 'classnames';
 import FieldOverlap from '../common-components/FieldOverlap';
 
@@ -11,13 +12,18 @@ const Input = ({
   error,
   loading,
   disabled,
+  value,
   ...props
 }) => {
+  const [innerValue, setInnerValue] = useState(value);
   const inputClasses = {
     input: true,
     input__error: !!error,
     input__disabled: disabled,
   };
+
+  const handleReset = () => setInnerValue('');
+
   return (
     <FieldOverlap
       label={name}
@@ -26,6 +32,8 @@ const Input = ({
       error={error}
       loading={loading}
       disabled={disabled}
+      resetIcon={!isEmpty(innerValue)}
+      onReset={handleReset}
     >
       <input
         id={id}
@@ -33,7 +41,15 @@ const Input = ({
         placeholder="Text goes here..."
         data-testid="input"
         disabled={disabled}
-        onChange={onChange ? v => onChange(name, v.target.value) : null}
+        onChange={
+          onChange
+            ? v => {
+                if (onChange) onChange(name, v.target.value);
+                setInnerValue(v.target.value);
+              }
+            : null
+        }
+        value={innerValue}
         {...props}
       />
     </FieldOverlap>
@@ -47,6 +63,7 @@ Input.propTypes = {
   name: string,
   onChange: func,
   loading: bool,
+  value: string,
   width: number,
 };
 Input.defaultProps = {
@@ -56,6 +73,7 @@ Input.defaultProps = {
   name: 'input',
   loading: false,
   onChange: null,
+  value: '',
   width: 200,
 };
 

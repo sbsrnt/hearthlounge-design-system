@@ -21,14 +21,6 @@ describe('Input Component', () => {
     expect(input.classList.contains('input__disabled')).toBeTruthy();
   });
 
-  test('fires onChange implicitly', async () => {
-    const { getByTestId } = render(<Input />);
-    const input = getByTestId('input');
-
-    fireEvent.change(input, { target: { value: '23' } });
-    expect(input.value).toBe('23');
-  });
-
   test('fires onChange explicitly', async done => {
     const handleChange = (name, value) => {
       expect(name).toEqual('foo');

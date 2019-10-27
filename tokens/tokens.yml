@@ -1,11 +1,5 @@
 _colors:
   color:
-    medium: '#000'
-    border: '#ccc'
-    secondary: '#888'
-    lightest: '#999'
-    dark: '#444'
-    darkest: '#333'
     neutral:
       '10': '#FFFFFF'
       '20': '#F9F8F6'

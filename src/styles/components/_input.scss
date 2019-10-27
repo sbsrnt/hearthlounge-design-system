@@ -9,11 +9,16 @@
 
   transition: all ease 0.4s;
 
-  color: $color-cyan-80;
+  color: $color-neutral-40;
   border: 0;
+  background: transparent;
+
+  &::placeholder {
+    color: $color-neutral-70;
+  }
 
   &__error {
-    color: $color-red-60;
+    color: $color-red-50;
   }
 
   &__disabled {

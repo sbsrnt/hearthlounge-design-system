@@ -1,9 +1,9 @@
+@import '../colors';
+
 .multiSelect {
   &__chipContainer {
     display: flex;
     flex-wrap: wrap;
-
-    background: transparent;
   }
 
   &__chip {

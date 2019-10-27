@@ -11,16 +11,16 @@
 
     transform-origin: center center;
 
-    color: $color-neutral-20;
-    border: 1px solid $color-neutral-90;
+    color: $color-neutral-50;
+    border: 1px solid $color-neutral-80;
     border-radius: 3px;
-    background-color: rgba($color-neutral-90, 0.8);
+    background-color: rgba($color-neutral-80, 0.9);
   }
 
   &__text {
     cursor: help;
 
-    color: $color-cyan-70;
-    border-bottom: 1px dotted $color-cyan-70;
+    color: $color-cyan-50;
+    border-bottom: 1px dotted $color-cyan-50;
   }
 }

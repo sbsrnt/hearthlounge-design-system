@@ -47,14 +47,14 @@
 
     padding: 0 5px;
 
-    color: $color-neutral-80;
-    background: white;
+    color: $color-neutral-60;
+    background: $color-neutral-90;
   }
 
   &__icons {
     position: absolute;
     z-index: 1;
-    top: 9px;
+    top: 10px;
     right: 5px;
 
     display: flex;
@@ -70,35 +70,45 @@
 
   &__close {
     path {
-      fill: $color-neutral-70;
+      fill: $color-neutral-60;
     }
 
     &:hover {
       path {
-        fill: $color-neutral-80;
+        fill: $color-neutral-40;
       }
     }
   }
 
   &__error {
-    color: $color-red-60;
+    color: $color-red-50;
     border-color: $color-red-50;
+
+    svg {
+      fill: $color-red-50;
+    }
   }
 
   &__disabled {
     cursor: not-allowed;
 
-    background: $color-neutral-20;
+    color: $color-neutral-40;
+    background: $color-neutral-70;
     input,
     button {
-      background: $color-neutral-20;
+      background: $color-neutral-70;
+
+      &::placeholder {
+        color: $color-neutral-60;
+      }
     }
 
     label {
+      color: $color-neutral-50;
       background: linear-gradient(
         to bottom,
-        $color-neutral-10 25%,
-        $color-neutral-20 100%
+        $color-neutral-90 30%,
+        $color-neutral-70 100%
       );
     }
   }
@@ -111,7 +121,7 @@
     opacity: 0;
   }
   100% {
-    top: 9px;
+    top: 10px;
 
     opacity: 1;
   }
@@ -119,7 +129,7 @@
 
 @keyframes iconFadeOut {
   0% {
-    top: 9px;
+    top: 10px;
 
     opacity: 1;
   }

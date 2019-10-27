@@ -1,0 +1,11 @@
+@import '../colors';
+
+.link {
+  color: $color-neutral-40;
+  &:active,
+  &:hover,
+  &:focus,
+  &:visited {
+    color: $color-neutral-60;
+  }
+}

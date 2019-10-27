@@ -29,8 +29,13 @@
 
     transition: all ease 0.4s;
 
-    color: $color-cyan-80;
+    color: $color-neutral-50;
     border: 0;
+    background: transparent;
+
+    &::placeholder {
+      color: $color-neutral-70;
+    }
   }
 
   &__icon {
@@ -40,13 +45,14 @@
     transition: all ease 0.4s;
     transform: rotate(90deg);
 
-    color: $color-neutral-80;
+    color: $color-neutral-70;
     border: 0;
+    background: $color-neutral-90;
 
     &--open {
       transform: rotate(-90deg);
 
-      color: $color-cyan-60;
+      color: $color-neutral-50;
     }
   }
 
@@ -69,7 +75,7 @@
     transition: all ease 0.4s;
 
     border-radius: 4px;
-    box-shadow: 0 0 4px $color-neutral-70;
+    box-shadow: 0 0 4px $color-neutral-50;
 
     &--visible {
       top: 5px;
@@ -107,21 +113,21 @@
 
     padding: 8px 5px;
 
-    color: $color-neutral-90;
-    border-bottom: 1px solid $color-neutral-30;
+    color: $color-neutral-70;
+    border-bottom: 1px solid $color-neutral-80;
 
     &:last-child {
       border-bottom: 0;
     }
 
     &--selected {
-      color: $color-cyan-60;
+      color: $color-neutral-50;
     }
 
     &--hovered {
       cursor: pointer;
 
-      color: $color-cyan-60;
+      color: $color-neutral-50;
     }
   }
 }
