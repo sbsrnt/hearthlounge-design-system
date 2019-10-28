@@ -21,6 +21,7 @@ export { Range } from './Range';
 export { Select } from './Select';
 export { Slider } from './Slider';
 export { StrikeBehind } from './StrikeBehind';
+export { Styled } from './Styled';
 export { Sublabel } from './Sublabel';
 export { TextEditor } from './TextEditor';
 export { Tooltip } from './Tooltip';
