@@ -3,12 +3,10 @@ import { bool, number, string } from 'prop-types';
 import cx from 'classnames';
 import { icons } from '../icons';
 
-const Icon = ({ name, block, visible, className, size, ...props }) => {
+const Icon = ({ name, block, className, size, ...props }) => {
   const { paths } = icons.find(i => i.tags[1] === name);
   const iconClasses = {
     icon: true,
-    visible,
-    notVisible: !visible,
     icon__block: block,
   };
 
@@ -29,18 +27,16 @@ const Icon = ({ name, block, visible, className, size, ...props }) => {
 };
 
 Icon.propTypes = {
+  block: bool,
   className: string,
   name: string.isRequired,
-  block: bool,
   size: number,
-  visible: bool,
 };
 
 Icon.defaultProps = {
-  className: null,
   block: false,
+  className: null,
   size: 24,
-  visible: true,
 };
 
 export { Icon };
