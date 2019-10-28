@@ -1,20 +1,12 @@
+@import '../colors';
 .icon {
   display: inline-block;
 
   transition: opacity ease 0.4s;
   transform: translate3d(0, 0, 0);
   vertical-align: middle;
-  &__visible {
-    display: block;
 
-    opacity: 1;
-  }
-
-  &__notVisible {
-    display: none;
-
-    opacity: 0;
-  }
+  fill: $color-neutral-50;
 
   &__block {
     display: block;
