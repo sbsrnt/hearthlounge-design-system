@@ -99,6 +99,16 @@ By default `<Styled />` has styles as the component would be inactive.
   </Story>
 </Preview>
 
+### `withBorder`
+
+<Preview withToolbar>
+  <Story name="withBorder">
+    <Styled withBorder>
+      <Icon name="github" />
+    </Styled>
+  </Story>
+</Preview>
+
 ### With nested components
 
 <Preview withToolbar>
@@ -119,6 +129,7 @@ Experiment with this story with Knobs addon in Canvas mode.
     active={boolean('active')}
     backgroundHoverColor="lightgrey"
     hoverColor="purple"
+    withBorder={boolean('withBorder')}
     withTransition={boolean('withTransition')}
   >
     <Icon name="github" />
