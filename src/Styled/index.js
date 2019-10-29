@@ -5,7 +5,9 @@ import { neutral50, neutral70 } from '../colors';
 
 const Styled = ({
   active,
+  activeColor,
   background,
+  backgroundActiveColor,
   backgroundHoverColor,
   children,
   className,
@@ -18,8 +20,8 @@ const Styled = ({
   const transition = 'all .4s ease';
   const visibleColor = hover ? hoverColor : color;
   const visibleBgColor = hover ? backgroundHoverColor : background;
-  const activeVisibleColor = active ? color : visibleColor;
-  const activeVisibleBgColor = active ? background : visibleBgColor;
+  const activeVisibleColor = active ? activeColor : visibleColor;
+  const activeVisibleBgColor = active ? backgroundActiveColor : visibleBgColor;
 
   const styles = {
     color: activeVisibleColor,
@@ -46,7 +48,9 @@ const Styled = ({
 
 Styled.propTypes = {
   active: bool,
+  activeColor: string,
   background: string,
+  backgroundActiveColor: string,
   backgroundHoverColor: string,
   children: node,
   className: string,
@@ -57,7 +61,9 @@ Styled.propTypes = {
 
 Styled.defaultProps = {
   active: false,
+  activeColor: neutral50,
   background: null,
+  backgroundActiveColor: null,
   backgroundHoverColor: null,
   children: null,
   className: null,
