@@ -109,7 +109,7 @@ code {
 
   vertical-align: baseline;
 
-  color: $color-neutral-60;
+  color: $color-neutral-40;
 }
 
 pre {
@@ -134,6 +134,11 @@ p {
   letter-spacing: 0.5px;
 
   color: $color-neutral-10;
+
+  code {
+    color: $color-neutral-40;
+    background: $color-neutral-80 !important;
+  }
 }
 
 body {

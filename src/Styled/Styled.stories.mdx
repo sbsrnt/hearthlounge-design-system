@@ -1,0 +1,127 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+
+import { Styled } from '.';
+import { Icon } from '../Icon';
+import { Paragraph } from '../Paragraph';
+import { Sublabel } from '../Sublabel';
+
+<Meta title="Design System|Styled" component={Styled} />
+
+# Styled
+
+## Passes styles to all child components
+
+By default `<Styled />` has styles as the component would be inactive.
+
+<Preview withToolbar>
+  <Story name="default">
+    <Styled>
+      <Paragraph>Hover over me</Paragraph>
+    </Styled>
+  </Story>
+</Preview>
+
+<Props of={Styled} />
+
+### `withTransition`
+
+<Preview withToolbar>
+  <Story name="withTransition">
+    <Styled withTransition>
+      <Paragraph>Hover over me</Paragraph>
+    </Styled>
+  </Story>
+</Preview>
+
+### With `active`
+
+<Preview withToolbar>
+  <Story name="active">
+    <div>
+      <Styled active>
+        <Paragraph> I'm active </Paragraph>
+      </Styled>
+      <Styled>
+        <Paragraph> I'm not active </Paragraph>
+      </Styled>
+    </div>
+  </Story>
+</Preview>
+
+### With different `hoverColor`
+
+<Preview withToolbar>
+  <Story name="hoverColor">
+    <Styled hoverColor="yellow">
+      <Paragraph>Hover over me</Paragraph>
+    </Styled>
+  </Story>
+</Preview>
+
+### With different `color`
+
+<Preview withToolbar>
+  <Story name="color">
+    <Styled color="yellow">
+      <Paragraph>Hover over me</Paragraph>
+    </Styled>
+  </Story>
+</Preview>
+
+### With `icon`
+
+<Preview withToolbar>
+  <Story name="with icon">
+    <Styled>
+      <Icon name="github" />
+    </Styled>
+  </Story>
+</Preview>
+
+### With `background` color
+
+<Preview withToolbar>
+  <Story name="with background">
+    <Styled background="cyan">
+      <Icon name="github" />
+    </Styled>
+  </Story>
+</Preview>
+
+### With `backgroundHoverColor` color
+
+<Preview withToolbar>
+  <Story name="with background hover color">
+    <Styled backgroundHoverColor="purple">
+      <Icon name="github" />
+    </Styled>
+  </Story>
+</Preview>
+
+### With nested components
+
+<Preview withToolbar>
+  <Story name="nested">
+    <Styled>
+      <Icon name="github" block />
+      <Sublabel> GitHub is dope</Sublabel>
+    </Styled>
+  </Story>
+</Preview>
+
+### Playground
+
+Experiment with this story with Knobs addon in Canvas mode.
+
+<Story name="knobs" decorators={[withKnobs]}>
+  <Styled
+    active={boolean('active')}
+    backgroundHoverColor="lightgrey"
+    hoverColor="purple"
+    withTransition={boolean('withTransition')}
+  >
+    <Icon name="github" />
+    <Sublabel>Some sublabel text</Sublabel>
+  </Styled>
+</Story>

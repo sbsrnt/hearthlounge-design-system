@@ -69,7 +69,6 @@ const FieldOverlap = ({
                 onClick={onReset}
                 aria-hidden={!resetIcon}
                 aria-label="reset input value icon"
-                visible={!resetIcon}
                 size={16}
               />
             )}
@@ -81,7 +80,6 @@ const FieldOverlap = ({
                   name="error"
                   aria-label="error icon"
                   data-testid="important icon"
-                  visible={!loading && error}
                   aria-hidden={!error || loading}
                   size={16}
                 />
