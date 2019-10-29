@@ -20,8 +20,10 @@ const Styled = ({
   const transition = 'all .4s ease';
   const visibleColor = hover ? hoverColor : color;
   const visibleBgColor = hover ? backgroundHoverColor : background;
-  const activeVisibleColor = active ? activeColor : visibleColor;
-  const activeVisibleBgColor = active ? backgroundActiveColor : visibleBgColor;
+  const activeVisibleColor = active ? activeColor || hoverColor : visibleColor;
+  const activeVisibleBgColor = active
+    ? backgroundActiveColor || backgroundHoverColor
+    : visibleBgColor;
 
   const styles = {
     color: activeVisibleColor,
@@ -61,7 +63,7 @@ Styled.propTypes = {
 
 Styled.defaultProps = {
   active: false,
-  activeColor: neutral50,
+  activeColor: null,
   background: null,
   backgroundActiveColor: null,
   backgroundHoverColor: null,
