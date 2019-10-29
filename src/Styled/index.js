@@ -1,5 +1,6 @@
 import React, { Children, cloneElement, useState } from 'react';
 import { bool, node, string } from 'prop-types';
+import cx from 'classnames';
 import { neutral50, neutral70 } from '../colors';
 
 const Styled = ({
@@ -33,7 +34,7 @@ const Styled = ({
 
   return (
     <div
-      className={className}
+      className={cx('styled', className)}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       {...props}
