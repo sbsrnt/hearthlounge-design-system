@@ -1,0 +1,7 @@
+$cursors: pointer, default, progress, not-allowed;
+
+@each $cursor in $cursors {
+  .cursor-#{$cursor} {
+    cursor: $cursor;
+  }
+}

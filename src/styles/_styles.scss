@@ -1,11 +1,9 @@
 @import 'colors';
 @import 'typography';
-@import 'animations';
-@import 'spacing';
-
+@import 'utils';
 @import 'mixins/spacing';
 
-@import 'global';
+@import 'reset';
 @import 'components';
 @import 'docs/palette';
 @import 'docs/icons';
