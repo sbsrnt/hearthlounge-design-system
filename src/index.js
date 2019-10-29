@@ -1,7 +1,6 @@
 import * as colors from './colors';
 
-export { colors };
-export { initToast, renderToast } from './Toast';
+export { useActions } from './hooks/useActions';
 
 export { AnimatedList } from './AnimatedList';
 export { Avatar } from './Avatar';
@@ -24,4 +23,7 @@ export { StrikeBehind } from './StrikeBehind';
 export { Styled } from './Styled';
 export { Sublabel } from './Sublabel';
 export { TextEditor } from './TextEditor';
+export { initToast, renderToast } from './Toast';
 export { Tooltip } from './Tooltip';
+
+export { colors };
