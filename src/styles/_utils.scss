@@ -2,3 +2,7 @@
 @import 'utils/flex';
 @import 'utils/text-align';
 @import 'utils/cursors';
+
+.min-100 {
+  min-height: 100%;
+}
