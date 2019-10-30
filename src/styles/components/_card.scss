@@ -4,3 +4,56 @@
   border-radius: 4px;
   box-shadow: 0 0 3px black;
 }
+
+.stacked {
+  $animation-timing: 0.3s;
+  $animation-ease: ease-in-out;
+  border-radius: 4px;
+  $animation-ease-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  transition: transform $animation-timing $animation-ease;
+  will-change: transform;
+
+  &__content {
+    background: $color-neutral-90;
+    height: 100%;
+    border-radius: 4px;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: transform $animation-timing $animation-ease;
+    will-change: transform;
+    transform-origin: center center;
+    background: currentColor;
+
+    box-shadow: 0 0 3px black;
+    border-radius: 4px;
+    transform: scale(0.9);
+  }
+
+  &:before {
+    z-index: -1;
+  }
+
+  &:after {
+    z-index: -2;
+  }
+
+  &:hover {
+    transform: translate(-5px, -5px);
+
+    &:before {
+      transform: translate(5px, 5px);
+    }
+    &:after {
+      transform: translate(10px, 10px);
+    }
+  }
+}
