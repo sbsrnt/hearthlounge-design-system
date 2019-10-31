@@ -19,8 +19,11 @@ const Loader = ({ size, thickness, className, ...props }) => {
 };
 
 Loader.propTypes = {
+  /** Any additional classNames to specify on the element */
   className: string,
+  /** Size of the element */
   size: number,
+  /** Loader's width */
   thickness: number,
 };
 Loader.defaultProps = {

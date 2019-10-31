@@ -28,8 +28,11 @@ const Icon = ({ name, block, className, size, ...props }) => {
 
 Icon.propTypes = {
   block: bool,
+  /** Any additional classNames to specify on the element */
   className: string,
+  /** Name of the icon to be rendered */
   name: string.isRequired,
+  /** Size of the icon */
   size: number,
 };
 

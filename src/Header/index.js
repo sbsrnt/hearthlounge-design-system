@@ -7,11 +7,14 @@ const Header = ({ as: T, children, className, ...props }) => (
   </T>
 );
 
-const supportedHeaderTypes = ['h1', 'h2', 'h3', 'h4', 'h5'];
+const supportedHeaderLevels = ['h1', 'h2', 'h3', 'h4', 'h5'];
 
 Header.propTypes = {
-  as: oneOf(supportedHeaderTypes),
+  /** Levels of header */
+  as: oneOf(supportedHeaderLevels),
+  /** Any node(s) to be displayed as children */
   children: node,
+  /** Any additional classNames to specify on the element */
   className: string,
 };
 Header.defaultProps = {

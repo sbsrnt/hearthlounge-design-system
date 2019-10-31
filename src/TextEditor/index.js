@@ -39,8 +39,11 @@ const TextEditor = ({ name, text, onChange }) => {
 };
 
 TextEditor.propTypes = {
+  /** Name to identify and be provided through callback */
   name: string,
+  /** Text editor value */
   text: string,
+  /** Function callback to execute on change of the element -> (name, value) */
   onChange: func,
 };
 TextEditor.defaultProps = {

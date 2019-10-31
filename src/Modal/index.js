@@ -47,12 +47,19 @@ const Modal = ({
 };
 
 Modal.propTypes = {
+  /** Any node(s) to be displayed as children */
   children: node.isRequired,
+  /** Modal's footer content */
   footer: node,
+  /** Any additional classNames to specify on the element */
   footerClassname: string,
+  /** Modal headline */
   header: string.isRequired,
+  /** Whether modal is visible or hidden */
   isOpen: bool,
+  /** Modal's footer wrapper component */
   ModalFooter: node,
+  /** Function callback to execute toggleModal  */
   toggleModal: func,
 };
 Modal.defaultProps = {

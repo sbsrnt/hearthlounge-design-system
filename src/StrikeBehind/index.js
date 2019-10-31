@@ -18,8 +18,11 @@ const StrikeBehind = ({ children, className, size, ...props }) => {
 const supportedSizes = ['small', 'medium'];
 
 StrikeBehind.propTypes = {
+  /** Any node(s) to be displayed as children */
   children: node,
+  /** Any additional classNames to specify on the element */
   className: string,
+  /** Size of the element */
   size: oneOf(supportedSizes),
 };
 StrikeBehind.defaultProps = {

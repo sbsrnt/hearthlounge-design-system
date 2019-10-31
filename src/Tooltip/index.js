@@ -58,8 +58,11 @@ const Tooltip = ({ applyStylesToChild, children, text }) => {
 };
 
 Tooltip.propTypes = {
+  /** Whether to apply tooltip child styles to wrapping node or not */
   applyStylesToChild: bool,
+  /** Any node(s) to be displayed as children */
   children: node.isRequired,
+  /** Tooltip text */
   text: string.isRequired,
 };
 

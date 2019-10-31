@@ -1,14 +1,16 @@
 import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
 
-import { Paragraph } from '.';
+import { Text } from '.';
 
-<Meta title="Design System|Paragraph" component={Paragraph} />
+<Meta title="Design System|Text" component={Text} />
 
-# Paragraph
+# Text
+
+## Represents large blocks of text
 
 <Preview>
   <Story name="default">
-    <Paragraph>
+    <Text>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -16,12 +18,8 @@ import { Paragraph } from '.';
       velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.
-    </Paragraph>
+    </Text>
   </Story>
 </Preview>
 
-<Props of={Paragraph} />
-
-## Usage
-
-Paragraph is used to represent paragraph. Wrapper for HTML's `p` tag
+<Props of={Text} />

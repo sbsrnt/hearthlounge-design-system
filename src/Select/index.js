@@ -95,14 +95,23 @@ const Select = ({
 };
 
 Select.propTypes = {
+  /** Disable from user interaction */
   disabled: bool,
+  /** Whether or not there as an issue */
   error: oneOfType([bool, string]),
+  /** Array of objects to be iterated over */
   items: arrayOf(shape({})),
+  /** Represents a caption for an item in a user interface */
   label: string,
+  /** Loading state to indicate that the data element needs is still loading */
   loading: bool,
+  /** Name to identify and be provided through callback */
   name: string,
+  /** Function callback to execute on input reset of the element -> (name, value) */
   onInputReset: func,
+  /** Function callback to execute on select of the element -> (name, value) */
   onSelect: func,
+  /** Width of the element */
   width: number,
 };
 Select.defaultProps = {

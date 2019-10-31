@@ -11,8 +11,11 @@ const Sublabel = ({ as: T, children, className, ...props }) => (
 const supportedNodes = ['div', 'label'];
 
 Sublabel.propTypes = {
+  /** The tag of the element */
   as: oneOf(supportedNodes),
+  /** Any node(s) to be displayed as children */
   children: node,
+  /** Any additional classNames to specify on the element */
   className: string,
 };
 Sublabel.defaultProps = {

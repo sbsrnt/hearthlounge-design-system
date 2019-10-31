@@ -14,7 +14,6 @@ const FieldOverlap = ({
   loading,
   width,
   error,
-  name,
   resetIcon,
   onReset,
   ...labelProps
@@ -96,14 +95,21 @@ const FieldOverlap = ({
 };
 
 FieldOverlap.propTypes = {
+  /** Any node(s) to be displayed as children */
   children: node,
+  /** Disable from user interaction */
   disabled: bool,
+  /** Whether or not there as an issue */
   error: oneOfType([bool, string]),
+  /** Represents a caption for an item in a user interface */
   label: string,
+  /** Loading state to indicate that the data element needs is still loading */
   loading: bool,
-  name: string,
+  /** Function callback to execute on reset of the element -> (name, value) */
   onReset: func,
+  /** Whether to show or not reset icon */
   resetIcon: bool,
+  /** Width of the element */
   width: number,
 };
 FieldOverlap.defaultProps = {
@@ -112,7 +118,6 @@ FieldOverlap.defaultProps = {
   error: null,
   label: null,
   loading: false,
-  name: null,
   onReset: null,
   resetIcon: false,
   width: 200,

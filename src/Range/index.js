@@ -15,8 +15,11 @@ const Range = ({ name, onChange, value, ...rest }) => {
 };
 
 Range.propTypes = {
+  /** Name to identify and be provided through callback */
   name: string,
+  /** Function callback to execute on change of the element -> (name, value) */
   onChange: func.isRequired,
+  /** Currently selected array of values */
   value: arrayOf(number),
 };
 

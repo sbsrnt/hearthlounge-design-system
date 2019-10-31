@@ -9,9 +9,13 @@ const Link = ({ as: T, to, children, className, ...props }) => (
 );
 
 Link.propTypes = {
+  /** The tag of the element */
   as: string,
+  /** Any node(s) to be displayed as children */
   children: node.isRequired,
+  /** Any additional classNames to specify on the element */
   className: string,
+  /** Redirection path */
   to: string.isRequired,
 };
 Link.defaultProps = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { bool, oneOf, string } from 'prop-types';
 import cx from 'classnames';
 
 import { Icon } from '../Icon';
@@ -43,25 +43,21 @@ const Avatar = ({ loading, username, src, size, className, ...props }) => {
 export const sizes = ['large', 'medium', 'small', 'tiny'];
 
 Avatar.propTypes = {
-  /** Avatar's class */
-  className: PropTypes.string,
-  /**
-   Use the loading state to indicate that the data Avatar needs is still loading.
-   */
-  loading: PropTypes.bool,
+  /** Any additional classNames to specify on the element */
+  className: string,
+  /** Loading state to indicate that the data element needs is still loading */
+  loading: bool,
   /**
    Avatar falls back to the user's initial when no image is provided.
    Supply a `username` and omit `src` to see what this looks like.
    */
-  username: PropTypes.string,
+  username: string,
   /**
    The URL of the Avatar's image.
    */
-  src: PropTypes.string,
-  /**
-   Avatar comes in four sizes. In most cases, you'll be fine with `medium`.
-   */
-  size: PropTypes.oneOf(sizes),
+  src: string,
+  /** Size of the element */
+  size: oneOf(sizes),
 };
 
 Avatar.defaultProps = {

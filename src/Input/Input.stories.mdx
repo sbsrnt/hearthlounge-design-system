@@ -13,6 +13,8 @@ import { Input } from '.';
 
 # Input
 
+## Interactive control for web-based forms in order to accept data from the user.
+
 <Preview withToolbar>
   <Story name="default">
     <Input
@@ -25,19 +27,6 @@ import { Input } from '.';
 </Preview>
 
 <Props of={Input} />
-
-## Usage
-
-<Preview withToolbar>
-  <Story name="onChange">
-    <Input
-      name="bar"
-      onChange={(name, value) =>
-        console.log('Name: ', name, '\nValue: ', value)
-      }
-    />
-  </Story>
-</Preview>
 
 ### Error
 

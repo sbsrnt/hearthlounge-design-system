@@ -11,6 +11,7 @@ const AnimatedList = ({
   itemClassName,
   items,
   name,
+  ...props
 }) => {
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -41,6 +42,7 @@ const AnimatedList = ({
       variants={container}
       initial="hidden"
       animate="visible"
+      {...props}
     >
       {items.map((itemProps, index) => (
         <motion.li
@@ -56,11 +58,17 @@ const AnimatedList = ({
 };
 
 AnimatedList.propTypes = {
+  /** Any node(s) to be displayed as children */
   children: func,
+  /** Any additional classNames to specify on the element */
   className: string,
+  /** Parent config to modify animation properties of the list element */
   containerAnimationConfig: shape({}),
+  /** Child config to modify animation properties of the single item element */
   itemAnimationConfig: shape({}),
+  /** Any additional classNames to specify on the single item element */
   itemClassName: string,
+  /** Array of objects to be iterated over */
   items: arrayOf(shape({ value: any }).isRequired).isRequired,
   /** Unique list name (required for unique item keys) */
   name: string.isRequired,

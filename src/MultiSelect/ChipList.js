@@ -13,6 +13,7 @@ const ChipList = ({ onRemoveItem, selectedItems }) => (
 );
 ChipList.propTypes = {
   onRemoveItem: func.isRequired,
+  /** Selected array of objects */
   selectedItems: arrayOf(string),
 };
 ChipList.defaultProps = {

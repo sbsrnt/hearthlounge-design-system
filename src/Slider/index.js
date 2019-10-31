@@ -15,8 +15,11 @@ const Slider = ({ name, onChange, value, ...rest }) => {
 };
 
 Slider.propTypes = {
+  /** Name to identify and be provided through callback */
   name: string,
+  /** Function callback to execute on change of the element -> (name, value) */
   onChange: func.isRequired,
+  /** Currently selected value */
   value: number,
 };
 

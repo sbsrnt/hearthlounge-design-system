@@ -14,7 +14,9 @@ const ModalFooter = ({ children, className }) => {
 };
 
 ModalFooter.propTypes = {
+  /** Any node(s) to be displayed as children */
   children: node,
+  /** Any additional classNames to specify on the element */
   className: string,
 };
 ModalFooter.defaultProps = {

@@ -156,15 +156,25 @@ const MultiSelect = ({
 };
 
 MultiSelect.propTypes = {
+  /** Disable from user interaction */
   disabled: bool,
+  /** Whether or not there as an issue */
   error: string,
+  /** Represents a caption for an item in a user interface */
   label: string,
+  /** Loading state to indicate that the data element needs is still loading */
   loading: bool,
+  /** Name to identify and be provided through callback */
   name: string,
+  /** Function callback to execute on select of the element -> (name, value) */
   onSelect: func,
+  /** Array of objects to be iterated over */
   options: arrayOf(shape({})),
+  /** Function callback to execute on reset selection of the element -> (name, value) */
   onResetSelection: func,
+  /** Selected array of objects */
   selectedOptions: arrayOf(shape({})),
+  /** Width of the element */
   width: number,
 };
 

@@ -37,9 +37,11 @@ const SelectInput = ({
 };
 
 SelectInput.propTypes = {
+  /** Disable from user interaction */
   disabled: bool,
   getInputProps: func.isRequired,
   toggleMenu: func.isRequired,
+  /** Name to identify and be provided through callback */
   name: string,
   isOpen: bool.isRequired,
   openMenu: func.isRequired,

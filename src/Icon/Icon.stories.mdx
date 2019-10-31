@@ -7,11 +7,7 @@ import { icons } from '../icons';
 
 # Icon
 
-An Icon is a piece of visual element, but we must ensure its accessibility while using it.
-It can have 2 purposes:
-
-- _decorative only_: for example, it illustrates a label next to it. We must ensure that it is ignored by screen readers, by setting `aria-hidden` attribute (ex: `<Icon name="check" aria-hidden />`)
-- _non-decorative_: it means that it delivers information. For example, an icon as only child in a button. The meaning can be obvious visually, but it must have a proper text alternative via `aria-label` for screen readers. (ex: `<Icon name="print" aria-label="Print this document" />`)
+## An Icon is a piece of visual element.
 
 <Preview>
   <Story name="default">
@@ -31,9 +27,14 @@ It can have 2 purposes:
 
 <Props of={Icon} />
 
-## Usage
+## Copyright Notice
 
-Header is used to represent header text. Wrapper for HTML's `h{n}` tag. By default the header is `h3`.
+[Hearthstone](https://playhearthstone.com/en-us/) and [World of Warcraft](https://worldofwarcraft.com/en-gb/) related icons are released into the public domain under the [Creative Commons CC0 Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/deed.en).
+
+These are derived artworks based on graphics that appear in the game Hearthstone and World of Warcraft © [Blizzard Entertainment](https://www.blizzard.com/en-gb/).
+Use of these artworks must comply with the relevant terms and conditions set out by Blizzard Entertainment.
+
+Any other Icons are released into the public domain under [Creative Commons CC4 Public Domain Dedication](https://creativecommons.org/licenses/by/4.0/) and/or [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 ### Without labels
 
