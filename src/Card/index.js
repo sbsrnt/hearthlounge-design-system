@@ -22,7 +22,7 @@ Card.propTypes = {
   children: node,
   /** Any additional classNames to specify on the element */
   className: string,
-  /** On hover resembles stack of cards */
+  /** Whether the animation of stacked cards should trigger or not */
   stacked: bool,
 };
 
