@@ -19,6 +19,7 @@ const Styled = ({
   color,
   hoverColor,
   withBorder,
+  withHover,
   withTransition,
   ...props
 }) => {
@@ -52,8 +53,10 @@ const Styled = ({
   return (
     <div
       className={cx('styled', className)}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      {...(withHover && {
+        onMouseEnter: () => setHover(true),
+        onMouseLeave: () => setHover(false),
+      })}
       {...props}
     >
       {childrenWithProps}
@@ -92,6 +95,8 @@ Styled.propTypes = {
   hoverColor: string,
   /** Whether border styles should be applied or not */
   withBorder: bool,
+  /** Whether hover functionality should be applied or not */
+  withHover: bool,
   /** Whether transition animation should be applied or not */
   withTransition: bool,
 };
@@ -111,6 +116,7 @@ Styled.defaultProps = {
   color: neutral70,
   hoverColor: neutral50,
   withBorder: false,
+  withHover: false,
   withTransition: false,
 };
 

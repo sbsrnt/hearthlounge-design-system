@@ -3,7 +3,7 @@ import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import { Styled } from '.';
 import { Icon } from '../Icon';
-import { Paragraph } from '../Paragraph';
+import { Text } from '../Text';
 import { Sublabel } from '../Sublabel';
 
 <Meta title="Design System|Styled" component={Styled} />
@@ -16,8 +16,8 @@ By default `<Styled />` has styles as the component would be inactive.
 
 <Preview withToolbar>
   <Story name="default">
-    <Styled>
-      <Paragraph>Hover over me</Paragraph>
+    <Styled withHover>
+      <Text>Hover over me</Text>
     </Styled>
   </Story>
 </Preview>
@@ -28,8 +28,8 @@ By default `<Styled />` has styles as the component would be inactive.
 
 <Preview withToolbar>
   <Story name="withTransition">
-    <Styled withTransition>
-      <Paragraph>Hover over me</Paragraph>
+    <Styled withHover withTransition>
+      <Text>Hover over me</Text>
     </Styled>
   </Story>
 </Preview>
@@ -40,10 +40,10 @@ By default `<Styled />` has styles as the component would be inactive.
   <Story name="active">
     <div>
       <Styled active>
-        <Paragraph> I'm active </Paragraph>
+        <Text> I'm active </Text>
       </Styled>
       <Styled>
-        <Paragraph> I'm not active </Paragraph>
+        <Text> I'm not active </Text>
       </Styled>
     </div>
   </Story>
@@ -53,8 +53,8 @@ By default `<Styled />` has styles as the component would be inactive.
 
 <Preview withToolbar>
   <Story name="hoverColor">
-    <Styled hoverColor="yellow">
-      <Paragraph>Hover over me</Paragraph>
+    <Styled withHover hoverColor="yellow">
+      <Text>Hover over me</Text>
     </Styled>
   </Story>
 </Preview>
@@ -63,8 +63,8 @@ By default `<Styled />` has styles as the component would be inactive.
 
 <Preview withToolbar>
   <Story name="color">
-    <Styled color="yellow">
-      <Paragraph>Hover over me</Paragraph>
+    <Styled withHover color="yellow">
+      <Text>Hover over me</Text>
     </Styled>
   </Story>
 </Preview>
@@ -73,7 +73,7 @@ By default `<Styled />` has styles as the component would be inactive.
 
 <Preview withToolbar>
   <Story name="with icon">
-    <Styled>
+    <Styled withHover>
       <Icon name="github" />
     </Styled>
   </Story>
@@ -83,7 +83,7 @@ By default `<Styled />` has styles as the component would be inactive.
 
 <Preview withToolbar>
   <Story name="with background">
-    <Styled background="cyan">
+    <Styled withHover background="cyan">
       <Icon name="github" />
     </Styled>
   </Story>
@@ -93,7 +93,7 @@ By default `<Styled />` has styles as the component would be inactive.
 
 <Preview withToolbar>
   <Story name="with background hover color">
-    <Styled backgroundHoverColor="purple">
+    <Styled withHover backgroundHoverColor="purple">
       <Icon name="github" />
     </Styled>
   </Story>
@@ -103,7 +103,7 @@ By default `<Styled />` has styles as the component would be inactive.
 
 <Preview withToolbar>
   <Story name="withBorder">
-    <Styled withBorder>
+    <Styled withHover withBorder>
       <Icon name="github" />
     </Styled>
   </Story>
@@ -113,7 +113,7 @@ By default `<Styled />` has styles as the component would be inactive.
 
 <Preview withToolbar>
   <Story name="nested">
-    <Styled>
+    <Styled withHover>
       <Icon name="github" block />
       <Sublabel> GitHub is dope</Sublabel>
     </Styled>
@@ -130,6 +130,7 @@ Experiment with this story with Knobs addon in Canvas mode.
     backgroundHoverColor="lightgrey"
     hoverColor="purple"
     withBorder={boolean('withBorder')}
+    withHover={boolean('withHover')}
     withTransition={boolean('withTransition')}
   >
     <Icon name="github" />
