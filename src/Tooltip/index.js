@@ -1,10 +1,10 @@
 import React from 'react';
-import { bool, node, string } from 'prop-types';
+import { bool, node, oneOf, string } from 'prop-types';
 import { useHover, ToggleLayer } from 'react-laag';
 import { motion, AnimatePresence } from 'framer-motion';
 import ResizeObserver from 'resize-observer-polyfill';
 
-const Tooltip = ({ applyStylesToChild, children, text }) => {
+const Tooltip = ({ anchor, applyStylesToChild, children, text }) => {
   const [show, hoverProps] = useHover({ delayEnter: 300, delayLeave: 200 });
 
   return (
@@ -12,7 +12,7 @@ const Tooltip = ({ applyStylesToChild, children, text }) => {
       ResizeObserver={ResizeObserver}
       isOpen={show}
       fixed
-      placement={{ anchor: 'TOP_CENTER', autoAdjust: true, triggerOffset: 4 }}
+      placement={{ anchor, autoAdjust: true, triggerOffset: 4 }}
       renderLayer={({ isOpen, layerProps, layerSide }) => {
         return (
           <AnimatePresence>
@@ -57,7 +57,15 @@ const Tooltip = ({ applyStylesToChild, children, text }) => {
   );
 };
 
+const supportedAnchors = [
+  'LEFT_CENTER',
+  'TOP_CENTER',
+  'RIGHT_CENTER',
+  'BOTTOM_CENTER',
+];
+
 Tooltip.propTypes = {
+  anchor: oneOf(supportedAnchors),
   /** Whether to apply tooltip child styles to wrapping node or not */
   applyStylesToChild: bool,
   /** Any node(s) to be displayed as children */
@@ -67,6 +75,7 @@ Tooltip.propTypes = {
 };
 
 Tooltip.defaultProps = {
+  anchor: 'TOP_CENTER',
   applyStylesToChild: false,
 };
 
