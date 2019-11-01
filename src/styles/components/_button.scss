@@ -38,6 +38,16 @@
         background: $color-neutral-10;
       }
     }
+
+    &--tertiary {
+      color: $color-neutral-30;
+      background: transparent;
+
+      &:hover {
+        color: $color-neutral-60;
+        background: transparent;
+      }
+    }
   }
 
   &__size {
